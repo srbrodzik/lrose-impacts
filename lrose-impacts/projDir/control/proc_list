@@ -1,0 +1,76 @@
+######################################################################
+# IMPACTS proc_list
+##############################################################################
+# SYSTEM processes
+#
+#DsServerMgr   primary    start_DsServerMgr         snuff_inst 
+#Janitor      logs       start_Janitor.logs        kill_Janitor 
+Scout         primary    start_Scout               kill_Scout 
+DataMapper    primary    start_DataMapper          kill_DataMapper
+#
+######################################################################
+# SERVER processes - copied from RELAMPAGO
+#
+#DsServerMgr      primary  start_inst(no-params)     snuff_inst
+#DsProxyServer    primary  start_inst(no-params)     snuff_inst
+#DsMdvServer      manager  start_inst(no-params)     snuff_inst
+NcMdvServer       manager  start_inst(no-params)     snuff_inst
+DsFmqServer       manager  start_inst(no-params)     snuff_inst
+#DsSpdbServer     manager  start_inst(no-params)     snuff_inst
+DsFCopyServer     manager  start_inst(no-params)     snuff_inst
+Metar2Symprod     manager  start_inst(no-params)     snuff_inst
+Rhi2Symprod       manager  start_inst(no-params)     snuff_inst
+AcTrack2Symprod   manager  start_inst(no-params)     snuff_inst
+SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
+Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
+#
+######################################################################
+# NEXRAD file ingest - from AWS
+#
+RadxConvert   kakq       start_inst(ingest)        snuff_inst
+RadxConvert   kbgm       start_inst(ingest)        snuff_inst
+RadxConvert   kbox       start_inst(ingest)        snuff_inst
+RadxConvert   kccx       start_inst(ingest)        snuff_inst
+RadxConvert   kdix       start_inst(ingest)        snuff_inst
+RadxConvert   kdox       start_inst(ingest)        snuff_inst
+RadxConvert   kenx       start_inst(ingest)        snuff_inst
+RadxConvert   kgyx       start_inst(ingest)        snuff_inst
+RadxConvert   kmhx       start_inst(ingest)        snuff_inst
+RadxConvert   kokx       start_inst(ingest)        snuff_inst
+RadxConvert   krax       start_inst(ingest)        snuff_inst
+#
+###############################################################################
+# Cartesian gridding, convert to MDV
+#
+Radx2Grid      kakq      start_inst(ingest)        snuff_inst
+Radx2Grid      kbgm      start_inst(ingest)        snuff_inst
+Radx2Grid      kbox      start_inst(ingest)        snuff_inst
+Radx2Grid      kccx      start_inst(ingest)        snuff_inst
+Radx2Grid      kdix      start_inst(ingest)        snuff_inst
+Radx2Grid      kdox      start_inst(ingest)        snuff_inst
+Radx2Grid      kenx      start_inst(ingest)        snuff_inst
+Radx2Grid      kgyx      start_inst(ingest)        snuff_inst
+Radx2Grid      kmhx      start_inst(ingest)        snuff_inst
+Radx2Grid      kokx      start_inst(ingest)        snuff_inst
+Radx2Grid      krax      start_inst(ingest)        snuff_inst
+#
+###############################################################################
+# Create mosaic
+#
+MdvMerge2     mosaic     start_inst(ingest)        snuff_inst
+#
+######################################################################
+#
+# Ingesting the GOES data
+#
+InputWatcher    goes16_ch13   start_inst(ingest)   snuff_inst
+GoesRnetCDF2Mdv goes16_ch13   start_inst(ingest)   snuff_inst
+Mdv2NetCDF      goes16_ch13   start_inst(ingest)   snuff_inst
+InputWatcher    glm16         start_inst(ingest)   snuff_inst
+GoesRGLM2Spdb   glm16         start_inst(ingest)   snuff_inst
+#
+##############################################################################
+# DISPLAY processes
+#
+CIDD            ops           start_CIDD.ops       snuff_inst     
+
