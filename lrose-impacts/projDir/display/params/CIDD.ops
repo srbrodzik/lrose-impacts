@@ -76,11 +76,10 @@
 ############################
 # Satellite data
 
-#GOES16_CH13    GOES16_CH13    $(DATA_DIR)/mdv/goes16_ch13&GOESR_CH13   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_CH13    GOES16_CH13    $(DATA_DIR)/mdv/goes16_ch13&GOESR___channel   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
+GOES16_CH01    GOES16_CH01    $(DATA_DIR)/mdv/goes16_ch01&GOESR_CH01   sat_cloud.colors %   -5   80  5  cart    1 0
+GOES16_CH05    GOES16_CH05    $(DATA_DIR)/mdv/goes16_ch05&GOESR_CH05   sat_cloud.colors %   -5   80  5  cart    1 0
+GOES16_CH10    GOES16_CH10    $(DATA_DIR)/mdv/goes16_ch10&GOESR_CH10   sat_tempC.colors C   -5   80  5  cart    1 0
+GOES16_CH13    GOES16_CH13    $(DATA_DIR)/mdv/goes16_ch13&GOESR_CH13   sat_tempC.colors C   -5   80  5  cart    1 0
 GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
 GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
 
@@ -1037,25 +1036,24 @@ cidd.help_command:   netscape_starter -remote 'openURL(http://www.rap.ucar.edu/C
 # This command is run whenever a BOOKMARK_MENU button is pressed.
 # The characters; %U are replaced with the url text from the
 # parameters; cidd.bookmarkN below.
-cidd.bookmark_command:  netscape_starter -remote 'openURL(%U)'
+#cidd.bookmark_command:  netscape_starter -remote 'openURL(%U)'
 
 # Number of bookmarks in the Menu
-cidd.num_bookmarks: 4
+#cidd.num_bookmarks: 4
 
 # BOOKMARKS FOR Quick Reference
 # Create N Bookmark and Label parameters
 # cidd.bookmarkN: - The exact URL text for use in the cidd.bookmark_command.
 # cidd.bookmark_labelN: The Label that appears in the menu
 #
-cidd.bookmark1: http://mars/aoaws/doc/roc_mds.html
-cidd.bookmark_label1: ROC
-cidd.bookmark2: http://www.rap.ucar.edu/weather/
-cidd.bookmark_label2: RAP Weather
-cidd.bookmark3: http://adds.awc-kc.noaa.gov/
-cidd.bookmark_label3: ADDS
-cidd.bookmark4: http://cessna/
-cidd.bookmark_label4: ADDS-Cessna
-
+#cidd.bookmark1: http://mars/aoaws/doc/roc_mds.html
+#cidd.bookmark_label1: ROC
+#cidd.bookmark2: http://www.rap.ucar.edu/weather/
+#cidd.bookmark_label2: RAP Weather
+#cidd.bookmark3: http://adds.awc-kc.noaa.gov/
+#cidd.bookmark_label3: ADDS
+#cidd.bookmark4: http://cessna/
+#cidd.bookmark_label4: ADDS-Cessna
 
 # Resources for compatibility with TITAN-TIME HISTORY Program
 
@@ -1156,19 +1154,6 @@ debug = DEBUG_OFF;
 //         Note: scale_constant set in MAIN_PARAM section.      
 
 prod_info = {
-#  {
-#    menu_label = "Titan Storm Detections",
-#    url = "spdbp:Tstorms2Symprod:basic//localhost::spdb/tstorms",
-#    data_type = 0,
-#    render_type = RENDER_FIRST_BEFORE_DATA_TIME,
-#    on_by_default = TRUE,
-#    minutes_allow_before = 0.0,
-#    minutes_allow_after = 0.0,
-#    text_off_threshold = 0,
-#    request_data_on_zoom = false,
-#    request_data_on_vert_change = false
-#  }
-#  ,
   {
     menu_label = "Aircraft Tracks",
     url = "spdbp:AcTrack2Symprod://localhost::spdb/ac_posn",
@@ -1184,7 +1169,8 @@ prod_info = {
   ,
   {
     menu_label = "GLM" ,
-    url = "spdbp:Ltg2Symprod://localhost:0:impacts/spdb/ltg/glm16",
+    //url = "spdbp:Ltg2Symprod://localhost:0:spdb/ltg/glm16",
+    url = "spdbp:Ltg2Symprod://localhost:0:/home/bob/impacts/spdb/ltg/glm16",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     // render_type = RENDER_ALL_BEFORE_DATA_TIME,
