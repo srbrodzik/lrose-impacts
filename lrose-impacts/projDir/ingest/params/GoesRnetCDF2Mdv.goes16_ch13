@@ -266,9 +266,9 @@ out_projection = PROJ_LATLON;
 //
 
 out_grid = {
-    nx = 1750,
+    nx = 2000,
     ny = 1250,
-    minx = -100,
+    minx = -105,
     miny = 25,
     dx = 0.02,
     dy = 0.02

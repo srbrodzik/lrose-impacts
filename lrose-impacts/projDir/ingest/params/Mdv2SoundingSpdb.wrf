@@ -65,7 +65,8 @@ procmap_register_interval = 60;
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/$(project)/mdv/wrf";
+//input_dir = "$(DATA_DIR)/$(project)/mdv/wrf";
+input_dir = "$(DATA_DIR)/mdv/wrf";
 
 ///////////// mode ////////////////////////////////////
 //
@@ -231,9 +232,18 @@ heights_are_in_km = FALSE;
 //
 
 station_locations = {
-  { "NPOL", 47.275528, -124.209056, 0.139},
-  { "KLGX", 47.1169, -124.107, 0.111},
-  { "KATX", 48.1946, -122.496, 0.195}
+//  { "NPOL", 47.275528, -124.209056, 0.139},
+  { "KAKQ", 36.984,  -77.0073, 0.255},
+  { "KBGM", 42.1997, -75.9847, 1.703},
+  { "KBOX", 41.9559, -71.1370, 0.232},
+  { "KCCX", 40.9228, -78.0039, 2.485},
+  { "KDIX", 39.9471, -74.4108, 0.230},
+  { "KDOX", 38.8258, -75.4401, 0.164},
+  { "KENX", 42.5866, -74.0640, 1.934},
+  { "KGYX", 43.8914, -70.2565, 0.474},
+  { "KMHX", 34.7759, -76.8762, 0.145},
+  { "KOKX", 40.8655, -72.8638, 0.199},
+  { "KRAX", 35.6655, -78.4898, 0.462}
 };
 
 //======================================================================
@@ -248,7 +258,8 @@ station_locations = {
 // Type: string
 //
 
-output_url = "spdbp:://bob.atmos.washington.edu::$(project)/spdb/soundings/wrf";
+//output_url = "spdbp:://bob.atmos.washington.edu::$(project)/spdb/soundings/wrf";
+output_url = "$(DATA_DIR)/spdb/soundings/wrf";
 
 ///////////// valid_period_secs ///////////////////////
 //

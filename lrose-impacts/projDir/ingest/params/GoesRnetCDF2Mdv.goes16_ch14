@@ -49,7 +49,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "goes16_ch01";
+instance = "goes16_ch14";
 
 //======================================================================
 //
@@ -90,7 +90,7 @@ trigger_mode = REALTIME;
 // Type: string
 //
 
-input_dir = "/home/disk/data/satellite/GOES/GRB16/ABI/CONUS/Channel01";
+input_dir = "/home/disk/data/satellite/GOES/GRB16/ABI/CONUS/Channel14";
 
 ///////////// max_valid_secs //////////////////////////
 //
@@ -127,7 +127,7 @@ scene_sub_str = "RadC";
 // Type: string
 //
 
-channel_sub_str = "C01";
+channel_sub_str = "C14";
 
 //======================================================================
 //
@@ -198,7 +198,7 @@ output_vlevel_type = VERT_SATELLITE_IMAGE;
 // Type: string
 //
 
-output_url = "$(DATA_DIR)/raw/mdv/goes16_ch01";
+output_url = "$(DATA_DIR)/raw/mdv/goes16_ch14";
 
 ///////////// init_zero ///////////////////////////////
 //
@@ -424,7 +424,7 @@ earth_radius = 6378.14;
 // Type: boolean
 //
 
-convert_units = FALSE;
+convert_units = TRUE;
 
 ///////////// units_convert_type //////////////////////
 //
@@ -530,9 +530,9 @@ check_quality_field = FALSE;
 //
 
 out_data_prep = {
-    short_name = "GOESR_CH01",
-    long_name = "GOESR_CH01_vis_blue_0.47um",
-    units = "%",
+    short_name = "GOESR_CH14",
+    long_name = "GOESR_CH14_IR_11.2um",
+    units = "C",
     encoding_type = ENCODING_INT16,
     compression_type = COMPRESSION_GZIP,
     scaling_type = SCALING_DYNAMIC,
@@ -662,7 +662,7 @@ include_rad_field = FALSE;
 rad_data_prep = {
     short_name = "radiance",
     long_name = "long_radinace",
-    units = "%",
+    units = "units",
     encoding_type = ENCODING_ASIS,
     compression_type = COMPRESSION_ASIS,
     scaling_type = SCALING_ASIS,

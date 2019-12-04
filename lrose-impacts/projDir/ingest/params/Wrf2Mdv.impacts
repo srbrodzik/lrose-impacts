@@ -60,7 +60,7 @@ alg_debug = DEBUG_NONE;
 // Type: string
 //
 
-instance = "olympex";
+instance = "impacts";
 
 ///////////// Procmap_reg_interval_secs ///////////////
 //
@@ -315,7 +315,8 @@ lead_times = {
 // Type: string
 //
 
-output_url = "$(DATA_DIR)/$(project)/mdv/wrf";
+//output_url = "$(DATA_DIR)/$(project)/mdv/wrf";
+output_url = "$(DATA_DIR)/mdv/wrf";
 
 //======================================================================
 //
@@ -1352,8 +1353,8 @@ output_projection = OUTPUT_PROJ_LATLON;
 //
 
 output_origin = {
-    lat = 47.2772,
-    lon = -124.211
+    lat = 37.5,
+    lon = -85
 };
 
 ///////////// lambert_lat1 ////////////////////////////
@@ -1416,8 +1417,8 @@ stereographic_tangent_lon = 0;
 //
 
 output_grid = {
-    nx = 400,
-    ny = 300,
+    nx = 2000,
+    ny = 1250,
     minx = -128,
     miny = 44,
     dx = 0.02,
@@ -1656,7 +1657,7 @@ data_set_info = "This MDV file was created by Wrf2Mdv.";
 // Type: string
 //
 
-data_set_name = "WRF model output - OLYMPEX.";
+data_set_name = "WRF model output - IMPACTS.";
 
 ///////////// data_set_source /////////////////////////
 //
@@ -1668,7 +1669,7 @@ data_set_name = "WRF model output - OLYMPEX.";
 // Type: string
 //
 
-data_set_source = "WRF output from OLYMPEX.";
+data_set_source = "WRF output from IMPACTS.";
 
 //======================================================================
 //
