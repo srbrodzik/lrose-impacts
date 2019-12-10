@@ -77,11 +77,13 @@
 # Satellite data
 
 GOES16_CH01    GOES16_CH01    $(DATA_DIR)/mdv/goes16_ch01&GOESR_CH01   sat_cloud.colors %   -5   80  5  cart    1 0
-GOES16_CH05    GOES16_CH05    $(DATA_DIR)/mdv/goes16_ch05&GOESR_CH05   sat_cloud.colors %   -5   80  5  cart    1 0
+GOES16_CH08    GOES16_CH08    $(DATA_DIR)/mdv/goes16_ch08&GOESR_CH08   sat_tempC.colors C   -5   80  5  cart    1 0
+GOES16_CH09    GOES16_CH09    $(DATA_DIR)/mdv/goes16_ch09&GOESR_CH09   sat_tempC.colors C   -5   80  5  cart    1 0
 GOES16_CH10    GOES16_CH10    $(DATA_DIR)/mdv/goes16_ch10&GOESR_CH10   sat_tempC.colors C   -5   80  5  cart    1 0
 GOES16_CH13    GOES16_CH13    $(DATA_DIR)/mdv/goes16_ch13&GOESR_CH13   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
+GOES16_CH14    GOES16_CH14    $(DATA_DIR)/mdv/goes16_ch14&GOESR_CH14   sat_tempC.colors C   -5   80  5  cart    1 0
+#GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
+#GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
 
 ############################
 # NEXRAD data
@@ -179,7 +181,55 @@ PHIDP_KRAX    PHIDP_KRAX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&PHIDP  
 </GRIDS>
 
 <WINDS>
+#----------------------------------------------------------------------------
+# Note:
+# Legend_label: Used for Image Labels and Menus
+# URL: should be of the form "protocol://host:port/dir/&" 
+#   The U,V and W field names will be appended to complete the URL
+#   Use the name "None" to indicate no W field componet.
+# U: The  East-West Wind componet Field name 
+#   Spaces can be in field names by substituting a Caret character for the space:
+#   Example: Field^Name = "Field Name"
+#   Field Index can alternatively be specified by prepending a '#' character to the field 
+#   (Use this if there are duplicate field names in the data files)
+#   Example: First field in file = "#1"
+# V: North-South Wind componet Field name 
+# W: Up-Down  Wind componet Field name - Use "None" to indicate no W field
+#
+#  Units: Labels append this (for barbs and reference lines) 
+# 
+# Style: This column is broken in to several componets for backward compatibility
+# 1. A mandantory number must be first.
+#     Absolute value of the number is the starting Line width.
+#     Values <= 0 Turns it off to begin with
+# 2. Second componet is a comma followed by the rendering style:  
+#     Wind Rendering Style  Options:
+#     "arrow" (centered at data point),
+#     "vector",(Vertex at data point )
+#     "barb" (N Hemisp),
+#     "labeledbarb", (labeled to nearest 10 degrees at the center - N. Hemisp)
+#     "tuft", (like a piece of yarn - the least obtrusive - like a headless vector)
+#     "tickvector" (Cross ticks at wind_time_scale_interval  minutes)
+#     "metbarb" (Calcs latitude - works for both hemispheres and
+#     adds a label of the 10's digit off the end of the barb, ala winds aloft charts)
+#     "barb_sh" (S Hemisphere),
+#     "labeledbarb", (labeled to nearest 10 degrees at the center - N. Hemisp)
+#     NOTE: When using arrow,vector,tuft,tickvector,  the data must be in
+#     m/sec for the scaling to work correctly. For the others (Barbs),
+#     the units are arbitrary, but the flag units on the barbs will reflect
+#     the data's native units. 
+# Example: "-2,metbarb" -->  Width 2, off to start, using winds aloft chart barbs
+# Example: "1"  --> Width 1, On to start, Uses cidd.wind_marker_type: defined in main section
+#
+# Color: Any Legal X color name - Can be several words, Example: dark green
+#
+# Legend_label  URL U V W_fieldnames units  Style [Color]
+#----------------------------------------------------------------------------
+
+WRFGFS-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs&  U10   V10   None m/s -1 yellow
+WRFNAM-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/nam&  U10   V10   None m/s -1 darkgreen
 # TREC_mdvp    mdvp:://localhost::mdv/trec&  #1 #2 None  m/s  2      yellow
+
 </WINDS>
 
 <MAPS>
@@ -566,7 +616,8 @@ cidd.margin_color: black
 
 # Render values outside the data range of the color scale in this color
 # 'transparent' is the default
-cidd.out_of_range_color: black
+#cidd.out_of_range_color: black
+cidd.out_of_range_color: transparent
 
 # Color of the cross section reference line 
 cidd.route_path_color: yellow
@@ -590,9 +641,11 @@ cidd.range_ring_color: gray
 # Set the follwing colors to 'transparent' to avoid having these
 # plotted. (This is the default) Otherwise, these data will be
 # plotted in the indicated color
-cidd.missing_data_color: grey20
+#cidd.missing_data_color: grey20
+#cidd.bad_data_color: grey20
+cidd.missing_data_color: transparent
+cidd.bad_data_color: transparent
 
-cidd.bad_data_color: grey20
 #
 # Time Control (Movie) Popup Colors
 cidd.epoch_indicator_color: orange
@@ -921,49 +974,69 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # 
 #
 #####################################################################################
-cidd.num_menu_bar_cells: 14
+cidd.num_menu_bar_cells: 19
 #
 cidd.menu_bar_label1: Fields...
 cidd.menu_bar_funct1: SHOW_DPD_MENU
 # 
-cidd.menu_bar_label2: View...
+cidd.menu_bar_label2: Zoom
 cidd.menu_bar_funct2: SHOW_VIEW_MENU
 #
-cidd.menu_bar_label3: Maps...
-cidd.menu_bar_funct3: SHOW_MAP_MENU
+cidd.menu_bar_label3: Back
+cidd.menu_bar_funct3: ZOOM_BACK
 #
-cidd.menu_bar_label4: Movie...
-cidd.menu_bar_funct4: SHOW_TIME_PANEL
+cidd.menu_bar_label4: Maps...
+cidd.menu_bar_funct4: SHOW_MAP_MENU
 #
-cidd.menu_bar_label5: Overlays...
-cidd.menu_bar_funct5: SHOW_DPD_PANEL
+cidd.menu_bar_label5: Movie...
+cidd.menu_bar_funct5: SHOW_TIME_PANEL
 #
-cidd.menu_bar_label6: SYMPRODS...
-cidd.menu_bar_funct6: SHOW_PRODUCT_MENU
+cidd.menu_bar_label6: Loop
+cidd.menu_bar_funct6: LOOP_ONOFF
+#  
+cidd.menu_bar_label7: Now
+cidd.menu_bar_funct7: SET_TO_NOW
+#  
+cidd.menu_bar_label8: Forecast
+cidd.menu_bar_funct8: SHOW_FORECAST_MENU
 #
-cidd.menu_bar_label7: ALL Symprods
-cidd.menu_bar_funct7: SYMPRODS_ONOFF
+cidd.menu_bar_label9: Products
+cidd.menu_bar_funct9: SHOW_PRODUCT_MENU
 #
-cidd.menu_bar_label8: X-Sect...
-cidd.menu_bar_funct8: SHOW_XSECT_PANEL
+cidd.menu_bar_label10: All-Prods
+cidd.menu_bar_funct10: SYMPRODS_ONOFF
 #
-cidd.menu_bar_label9: Loop
-cidd.menu_bar_funct9: LOOP_ONOFF
+cidd.menu_bar_label11: Vsection
+cidd.menu_bar_funct11: SHOW_XSECT_PANEL
 #
-cidd.menu_bar_label10: RESET
-cidd.menu_bar_funct10: RESET
+cidd.menu_bar_label12: Reload
+cidd.menu_bar_funct12: RELOAD
 #
-cidd.menu_bar_label11: Reload
-cidd.menu_bar_funct11: RELOAD
+cidd.menu_bar_label13: Overlays...
+cidd.menu_bar_funct13: SHOW_DPD_PANEL
 #
-cidd.menu_bar_label12: Value 
-cidd.menu_bar_funct12: REPORT_MODE_ONOFF
+cidd.menu_bar_label14: Config
+cidd.menu_bar_funct14: SHOW_GRID_PANEL
 #
-cidd.menu_bar_label13: Print
-cidd.menu_bar_funct13: PRINT_BUTTON
+cidd.menu_bar_label15: Status
+cidd.menu_bar_funct15: SHOW_STATUS_PANEL
 #
-cidd.menu_bar_label14: Exit
-cidd.menu_bar_funct14: EXIT_BUTTON
+cidd.menu_bar_label16: Winds
+cidd.menu_bar_funct16: WINDS_ONOFF
+#
+cidd.menu_bar_label17: Value
+cidd.menu_bar_funct17: REPORT_MODE_ONOFF
+#
+cidd.menu_bar_label18: RESET
+cidd.menu_bar_funct18: RESET
+#
+cidd.menu_bar_label19: Exit
+cidd.menu_bar_funct19: EXIT_BUTTON
+
+
+#
+#cidd.menu_bar_label13: Print
+#cidd.menu_bar_funct13: PRINT_BUTTON
 #
 #cidd.menu_bar_label7: URL...
 #cidd.menu_bar_funct7: SHOW_BOOKMARK_MENU
@@ -971,26 +1044,11 @@ cidd.menu_bar_funct14: EXIT_BUTTON
 #cidd.menu_bar_label8: Model Run...
 #cidd.menu_bar_funct8: SHOW_GENTIME_MENU
 #
-#cidd.menu_bar_label10: Config...
-#cidd.menu_bar_funct10: SHOW_GRID_PANEL
-#
-#cidd.menu_bar_label11: Status...
-#cidd.menu_bar_funct11: SHOW_STATUS_PANEL
-#
-#cidd.menu_bar_label14: Fcast
-#cidd.menu_bar_funct14: SHOW_FORECAST_MENU
-#
 #cidd.menu_bar_label15: Past
 #cidd.menu_bar_funct15: SHOW_PAST_MENU
-#
-#cidd.menu_bar_label16: Now
-#cidd.menu_bar_funct16: SET_TO_NOW
 #  
 #cidd.menu_bar_label17: Close Popups
 #cidd.menu_bar_funct17: CLOSE_POPUPS
-#
-#cidd.menu_bar_label19: Winds
-#cidd.menu_bar_funct19: WINDS_ONOFF
 #
 #cidd.menu_bar_label24: Draw Mode
 #cidd.menu_bar_funct24: SET_DRAW_MODE
@@ -1006,6 +1064,9 @@ cidd.menu_bar_funct14: EXIT_BUTTON
 #
 #cidd.menu_bar_label28: Snapshot
 #cidd.menu_bar_funct28: SNAP_IMAGE
+#
+#cidd.menu_bar_label29: Base Map
+#cidd.menu_bar_funct29: LANDUSE_ONOFF
 #
 
 ##########################################
@@ -1155,34 +1216,123 @@ debug = DEBUG_OFF;
 
 prod_info = {
   {
-    menu_label = "Aircraft Tracks",
-    url = "spdbp:AcTrack2Symprod://localhost::spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_ALL,
-    on_by_default = TRUE,
-    minutes_allow_before = 10.0,
-    minutes_allow_after = 0.0,
-    text_off_threshold = 0,
-    request_data_on_zoom = false,
-    request_data_on_vert_change = false
-  }
-  ,
-  {
     menu_label = "GLM" ,
     //url = "spdbp:Ltg2Symprod://localhost:0:spdb/ltg/glm16",
-    url = "spdbp:Ltg2Symprod://localhost:0:/home/bob/impacts/spdb/ltg/glm16",
+    url = "spdbp:Ltg2Symprod://localhost:0:$(DATA_DIR)/spdb/ltg/glm16",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     // render_type = RENDER_ALL_BEFORE_DATA_TIME,
-    on_by_default = TRUE,
+    on_by_default = FALSE,
     minutes_allow_before = 20.0,
     minutes_allow_after = 0.0,
     text_off_threshold = 0.0,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
   }
- 
-
+ ,                        
+  {
+    menu_label = "ER2 15_min",
+    url = "spdbp:AcTrack2Symprod:N809NA.15_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
+    menu_label = "ER2 30_min",
+    url = "spdbp:AcTrack2Symprod:N809NA.30_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
+    menu_label = "ER2 5_hr",
+    url = "spdbp:AcTrack2Symprod:N809NA.5_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
+    menu_label = "ER2 10_hr",
+    url = "spdbp:AcTrack2Symprod:N809NA.10_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
+    menu_label = "P3 15_min",
+    url = "spdbp:AcTrack2Symprod:N426NA.15_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
+    menu_label = "P3 30_min",
+    url = "spdbp:AcTrack2Symprod:N426NA.30_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
+    menu_label = "P3 5_hr",
+    url = "spdbp:AcTrack2Symprod:N426NA.5_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
+    menu_label = "P3 10_hr",
+    url = "spdbp:AcTrack2Symprod:N426NA.10_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
 };
 
 </SYMPRODS> 
