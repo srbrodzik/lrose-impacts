@@ -34,9 +34,11 @@ RadxConvert   kdix       start_inst(ingest)        snuff_inst
 RadxConvert   kdox       start_inst(ingest)        snuff_inst
 RadxConvert   kenx       start_inst(ingest)        snuff_inst
 RadxConvert   kgyx       start_inst(ingest)        snuff_inst
+#RadxConvert   klwx       start_inst(ingest)        snuff_inst
 RadxConvert   kmhx       start_inst(ingest)        snuff_inst
 RadxConvert   kokx       start_inst(ingest)        snuff_inst
 RadxConvert   krax       start_inst(ingest)        snuff_inst
+#RadxConvert   ktyx       start_inst(ingest)        snuff_inst
 #
 ###############################################################################
 # Cartesian gridding of NEXRAD data
@@ -49,9 +51,11 @@ Radx2Grid      kdix      start_inst(ingest)        snuff_inst
 Radx2Grid      kdox      start_inst(ingest)        snuff_inst
 Radx2Grid      kenx      start_inst(ingest)        snuff_inst
 Radx2Grid      kgyx      start_inst(ingest)        snuff_inst
+#Radx2Grid      klwx      start_inst(ingest)        snuff_inst
 Radx2Grid      kmhx      start_inst(ingest)        snuff_inst
 Radx2Grid      kokx      start_inst(ingest)        snuff_inst
 Radx2Grid      krax      start_inst(ingest)        snuff_inst
+#Radx2Grid      ktyx      start_inst(ingest)        snuff_inst
 #
 ###############################################################################
 # Create mosaic
@@ -63,19 +67,25 @@ MdvMerge2     mosaic     start_inst(ingest)        snuff_inst
 # Ingesting the GOES data
 #
 InputWatcher    goes16_ch01   start_inst(ingest)   snuff_inst
-InputWatcher    goes16_ch05   start_inst(ingest)   snuff_inst
+InputWatcher    goes16_ch08   start_inst(ingest)   snuff_inst
+InputWatcher    goes16_ch09   start_inst(ingest)   snuff_inst
 InputWatcher    goes16_ch10   start_inst(ingest)   snuff_inst
 InputWatcher    goes16_ch13   start_inst(ingest)   snuff_inst
+#InputWatcher    goes16_ch14   start_inst(ingest)   snuff_inst
 
 GoesRnetCDF2Mdv goes16_ch01   start_inst(ingest)   snuff_inst
-GoesRnetCDF2Mdv goes16_ch05   start_inst(ingest)   snuff_inst
+GoesRnetCDF2Mdv goes16_ch08   start_inst(ingest)   snuff_inst
+GoesRnetCDF2Mdv goes16_ch09   start_inst(ingest)   snuff_inst
 GoesRnetCDF2Mdv goes16_ch10   start_inst(ingest)   snuff_inst
 GoesRnetCDF2Mdv goes16_ch13   start_inst(ingest)   snuff_inst
+#GoesRnetCDF2Mdv goes16_ch14   start_inst(ingest)   snuff_inst
 
 Mdv2NetCDF      goes16_ch01   start_inst(ingest)   snuff_inst
-Mdv2NetCDF      goes16_ch05   start_inst(ingest)   snuff_inst
+Mdv2NetCDF      goes16_ch08   start_inst(ingest)   snuff_inst
+Mdv2NetCDF      goes16_ch09   start_inst(ingest)   snuff_inst
 Mdv2NetCDF      goes16_ch10   start_inst(ingest)   snuff_inst
 Mdv2NetCDF      goes16_ch13   start_inst(ingest)   snuff_inst
+#Mdv2NetCDF      goes16_ch14   start_inst(ingest)   snuff_inst
 
 InputWatcher    glm16         start_inst(ingest)   snuff_inst
 GoesRGLM2Spdb   glm16         start_inst(ingest)   snuff_inst
@@ -88,8 +98,8 @@ GoesRGLM2Spdb   glm16         start_inst(ingest)   snuff_inst
 #
 # Aircraft (ER2) data ingest
 #
-#download_iwg1.py N806NA start_download_iwg1.py.N806NA  snuff_inst
-#AcData2Spdb      N806NA start_inst(ingest)             snuff_inst
+download_iwg1.py N809NA start_download_iwg1.py.N809NA  snuff_inst
+AcData2Spdb      N809NA start_inst(ingest)             snuff_inst
 #
 ######################################################################
 #
