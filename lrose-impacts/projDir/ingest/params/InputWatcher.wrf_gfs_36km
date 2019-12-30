@@ -1,5 +1,5 @@
 /**********************************************************************
- * TDRP params for InputWatcher
+ * TDRP params for ./InputWatcher
  **********************************************************************/
 
 //======================================================================
@@ -46,7 +46,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "goes16_ch05";
+instance = "wrf_gfs_36km";
 
 //======================================================================
 //
@@ -66,7 +66,8 @@ instance = "goes16_ch05";
 // Type: string
 //
 
-input_dir = "/home/disk/data/satellite/GOES/GRB16/ABI/CONUS/Channel05";
+//input_dir = "/home/disk/sage1/mm5rt/data";
+input_dir = "/home/disk/meso-home/colle/wrf/GFS";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -80,7 +81,7 @@ input_dir = "/home/disk/data/satellite/GOES/GRB16/ABI/CONUS/Channel05";
 // Type: int
 //
 
-wait_between_checks = 2;
+wait_between_checks = 30;
 
 ///////////// file_quiescence /////////////////////////
 //
@@ -93,7 +94,7 @@ wait_between_checks = 2;
 // Type: int
 //
 
-file_quiescence = 5;
+file_quiescence = 30;
 
 ///////////// max_valid_age ///////////////////////////
 //
@@ -105,7 +106,8 @@ file_quiescence = 5;
 // Type: int
 //
 
-max_valid_age = 900;
+max_valid_age = 86400;
+//max_valid_age = 2592000;
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -174,7 +176,8 @@ search_recursively = TRUE;
 // Type: int
 //
 
-max_dir_age = 900;
+max_dir_age = 3600;
+//max_dir_age = -1;
 
 ///////////// max_recursion_depth /////////////////////
 //
@@ -189,7 +192,7 @@ max_dir_age = 900;
 // Type: int
 //
 
-max_recursion_depth = 5;
+max_recursion_depth = 1;
 
 ///////////// follow_links ////////////////////////////
 //
@@ -204,31 +207,17 @@ max_recursion_depth = 5;
 
 follow_links = FALSE;
 
-///////////// use_inotify /////////////////////////////
-//
-// Option to use inotify in realtime mode without latest_data_info.
-//
-// If TRUE, uses inotify instead of scanning the directory for new 
-//   files. This is more efficient.
-//
-//
-// Type: boolean
-//
-
-use_inotify = TRUE;
-
 ///////////// search_ext //////////////////////////////
 //
 // File name extension.
 //
-// If set, only files with this extension will be processed. This can be 
-//   a comma-delimited list of extensions.
+// If set, only files with this extension will be processed.
 //
 //
 // Type: string
 //
 
-search_ext = "nc";
+search_ext = "";
 
 ///////////// search_substr ///////////////////////////
 //
@@ -241,7 +230,7 @@ search_ext = "nc";
 // Type: string
 //
 
-search_substr = "OR_ABI-L1b";
+search_substr = "wrfout_d01";
 
 ///////////// save_latest_read_time ///////////////////
 //
@@ -329,7 +318,7 @@ call_data_arrived_script = FALSE;
 // Type: string
 //
 
-data_arrived_script = "test_script.pl";
+data_arrived_script = "test_script";
 
 ///////////// include_arrived_script_args /////////////
 //
@@ -500,8 +489,7 @@ data_late_secs = 3600;
 //
 // If TRUE, the file will be copied to a file, in the directory 
 //   'output_dir', with the path based on the file modify time. The path 
-//   will be: 'copy_dir/yyyymmdd/hhmmss.copy_ext'. This option takes 
-//   precedence over copy_using_original_name.
+//   will be: 'copy_dir/yyyymmdd/hhmmss.copy_ext'.
 //
 //
 // Type: boolean
@@ -522,20 +510,7 @@ copy_to_time_stamped_file = FALSE;
 // Type: boolean
 //
 
-copy_using_original_name = FALSE;
-
-///////////// append_date_time_to_original_name ///////
-//
-// Option to append the date and time to the original name.
-//
-// If TRUE, yyyymmdd_hhmmss will be appended to the original file name. 
-//   This helps to keep forecast data unique, if applicable.
-//
-//
-// Type: boolean
-//
-
-append_date_time_to_original_name = FALSE;
+copy_using_original_name = TRUE;
 
 ///////////// without_date_directory //////////////////
 //
@@ -559,19 +534,8 @@ without_date_directory = FALSE;
 // Type: string
 //
 
-copy_dir = "./output";
-
-///////////// copy_prefix /////////////////////////////
-//
-// Prefix for file name of copy.
-//
-// If empty, no prefix will be added.
-//
-//
-// Type: string
-//
-
-copy_prefix = "";
+//copy_dir = "$(DATA_DIR)/$(project)/raw/wrf";
+copy_dir = "$(DATA_DIR)/raw/wrf/gfs_36km";
 
 ///////////// copy_ext ////////////////////////////////
 //
@@ -583,7 +547,7 @@ copy_prefix = "";
 // Type: string
 //
 
-copy_ext = "copy";
+copy_ext = "";
 
 ///////////// add_day_to_filename /////////////////////
 //
@@ -619,7 +583,7 @@ remove_after_copy = FALSE;
 // Type: boolean
 //
 
-uncompress_after_copy = FALSE;
+uncompress_after_copy = TRUE;
 
 //======================================================================
 //
@@ -639,7 +603,7 @@ uncompress_after_copy = FALSE;
 // Type: boolean
 //
 
-write_latest_data_info_file = TRUE;
+write_latest_data_info_file = FALSE;
 
 ///////////// data_type ///////////////////////////////
 //
@@ -652,7 +616,7 @@ write_latest_data_info_file = TRUE;
 // Type: string
 //
 
-data_type = "netcdf";
+data_type = "nc";
 
 ///////////// write_latest_data_info_to_proxy_dir /////
 //
@@ -680,7 +644,7 @@ write_latest_data_info_to_proxy_dir = FALSE;
 // Type: string
 //
 
-latest_data_info_proxy_dir = "./proxy";
+latest_data_info_proxy_dir = "$(DATA_DIR)/$(project)/raw/wrf/proxy";
 
 //======================================================================
 //

@@ -23,8 +23,10 @@
 */1 * * * *   csh -c "run_GetAwsRadar.kdox" 1> /dev/null 2> /dev/null
 */1 * * * *   csh -c "run_GetAwsRadar.kenx" 1> /dev/null 2> /dev/null
 */1 * * * *   csh -c "run_GetAwsRadar.kgyx" 1> /dev/null 2> /dev/null
+*/1 * * * *   csh -c "run_GetAwsRadar.klwx" 1> /dev/null 2> /dev/null
 */1 * * * *   csh -c "run_GetAwsRadar.kmhx" 1> /dev/null 2> /dev/null
 */1 * * * *   csh -c "run_GetAwsRadar.kokx" 1> /dev/null 2> /dev/null
 */1 * * * *   csh -c "run_GetAwsRadar.krax" 1> /dev/null 2> /dev/null
+*/1 * * * *   csh -c "run_GetAwsRadar.ktyx" 1> /dev/null 2> /dev/null
 #
 ####################################################################

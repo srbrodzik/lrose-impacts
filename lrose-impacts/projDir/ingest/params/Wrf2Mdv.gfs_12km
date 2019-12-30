@@ -60,7 +60,7 @@ alg_debug = DEBUG_NONE;
 // Type: string
 //
 
-instance = "impacts";
+instance = "gfs_12km";
 
 ///////////// Procmap_reg_interval_secs ///////////////
 //
@@ -130,7 +130,8 @@ soilparm_path = "./SOILPARM.TBL";
 // Type: string
 //
 
-realtime_input_dir = "$(DATA_DIR)/$(project)/raw/wrf";
+//realtime_input_dir = "$(DATA_DIR)/$(project)/raw/wrf";
+realtime_input_dir = "$(DATA_DIR)/raw/wrf/gfs_12km";
 
 ///////////// File_quiescence_secs ////////////////////
 //
@@ -181,7 +182,7 @@ Dir_scan_interval_secs = 10;
 // Type: string
 //
 
-DomainString = "wrfout_d3";
+DomainString = "wrfout_d02";
 
 ///////////// File_extension //////////////////////////
 //
@@ -194,7 +195,8 @@ DomainString = "wrfout_d3";
 // Type: string
 //
 
-File_extension = "0000";
+//File_extension = "0000";
+File_extension = "";
 
 ///////////// use_ldata ///////////////////////////////
 //
@@ -316,7 +318,8 @@ lead_times = {
 //
 
 //output_url = "$(DATA_DIR)/$(project)/mdv/wrf";
-output_url = "$(DATA_DIR)/mdv/wrf";
+output_url = "$(DATA_DIR)/mdv/wrf/gfs_12km";
+//output_url = "./output";
 
 //======================================================================
 //
@@ -524,32 +527,37 @@ output_fields = {
   }
   ,
   {
+    name = CLW_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = RNW_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = ICE_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SNOW_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = GRAUPEL_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
     name = W_FIELD,
     encoding = OUT_INT16
   }
   ,
   {
-    name = WSPD_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = TC_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = RH_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = Q_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = THETA_FIELD,
+    name = P_FIELD,
     encoding = OUT_INT16
   }
   ,
@@ -559,7 +567,82 @@ output_fields = {
   }
   ,
   {
+    name = PHB_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = PH_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = REFL_10CM_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = THETA_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
     name = HGT_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = GEO_POT_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SNOWCOVR_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = T2_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = Q2_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = U10_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = V10_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SNOWH_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SFC_PRES_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SNOW_WE_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SNOW_NC_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = FZLEVEL_FIELD,
     encoding = OUT_INT16
   }
 };
@@ -703,38 +786,32 @@ field_name_map = {
   }
   ,
   {
-    original_name = Q_FIELD,
-    name = "Q",
-    long_name = "Mixing ratio kg/kg"
-  }
-  ,
-  {
     original_name = CLW_FIELD,
-    name = "clw",
-    long_name = "Cloud liquid mixing ratio"
+    name = "QCLOUD",
+    long_name = "Cloud liquid mixing ratio (kg kg-1)"
   }
   ,
   {
     original_name = RNW_FIELD,
-    name = "rnw",
-    long_name = "Rain mixing ratio"
+    name = "QRAIN",
+    long_name = "Rain water mixing ratio"
   }
   ,
   {
     original_name = ICE_FIELD,
-    name = "ice",
+    name = "QICE",
     long_name = "Ice mixing ratio"
   }
   ,
   {
     original_name = SNOW_FIELD,
-    name = "snow",
+    name = "QSNOW",
     long_name = "Snow mixing ratio"
   }
   ,
   {
     original_name = GRAUPEL_FIELD,
-    name = "graupel",
+    name = "QGRAUPEL",
     long_name = "Graupel mixing ratio"
   }
   ,
@@ -747,25 +824,13 @@ field_name_map = {
   {
     original_name = P_FIELD,
     name = "P",
-    long_name = "pressure perturbation"
+    long_name = "perturbation pressure"
   }
   ,
   {
     original_name = PB_FIELD,
     name = "PB",
     long_name = "BASE STATE PRESSURE"
-  }
-  ,
-  {
-    original_name = U_EDGE_FIELD,
-    name = "U_EDGE",
-    long_name = "u wind on edge"
-  }
-  ,
-  {
-    original_name = V_EDGE_FIELD,
-    name = "V_EDGE",
-    long_name = "v wind on edge"
   }
   ,
   {
@@ -781,111 +846,15 @@ field_name_map = {
   }
   ,
   {
-    original_name = DNW_FIELD,
-    name = "DNW",
-    long_name = "d(eta) values between full (w) levels"
-  }
-  ,
-  {
-    original_name = MUB_FIELD,
-    name = "MUB",
-    long_name = "base state dry air mass in column"
-  }
-  ,
-  {
-    original_name = MU_FIELD,
-    name = "MU",
-    long_name = "perturbation dry air mass in column"
-  }
-  ,
-  {
     original_name = REFL_10CM_FIELD,
-    name = "dbz",
+    name = "REFL_10CM",
     long_name = "Radar Reflectivity"
   }
   ,
   {
-    original_name = ITFADEF_FIELD,
-    name = "ITFADEF",
-    long_name = "Turbulence severity - ITFA"
-  }
-  ,
-  {
-    original_name = TK_FIELD,
-    name = "TK",
-    long_name = "Temperature"
-  }
-  ,
-  {
-    original_name = TC_FIELD,
-    name = "Temp",
-    long_name = "Temperature"
-  }
-  ,
-  {
-    original_name = WSPD_FIELD,
-    name = "Wspeed",
-    long_name = "Wind speed"
-  }
-  ,
-  {
-    original_name = WDIR_FIELD,
-    name = "Wdir",
-    long_name = "Wind dirn"
-  }
-  ,
-  {
-    original_name = PRESSURE_FIELD,
-    name = "pressure",
-    long_name = "Absolute pressure"
-  }
-  ,
-  {
-    original_name = RH_FIELD,
-    name = "RH",
-    long_name = "Relative humidity"
-  }
-  ,
-  {
-    original_name = SPEC_H_FIELD,
-    name = "SpecH",
-    long_name = "Specific humidity"
-  }
-  ,
-  {
-    original_name = DEWPT_FIELD,
-    name = "DewPt",
-    long_name = "Dew point"
-  }
-  ,
-  {
-    original_name = ICING_FIELD,
-    name = "Icing",
-    long_name = "Icing severity index"
-  }
-  ,
-  {
-    original_name = CLW_G_FIELD,
-    name = "CLW_G",
-    long_name = "Cloud Liquid Mixing Ratio kg/kg"
-  }
-  ,
-  {
-    original_name = RNW_G_FIELD,
-    name = "RNW_G",
-    long_name = "Rain Liquid Mixing Ratio kg/kg"
-  }
-  ,
-  {
     original_name = THETA_FIELD,
-    name = "THETA",
-    long_name = "Potential Temperature"
-  }
-  ,
-  {
-    original_name = DBZ_3D_FIELD,
-    name = "dbz_3d",
-    long_name = "dBZ-3D Estimated"
+    name = "T",
+    long_name = "Perturbation Potential Temperature (theta-t0)"
   }
   ,
   {
@@ -901,195 +870,9 @@ field_name_map = {
   }
   ,
   {
-    original_name = Q_G_FIELD,
-    name = "Q_g",
-    long_name = "Mixing ratio kg/kg"
-  }
-  ,
-  {
-    original_name = CAPE_3D_FIELD,
-    name = "CAPE_3D",
-    long_name = "CAPE 3D"
-  }
-  ,
-  {
-    original_name = CIN_3D_FIELD,
-    name = "CIN_3D",
-    long_name = "CIN 3D"
-  }
-  ,
-  {
-    original_name = LCL_3D_FIELD,
-    name = "LCL_3D",
-    long_name = "LCL 3D"
-  }
-  ,
-  {
-    original_name = LFC_3D_FIELD,
-    name = "LFC_3D",
-    long_name = "LFC 3D"
-  }
-  ,
-  {
-    original_name = EL_3D_FIELD,
-    name = "EL_3D",
-    long_name = "EL 3D"
-  }
-  ,
-  {
-    original_name = Z_AGL_FIELD,
-    name = "zz",
-    long_name = "Height above ground"
-  }
-  ,
-  {
-    original_name = SOIL_T_1_FIELD,
-    name = "soil_t_1",
-    long_name = "Soil temperature in layer 1"
-  }
-  ,
-  {
-    original_name = SOIL_T_2_FIELD,
-    name = "soil_t_2",
-    long_name = "Soil temperature in layer 2"
-  }
-  ,
-  {
-    original_name = SOIL_T_3_FIELD,
-    name = "soil_t_3",
-    long_name = "Soil temperature in layer 3"
-  }
-  ,
-  {
-    original_name = SOIL_T_4_FIELD,
-    name = "soil_t_4",
-    long_name = "Soil temperature in layer 4"
-  }
-  ,
-  {
-    original_name = SOIL_T_5_FIELD,
-    name = "soil_t_5",
-    long_name = "Soil temperature in layer 5"
-  }
-  ,
-  {
-    original_name = SOIL_M_1_FIELD,
-    name = "soil_m_1",
-    long_name = "Soil moisture in layer 1"
-  }
-  ,
-  {
-    original_name = SOIL_M_2_FIELD,
-    name = "soil_m_2",
-    long_name = "Soil moisture in layer 2"
-  }
-  ,
-  {
-    original_name = SOIL_M_3_FIELD,
-    name = "soil_m_3",
-    long_name = "Soil moisture in layer 3"
-  }
-  ,
-  {
-    original_name = SOIL_M_4_FIELD,
-    name = "soil_m_4",
-    long_name = "Soil moisture in layer 4"
-  }
-  ,
-  {
-    original_name = SOIL_M_5_FIELD,
-    name = "soil_m_5",
-    long_name = "Soil moisture in layer 5"
-  }
-  ,
-  {
-    original_name = SOIL_AM_1_FIELD,
-    name = "soil_am_1",
-    long_name = "Available Soil moisture in layer 1"
-  }
-  ,
-  {
-    original_name = SOIL_AM_2_FIELD,
-    name = "soil_am_2",
-    long_name = "Available Soil moisture in layer 2"
-  }
-  ,
-  {
-    original_name = SOIL_AM_3_FIELD,
-    name = "soil_am_3",
-    long_name = "Available Soil moisture in layer 3"
-  }
-  ,
-  {
-    original_name = SOIL_AM_4_FIELD,
-    name = "soil_am_4",
-    long_name = "Available Soil moisture in layer 4"
-  }
-  ,
-  {
-    original_name = SOIL_AM_5_FIELD,
-    name = "soil_am_5",
-    long_name = "Available Soil moisture in layer 5"
-  }
-  ,
-  {
-    original_name = LAT_FIELD,
-    name = "latitude",
-    long_name = "Latitude"
-  }
-  ,
-  {
-    original_name = LON_FIELD,
-    name = "longitude",
-    long_name = "Longitude"
-  }
-  ,
-  {
-    original_name = GROUND_T_FIELD,
-    name = "ground_t",
-    long_name = "Ground temperature"
-  }
-  ,
-  {
-    original_name = RAINC_FIELD,
-    name = "rainc",
-    long_name = "Accumulated Total Cumulus Precipitation"
-  }
-  ,
-  {
-    original_name = RAINNC_FIELD,
-    name = "rainnc",
-    long_name = "Accumulated Total Grid Scale Precipitation"
-  }
-  ,
-  {
-    original_name = TERRAIN_FIELD,
-    name = "terrain",
-    long_name = "Terrain height"
-  }
-  ,
-  {
-    original_name = LAND_USE_FIELD,
-    name = "land_use",
-    long_name = "Land use category"
-  }
-  ,
-  {
     original_name = SNOWCOVR_FIELD,
-    name = "snowcovr",
+    name = "SNOWC",
     long_name = "Snow cover flags"
-  }
-  ,
-  {
-    original_name = TSEASFC_FIELD,
-    name = "tseasfc",
-    long_name = "Sea surface temperature"
-  }
-  ,
-  {
-    original_name = PBL_HGT_FIELD,
-    name = "pbl_hgt",
-    long_name = "Pbl height"
   }
   ,
   {
@@ -1118,188 +901,32 @@ field_name_map = {
   ,
   {
     original_name = SNOWH_FIELD,
-    name = "snowh",
+    name = "SNOWH",
     long_name = "Physical snow depth"
   }
   ,
   {
     original_name = SFC_PRES_FIELD,
-    name = "surfP",
+    name = "PSFC",
     long_name = "Surface Pressure"
   }
   ,
   {
-    original_name = LAND_MASK_FIELD,
-    name = "land_mask",
-    long_name = "Land Mask (1-land 0-water)"
-  }
-  ,
-  {
-    original_name = TH2_FIELD,
-    name = "TH2",
-    long_name = "POT TEMP at 2 M"
-  }
-  ,
-  {
-    original_name = HFX_FIELD,
-    name = "HFX",
-    long_name = "UPWARD HEAT FLUX AT THE SURFACE"
-  }
-  ,
-  {
-    original_name = LH_FIELD,
-    name = "LH",
-    long_name = "LATENT HEAT FLUX AT THE SURFACE"
-  }
-  ,
-  {
     original_name = SNOW_WE_FIELD,
-    name = "SNOW_WE",
+    name = "SNOW",
     long_name = "SNOW WATER EQUIVALENT"
   }
   ,
   {
     original_name = SNOW_NC_FIELD,
-    name = "SNOW_NC",
+    name = "SNOWNC",
     long_name = "ACCUMULATED TOTAL GRID SCALE SNOW AND ICE"
-  }
-  ,
-  {
-    original_name = GRAUPEL_NC_FIELD,
-    name = "GRAUPEL_NC",
-    long_name = "ACCUMULATED TOTAL GRID SCALE GRAUPEL"
-  }
-  ,
-  {
-    original_name = SOIL_TYPE_FIELD,
-    name = "SOIL_TYPE",
-    long_name = "DOMINANT SOIL CATEGORY"
   }
   ,
   {
     original_name = FZLEVEL_FIELD,
     name = "FZLevel",
     long_name = "freezing level"
-  }
-  ,
-  {
-    original_name = RAIN_TOTAL_FIELD,
-    name = "rain_total",
-    long_name = "Rain accumulation - con + non"
-  }
-  ,
-  {
-    original_name = T2C_FIELD,
-    name = "T2C",
-    long_name = "2-meter Temperature in C"
-  }
-  ,
-  {
-    original_name = DBZ_2D_FIELD,
-    name = "dbz_2d",
-    long_name = "dBZ-2D Estimated"
-  }
-  ,
-  {
-    original_name = RH2_FIELD,
-    name = "RH2",
-    long_name = "Relative humidity at 2 meters"
-  }
-  ,
-  {
-    original_name = WSPD10_FIELD,
-    name = "Wspeed10",
-    long_name = "Wind speed at 10 meters"
-  }
-  ,
-  {
-    original_name = WDIR10_FIELD,
-    name = "Wdir10",
-    long_name = "Wind direction at 10 meters"
-  }
-  ,
-  {
-    original_name = LANDUSEF_1_FIELD,
-    name = "Landusef_1",
-    long_name = "Landuse (urban)"
-  }
-  ,
-  {
-    original_name = LANDUSEF_2_FIELD,
-    name = "Landusef_2",
-    long_name = "Landuse (crops/woods)"
-  }
-  ,
-  {
-    original_name = LANDUSEF_6_FIELD,
-    name = "Landusef_6",
-    long_name = "Landuse (dryland crops and pasture)"
-  }
-  ,
-  {
-    original_name = LANDUSEF_15_FIELD,
-    name = "Landusef_15",
-    long_name = "Landuse (mixed forest)"
-  }
-  ,
-  {
-    original_name = GREENFRAC_7_FIELD,
-    name = "Greenfrac_7",
-    long_name = "Green Fraction (July)"
-  }
-  ,
-  {
-    original_name = TWP_FIELD,
-    name = "twp",
-    long_name = "Total Water Path"
-  }
-  ,
-  {
-    original_name = VIL_FIELD,
-    name = "vil",
-    long_name = "digital vil"
-  }
-  ,
-  {
-    original_name = RWP_FIELD,
-    name = "rwp",
-    long_name = "Rain Water Path"
-  }
-  ,
-  {
-    original_name = SPEC_H_2M_FIELD,
-    name = "spec_h2m",
-    long_name = "Specific Humidity at 2 meters"
-  }
-  ,
-  {
-    original_name = CAPE_FIELD,
-    name = "CAPE",
-    long_name = "CAPE"
-  }
-  ,
-  {
-    original_name = CIN_FIELD,
-    name = "CIN",
-    long_name = "CIN"
-  }
-  ,
-  {
-    original_name = LCL_FIELD,
-    name = "LCL",
-    long_name = "LCL"
-  }
-  ,
-  {
-    original_name = LFC_FIELD,
-    name = "LFC",
-    long_name = "LFC"
-  }
-  ,
-  {
-    original_name = EL_FIELD,
-    name = "EL",
-    long_name = "EL"
   }
 };
 
@@ -1353,8 +980,8 @@ output_projection = OUTPUT_PROJ_LATLON;
 //
 
 output_origin = {
-    lat = 37.5,
-    lon = -85
+    lat = 40.,
+    lon = -76.
 };
 
 ///////////// lambert_lat1 ////////////////////////////
@@ -1417,10 +1044,10 @@ stereographic_tangent_lon = 0;
 //
 
 output_grid = {
-    nx = 2000,
-    ny = 1250,
-    minx = -128,
-    miny = 44,
+    nx = 1250,
+    ny = 700,
+    minx = -88,
+    miny = 33,
     dx = 0.02,
     dy = 0.02
 };
@@ -1554,12 +1181,7 @@ height_levels = {
  12,
  13,
  14,
- 15,
- 16,
- 17,
- 18,
- 19,
- 20
+ 15
 };
 
 ///////////// copy_lowest_downwards ///////////////////
@@ -1657,7 +1279,7 @@ data_set_info = "This MDV file was created by Wrf2Mdv.";
 // Type: string
 //
 
-data_set_name = "WRF model output - IMPACTS.";
+data_set_name = "WRF-GFS-12km model output - Stonybrook - IMPACTS.";
 
 ///////////// data_set_source /////////////////////////
 //
@@ -1669,7 +1291,7 @@ data_set_name = "WRF model output - IMPACTS.";
 // Type: string
 //
 
-data_set_source = "WRF output from IMPACTS.";
+data_set_source = "WRF-GFS-12km output from Stonybrook for IMPACTS.";
 
 //======================================================================
 //

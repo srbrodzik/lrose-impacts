@@ -597,7 +597,7 @@ input_urls = {
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kokx",
+    url = "mdvp:://localhost::mdv/radarCart/klwx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
@@ -611,7 +611,21 @@ input_urls = {
   }
   ,
   {
+    url = "mdvp:://localhost::mdv/radarCart/kokx",
+    field_names = "",
+    is_required = FALSE,
+    must_update = FALSE
+  }
+  ,
+  {
     url = "mdvp:://localhost::mdv/radarCart/krax",
+    field_names = "",
+    is_required = FALSE,
+    must_update = FALSE
+  }
+  ,
+  {
+    url = "mdvp:://localhost::mdv/radarCart/ktyx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
@@ -830,7 +844,7 @@ output_data_set_name = "3D-MOSAIC";
 // Type: string
 //
 
-output_data_set_source = "NEXRAD radars KAKQ,KBGM,KBOX,KCCX,KDIX,KDOX,KENX,KGYX,KMHX,KOKX,KRAX";
+output_data_set_source = "NEXRAD radars KAKQ,KBGM,KBOX,KCCX,KDIX,KDOX,KENX,KGYX,KLWX,KMHX,KOKX,KRAX,KTYX";
 
 ///////////// copyMetaDataFromInput ///////////////////
 //

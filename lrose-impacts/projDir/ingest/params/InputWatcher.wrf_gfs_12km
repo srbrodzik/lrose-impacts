@@ -46,7 +46,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "wrf";
+instance = "wrf_gfs_12km";
 
 //======================================================================
 //
@@ -66,7 +66,8 @@ instance = "wrf";
 // Type: string
 //
 
-input_dir = "/home/disk/sage1/mm5rt/data";
+//input_dir = "/home/disk/sage1/mm5rt/data";
+input_dir = "/home/disk/meso-home/colle/wrf/GFS";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -106,6 +107,7 @@ file_quiescence = 30;
 //
 
 max_valid_age = 86400;
+//max_valid_age = 2592000;
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -175,6 +177,7 @@ search_recursively = TRUE;
 //
 
 max_dir_age = 3600;
+//max_dir_age = -1;
 
 ///////////// max_recursion_depth /////////////////////
 //
@@ -227,7 +230,7 @@ search_ext = "";
 // Type: string
 //
 
-search_substr = "wrfout_d3";
+search_substr = "wrfout_d02";
 
 ///////////// save_latest_read_time ///////////////////
 //
@@ -531,7 +534,8 @@ without_date_directory = FALSE;
 // Type: string
 //
 
-copy_dir = "$(DATA_DIR)/$(project)/raw/wrf";
+//copy_dir = "$(DATA_DIR)/$(project)/raw/wrf";
+copy_dir = "$(DATA_DIR)/raw/wrf/gfs_12km";
 
 ///////////// copy_ext ////////////////////////////////
 //
@@ -569,7 +573,8 @@ add_day_to_filename = FALSE;
 // Type: boolean
 //
 
-remove_after_copy = FALSE;
+//remove_after_copy = FALSE;
+remove_after_copy = TRUE;
 
 ///////////// uncompress_after_copy ///////////////////
 //

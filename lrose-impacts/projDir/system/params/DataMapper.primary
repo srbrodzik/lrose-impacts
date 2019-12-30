@@ -63,7 +63,6 @@ data_types = {
  "dorade",
  "mdv",
  "spdb",
- "titan",
  "txt",
  "ascii",
  "grib",

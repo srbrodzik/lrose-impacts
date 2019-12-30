@@ -34,11 +34,11 @@ RadxConvert   kdix       start_inst(ingest)        snuff_inst
 RadxConvert   kdox       start_inst(ingest)        snuff_inst
 RadxConvert   kenx       start_inst(ingest)        snuff_inst
 RadxConvert   kgyx       start_inst(ingest)        snuff_inst
-#RadxConvert   klwx       start_inst(ingest)        snuff_inst
+RadxConvert   klwx       start_inst(ingest)        snuff_inst
 RadxConvert   kmhx       start_inst(ingest)        snuff_inst
 RadxConvert   kokx       start_inst(ingest)        snuff_inst
 RadxConvert   krax       start_inst(ingest)        snuff_inst
-#RadxConvert   ktyx       start_inst(ingest)        snuff_inst
+RadxConvert   ktyx       start_inst(ingest)        snuff_inst
 #
 ###############################################################################
 # Cartesian gridding of NEXRAD data
@@ -51,11 +51,11 @@ Radx2Grid      kdix      start_inst(ingest)        snuff_inst
 Radx2Grid      kdox      start_inst(ingest)        snuff_inst
 Radx2Grid      kenx      start_inst(ingest)        snuff_inst
 Radx2Grid      kgyx      start_inst(ingest)        snuff_inst
-#Radx2Grid      klwx      start_inst(ingest)        snuff_inst
+Radx2Grid      klwx      start_inst(ingest)        snuff_inst
 Radx2Grid      kmhx      start_inst(ingest)        snuff_inst
 Radx2Grid      kokx      start_inst(ingest)        snuff_inst
 Radx2Grid      krax      start_inst(ingest)        snuff_inst
-#Radx2Grid      ktyx      start_inst(ingest)        snuff_inst
+Radx2Grid      ktyx      start_inst(ingest)        snuff_inst
 #
 ###############################################################################
 # Create mosaic
@@ -103,11 +103,16 @@ AcData2Spdb      N809NA start_inst(ingest)             snuff_inst
 #
 ######################################################################
 #
-# WRF domain 3
+# WRF domains 1 & 2
 #
-#InputWatcher     wrf       start_inst(ingest)  snuff_inst
-#Wrf2Mdv          impacts   start_inst(ingest)  snuff_inst
-#Mdv2SoundingSpdb wrf       start_inst(ingest)  snuff_inst
+InputWatcher     wrf_gfs_36km    start_inst(ingest)  snuff_inst
+InputWatcher     wrf_gfs_12km    start_inst(ingest)  snuff_inst
+
+Wrf2Mdv          gfs_36km        start_inst(ingest)  snuff_inst
+Wrf2Mdv          gfs_12km        start_inst(ingest)  snuff_inst
+
+#Mdv2SoundingSpdb wrf_gfs_36km    start_inst(ingest)  snuff_inst
+#Mdv2SoundingSpdb wrf_gfs_12km    start_inst(ingest)  snuff_inst
 #
 ######################################################################
 # PID and rain rate
