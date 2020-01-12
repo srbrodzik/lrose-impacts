@@ -187,7 +187,8 @@ PHIDP_KTYX    PHIDP_KTYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&PHIDP  
 ############################
 # GPM Ku data
 
-GPM_REFL          GPM_REFL                mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
+#GPM_REFL          GPM_REFL                mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
+GPM_REFL          GPM_REFL                mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&refl              dbz.colors                   dBZ        -5 80 5 dcont 1 0
 GPM_NEARSURFRAIN  GPM_NEAR_SURF_RAIN      mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&near_surf_rain    rain_accum.colors            mm         -5 80 5 dcont 1 0
 GPM_RAINTYPE      GPM_RAIN_TYPE           mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&rain_type         convsf_gpm.colors            -          -5 80 5 cart  1 0
 GPM_PHASETYPE     GPM_PHASE_TYPE          mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&phase_type        phase_gpm.colors             -          -5 80 5 cart  1 0
@@ -199,9 +200,9 @@ GPM_SWATH         GPM_SWATH               mdvp:://localhost:0:$(DATA_DIR)/mdv/gp
 ############################
 # WRF data - 36km
 
-WRFGFS36_U          WRFGFS36_U        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&U         vel.colors            m/s    -5   80  5  dcont   1 0
-WRFGFS36_V          WRFGFS36_V        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&V         vel.colors            m/s    -5   80  5  dcont   1 0
-WRFGFS36_W          WRFGFS36_W        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&W         wvel_cm.colors        m/s    -5   80  5  dcont   1 0
+WRFGFS36_U          WRFGFS36_U        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&U         uv_wspd.colors        m/s    -5   80  5  dcont   1 0
+WRFGFS36_V          WRFGFS36_V        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&V         uv_wspd.colors        m/s    -5   80  5  dcont   1 0
+WRFGFS36_W          WRFGFS36_W        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
 WRFGFS36_P          WRFGFS36_P        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&P         press_pert_pa.colors  Pa     -5   80  5  dcont   1 0
 WRFGFS36_T          WRFGFS36_T        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&T         tempK.colors          K      -5   80  5  dcont   1 0
 WRFGFS36_REFL       WRFGFS36_REFL     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&REFL_10CM refl.colors           dBZ    -5   80  5  cont    1 0
@@ -230,9 +231,9 @@ WRFGFS36_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/m
 ############################
 # WRF data - 12km
 
-WRFGFS12_U          WRFGFS12_U        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&U         vel.colors            m/s    -5   80  5  dcont   1 0
-WRFGFS12_V          WRFGFS12_V        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&V         vel.colors            m/s    -5   80  5  dcont   1 0
-WRFGFS12_W          WRFGFS12_W        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&W         wvel_cm.colors        m/s    -5   80  5  dcont   1 0
+WRFGFS12_U          WRFGFS12_U        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&U         uv_wspd.colors        m/s    -5   80  5  dcont   1 0
+WRFGFS12_V          WRFGFS12_V        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&V         uv_wspd.colors        m/s    -5   80  5  dcont   1 0
+WRFGFS12_W          WRFGFS12_W        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
 WRFGFS12_P          WRFGFS12_P        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&P         press_pert_pa.colors  Pa     -5   80  5  dcont   1 0
 WRFGFS12_T          WRFGFS12_T        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&T         tempK.colors          K      -5   80  5  dcont   1 0
 WRFGFS12_REFL       WRFGFS12_REFL     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&REFL_10CM refl.colors           dBZ    -5   80  5  cont    1 0

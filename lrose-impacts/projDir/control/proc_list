@@ -93,8 +93,8 @@ GoesRGLM2Spdb   glm16         start_inst(ingest)   snuff_inst
 ######################################################################
 # Aircraft (P3)  data ingest
 #
-#download_iwg1.py N426NA start_download_iwg1.py.N426NA  snuff_inst
-#AcData2Spdb      N426NA start_inst(ingest)             snuff_inst
+download_iwg1.py N426NA start_download_iwg1.py.N426NA  snuff_inst
+AcData2Spdb      N426NA start_inst(ingest)             snuff_inst
 #
 # Aircraft (ER2) data ingest
 #
@@ -103,13 +103,28 @@ AcData2Spdb      N809NA start_inst(ingest)             snuff_inst
 #
 ######################################################################
 #
-# WRF domains 1 & 2
+# WRF GFS domains 1, 2 & 3
 #
 InputWatcher     wrf_gfs_36km    start_inst(ingest)  snuff_inst
 InputWatcher     wrf_gfs_12km    start_inst(ingest)  snuff_inst
+InputWatcher     wrf_gfs_04km    start_inst(ingest)  snuff_inst
 
 Wrf2Mdv          gfs_36km        start_inst(ingest)  snuff_inst
 Wrf2Mdv          gfs_12km        start_inst(ingest)  snuff_inst
+
+#Mdv2SoundingSpdb wrf_gfs_36km    start_inst(ingest)  snuff_inst
+#Mdv2SoundingSpdb wrf_gfs_12km    start_inst(ingest)  snuff_inst
+#
+######################################################################
+#
+# WRF NAM domains 1, 2 & 3
+#
+InputWatcher     wrf_nam_36km    start_inst(ingest)  snuff_inst
+InputWatcher     wrf_nam_12km    start_inst(ingest)  snuff_inst
+InputWatcher     wrf_nam_04km    start_inst(ingest)  snuff_inst
+
+#Wrf2Mdv          nam_36km        start_inst(ingest)  snuff_inst
+#Wrf2Mdv          nam_12km        start_inst(ingest)  snuff_inst
 
 #Mdv2SoundingSpdb wrf_gfs_36km    start_inst(ingest)  snuff_inst
 #Mdv2SoundingSpdb wrf_gfs_12km    start_inst(ingest)  snuff_inst

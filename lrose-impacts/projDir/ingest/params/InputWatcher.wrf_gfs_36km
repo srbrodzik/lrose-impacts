@@ -573,7 +573,8 @@ add_day_to_filename = FALSE;
 // Type: boolean
 //
 
-remove_after_copy = FALSE;
+//remove_after_copy = FALSE;
+remove_after_copy = TRUE;
 
 ///////////// uncompress_after_copy ///////////////////
 //

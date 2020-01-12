@@ -187,7 +187,8 @@ PHIDP_KTYX    PHIDP_KTYX   $(DATA_DIR)/cfradial/ktyx&PHIDP   phidp_360.colors  d
 ############################
 # GPM Ku data
 
-GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
+#GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
+GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              dbz.colors                   dBZ        -5 80 5 dcont 1 0
 GPM_NEARSURFRAIN  GPM_NEAR_SURF_RAIN      $(DATA_DIR)/mdv/gpm_ku&near_surf_rain    rain_accum.colors            mm         -5 80 5 dcont 1 0
 GPM_RAINTYPE      GPM_RAIN_TYPE           $(DATA_DIR)/mdv/gpm_ku&rain_type         convsf_gpm.colors            -          -5 80 5 cart  1 0
 GPM_PHASETYPE     GPM_PHASE_TYPE          $(DATA_DIR)/mdv/gpm_ku&phase_type        phase_gpm.colors             -          -5 80 5 cart  1 0
