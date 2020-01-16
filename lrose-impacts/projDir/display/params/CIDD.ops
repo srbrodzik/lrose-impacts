@@ -185,6 +185,15 @@ RHOHV_KTYX    RHOHV_KTYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&RHOHV  
 PHIDP_KTYX    PHIDP_KTYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
 ############################
+# NPOL data
+NPOL_DZ       NPOL_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/ppi&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
+NPOL_VR       NPOL_VR      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/ppi&VR   vel.colors    m/s    -5   80  5  dcont   1 0
+NPOL_ZDR      NPOL_ZDR     mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/ppi&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
+NPOL_RHOHV    NPOL_RHOHV   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/ppi&RH   rhohv.colors  -      -5   80  5  dcont   1 0
+NPOL_PHIDP    NPOL_PHIDP   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/ppi&PH   phidp_360.colors deg -5   80  5  dcont   1 0
+NPOL_======   ======       mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
+
+############################
 # GPM Ku data
 
 #GPM_REFL          GPM_REFL                mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
@@ -1315,7 +1324,20 @@ prod_info = {
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
   }
- ,                        
+  ,                        
+  {
+    menu_label = "RHI-NPOL",
+    url = "spdbp:Rhi2Symprod:ticks//localhost:0:$(DATA_DIR)/spdb/rhi/npol",
+    data_type = 0,
+    render_type = RENDER_ALL_VALID,
+    on_by_default = FALSE,
+    minutes_allow_before = 20,
+    minutes_allow_after = 10,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  , 
   {
     menu_label = "ER2 15_min",
     url = "spdbp:AcTrack2Symprod:N809NA.15_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",

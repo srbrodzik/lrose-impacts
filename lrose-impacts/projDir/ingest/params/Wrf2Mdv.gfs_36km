@@ -267,7 +267,8 @@ min_forecast_dtime = 0;
 // Type: int
 //
 
-max_forecast_dtime = 64800;
+//max_forecast_dtime = 64800;
+max_forecast_dtime =  172800;
 
 ///////////// specify_lead_times //////////////////////
 //

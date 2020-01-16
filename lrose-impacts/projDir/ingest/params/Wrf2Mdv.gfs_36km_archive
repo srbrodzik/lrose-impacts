@@ -60,7 +60,7 @@ alg_debug = DEBUG_NONE;
 // Type: string
 //
 
-instance = "gfs_12km";
+instance = "gfs_36km";
 
 ///////////// Procmap_reg_interval_secs ///////////////
 //
@@ -98,7 +98,7 @@ Procmap_reg_interval_secs = 60;
 //     REALTIME
 //
 
-mode = REALTIME;
+mode = ARCHIVE;
 
 //======================================================================
 //
@@ -131,7 +131,7 @@ soilparm_path = "./SOILPARM.TBL";
 //
 
 //realtime_input_dir = "$(DATA_DIR)/$(project)/raw/wrf";
-realtime_input_dir = "$(DATA_DIR)/raw/wrf/gfs_12km";
+realtime_input_dir = "/home/bob/impacts/raw/wrf_reruns/gfs_36km";
 
 ///////////// File_quiescence_secs ////////////////////
 //
@@ -182,7 +182,7 @@ Dir_scan_interval_secs = 10;
 // Type: string
 //
 
-DomainString = "wrfout_d02";
+DomainString = "wrfout_d01";
 
 ///////////// File_extension //////////////////////////
 //
@@ -208,7 +208,7 @@ File_extension = "";
 // Type: boolean
 //
 
-use_ldata = TRUE;
+use_ldata = FALSE;
 
 ///////////// get_times_from_filenames ////////////////
 //
@@ -240,7 +240,7 @@ get_times_from_filenames = FALSE;
 // Type: int
 //
 
-max_realtime_valid_age = 3600;
+max_realtime_valid_age = 86400;
 
 ///////////// min_forecast_dtime //////////////////////
 //
@@ -319,7 +319,7 @@ lead_times = {
 //
 
 //output_url = "$(DATA_DIR)/$(project)/mdv/wrf";
-output_url = "$(DATA_DIR)/mdv/wrf/gfs_12km";
+output_url = "/home/bob/impacts/mdv/wrf/gfs_36km";
 //output_url = "./output";
 
 //======================================================================
@@ -981,8 +981,8 @@ output_projection = OUTPUT_PROJ_LATLON;
 //
 
 output_origin = {
-    lat = 40.,
-    lon = -76.
+    lat = 37.5,
+    lon = -85
 };
 
 ///////////// lambert_lat1 ////////////////////////////
@@ -1045,10 +1045,10 @@ stereographic_tangent_lon = 0;
 //
 
 output_grid = {
-    nx = 1250,
-    ny = 700,
-    minx = -88,
-    miny = 33,
+    nx = 2000,
+    ny = 1250,
+    minx = -105,
+    miny = 25,
     dx = 0.02,
     dy = 0.02
 };
@@ -1280,7 +1280,7 @@ data_set_info = "This MDV file was created by Wrf2Mdv.";
 // Type: string
 //
 
-data_set_name = "WRF-GFS-12km model output - Stonybrook - IMPACTS.";
+data_set_name = "WRF-GFS-36km model output - Stonybrook - IMPACTS.";
 
 ///////////// data_set_source /////////////////////////
 //
@@ -1292,7 +1292,7 @@ data_set_name = "WRF-GFS-12km model output - Stonybrook - IMPACTS.";
 // Type: string
 //
 
-data_set_source = "WRF-GFS-12km output from Stonybrook for IMPACTS.";
+data_set_source = "WRF-GFS-36km output from Stonybrook for IMPACTS.";
 
 //======================================================================
 //

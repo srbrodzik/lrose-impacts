@@ -98,7 +98,7 @@ Procmap_reg_interval_secs = 60;
 //     REALTIME
 //
 
-mode = REALTIME;
+mode = ARCHIVE;
 
 //======================================================================
 //
@@ -131,7 +131,7 @@ soilparm_path = "./SOILPARM.TBL";
 //
 
 //realtime_input_dir = "$(DATA_DIR)/$(project)/raw/wrf";
-realtime_input_dir = "$(DATA_DIR)/raw/wrf/gfs_12km";
+realtime_input_dir = "/home/bob/impacts/raw/wrf_reruns/gfs_12km";
 
 ///////////// File_quiescence_secs ////////////////////
 //
@@ -208,7 +208,7 @@ File_extension = "";
 // Type: boolean
 //
 
-use_ldata = TRUE;
+use_ldata = FALSE;
 
 ///////////// get_times_from_filenames ////////////////
 //
@@ -240,7 +240,7 @@ get_times_from_filenames = FALSE;
 // Type: int
 //
 
-max_realtime_valid_age = 3600;
+max_realtime_valid_age = 86400;
 
 ///////////// min_forecast_dtime //////////////////////
 //
@@ -268,7 +268,7 @@ min_forecast_dtime = 0;
 //
 
 //max_forecast_dtime = 64800;
-max_forecast_dtime =  172800;
+max_forecast_dtime =  129600;
 
 ///////////// specify_lead_times //////////////////////
 //
@@ -319,7 +319,7 @@ lead_times = {
 //
 
 //output_url = "$(DATA_DIR)/$(project)/mdv/wrf";
-output_url = "$(DATA_DIR)/mdv/wrf/gfs_12km";
+output_url = "/home/bob/impacts/mdv/wrf/gfs_12km";
 //output_url = "./output";
 
 //======================================================================

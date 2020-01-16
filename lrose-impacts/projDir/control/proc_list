@@ -64,6 +64,18 @@ MdvMerge2     mosaic     start_inst(ingest)        snuff_inst
 #
 ######################################################################
 #
+# Ingesting NPOL data
+#
+InputWatcher    npol_ppi   start_inst(ingest)   snuff_inst
+InputWatcher    npol_rhi   start_inst(ingest)   snuff_inst
+#
+RadxConvert	npol_ppi   start_inst(ingest)	snuff_inst
+RadxConvert	npol_rhi   start_inst(ingest)	snuff_inst
+#
+Rhi2Spdb	npol	   start_inst(ingest)	snuff_inst
+#
+######################################################################
+#
 # Ingesting the GOES data
 #
 InputWatcher    goes16_ch01   start_inst(ingest)   snuff_inst
@@ -72,21 +84,21 @@ InputWatcher    goes16_ch09   start_inst(ingest)   snuff_inst
 InputWatcher    goes16_ch10   start_inst(ingest)   snuff_inst
 InputWatcher    goes16_ch13   start_inst(ingest)   snuff_inst
 #InputWatcher    goes16_ch14   start_inst(ingest)   snuff_inst
-
+#
 GoesRnetCDF2Mdv goes16_ch01   start_inst(ingest)   snuff_inst
 GoesRnetCDF2Mdv goes16_ch08   start_inst(ingest)   snuff_inst
 GoesRnetCDF2Mdv goes16_ch09   start_inst(ingest)   snuff_inst
 GoesRnetCDF2Mdv goes16_ch10   start_inst(ingest)   snuff_inst
 GoesRnetCDF2Mdv goes16_ch13   start_inst(ingest)   snuff_inst
 #GoesRnetCDF2Mdv goes16_ch14   start_inst(ingest)   snuff_inst
-
+#
 Mdv2NetCDF      goes16_ch01   start_inst(ingest)   snuff_inst
 Mdv2NetCDF      goes16_ch08   start_inst(ingest)   snuff_inst
 Mdv2NetCDF      goes16_ch09   start_inst(ingest)   snuff_inst
 Mdv2NetCDF      goes16_ch10   start_inst(ingest)   snuff_inst
 Mdv2NetCDF      goes16_ch13   start_inst(ingest)   snuff_inst
 #Mdv2NetCDF      goes16_ch14   start_inst(ingest)   snuff_inst
-
+#
 InputWatcher    glm16         start_inst(ingest)   snuff_inst
 GoesRGLM2Spdb   glm16         start_inst(ingest)   snuff_inst
 #
@@ -108,10 +120,10 @@ AcData2Spdb      N809NA start_inst(ingest)             snuff_inst
 InputWatcher     wrf_gfs_36km    start_inst(ingest)  snuff_inst
 InputWatcher     wrf_gfs_12km    start_inst(ingest)  snuff_inst
 InputWatcher     wrf_gfs_04km    start_inst(ingest)  snuff_inst
-
+#
 Wrf2Mdv          gfs_36km        start_inst(ingest)  snuff_inst
 Wrf2Mdv          gfs_12km        start_inst(ingest)  snuff_inst
-
+#
 #Mdv2SoundingSpdb wrf_gfs_36km    start_inst(ingest)  snuff_inst
 #Mdv2SoundingSpdb wrf_gfs_12km    start_inst(ingest)  snuff_inst
 #
@@ -122,10 +134,10 @@ Wrf2Mdv          gfs_12km        start_inst(ingest)  snuff_inst
 InputWatcher     wrf_nam_36km    start_inst(ingest)  snuff_inst
 InputWatcher     wrf_nam_12km    start_inst(ingest)  snuff_inst
 InputWatcher     wrf_nam_04km    start_inst(ingest)  snuff_inst
-
+#
 #Wrf2Mdv          nam_36km        start_inst(ingest)  snuff_inst
 #Wrf2Mdv          nam_12km        start_inst(ingest)  snuff_inst
-
+#
 #Mdv2SoundingSpdb wrf_gfs_36km    start_inst(ingest)  snuff_inst
 #Mdv2SoundingSpdb wrf_gfs_12km    start_inst(ingest)  snuff_inst
 #
@@ -145,5 +157,5 @@ InputWatcher     wrf_nam_04km    start_inst(ingest)  snuff_inst
 ##############################################################################
 # DISPLAY processes
 #
-CIDD            ops           start_CIDD.ops       snuff_inst     
+#CIDD            ops           start_CIDD.ops       snuff_inst     
 
