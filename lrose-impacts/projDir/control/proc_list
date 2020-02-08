@@ -30,15 +30,27 @@ RadxConvert   kakq       start_inst(ingest)        snuff_inst
 RadxConvert   kbgm       start_inst(ingest)        snuff_inst
 RadxConvert   kbox       start_inst(ingest)        snuff_inst
 RadxConvert   kccx       start_inst(ingest)        snuff_inst
+RadxConvert   kcle       start_inst(ingest)        snuff_inst
 RadxConvert   kdix       start_inst(ingest)        snuff_inst
 RadxConvert   kdox       start_inst(ingest)        snuff_inst
+RadxConvert   kdtx       start_inst(ingest)        snuff_inst
+RadxConvert   kdvn       start_inst(ingest)        snuff_inst
 RadxConvert   kenx       start_inst(ingest)        snuff_inst
+RadxConvert   kgrb       start_inst(ingest)        snuff_inst
+RadxConvert   kgrr       start_inst(ingest)        snuff_inst
 RadxConvert   kgyx       start_inst(ingest)        snuff_inst
+RadxConvert   kiln       start_inst(ingest)        snuff_inst
+RadxConvert   kilx       start_inst(ingest)        snuff_inst
+RadxConvert   kind       start_inst(ingest)        snuff_inst
+RadxConvert   kiwx       start_inst(ingest)        snuff_inst
+RadxConvert   klot       start_inst(ingest)        snuff_inst
 RadxConvert   klwx       start_inst(ingest)        snuff_inst
 RadxConvert   kmhx       start_inst(ingest)        snuff_inst
+RadxConvert   kmkx       start_inst(ingest)        snuff_inst
 RadxConvert   kokx       start_inst(ingest)        snuff_inst
 RadxConvert   krax       start_inst(ingest)        snuff_inst
 RadxConvert   ktyx       start_inst(ingest)        snuff_inst
+RadxConvert   kvwx       start_inst(ingest)        snuff_inst
 #
 ###############################################################################
 # Cartesian gridding of NEXRAD data
@@ -47,20 +59,33 @@ Radx2Grid      kakq      start_inst(ingest)        snuff_inst
 Radx2Grid      kbgm      start_inst(ingest)        snuff_inst
 Radx2Grid      kbox      start_inst(ingest)        snuff_inst
 Radx2Grid      kccx      start_inst(ingest)        snuff_inst
+Radx2Grid      kcle      start_inst(ingest)        snuff_inst
 Radx2Grid      kdix      start_inst(ingest)        snuff_inst
 Radx2Grid      kdox      start_inst(ingest)        snuff_inst
+Radx2Grid      kdtx      start_inst(ingest)        snuff_inst
+Radx2Grid      kdvn      start_inst(ingest)        snuff_inst
 Radx2Grid      kenx      start_inst(ingest)        snuff_inst
+Radx2Grid      kgrb      start_inst(ingest)        snuff_inst
+Radx2Grid      kgrr      start_inst(ingest)        snuff_inst
 Radx2Grid      kgyx      start_inst(ingest)        snuff_inst
+Radx2Grid      kiln      start_inst(ingest)        snuff_inst
+Radx2Grid      kilx      start_inst(ingest)        snuff_inst
+Radx2Grid      kind      start_inst(ingest)        snuff_inst
+Radx2Grid      kiwx      start_inst(ingest)        snuff_inst
+Radx2Grid      klot      start_inst(ingest)        snuff_inst
 Radx2Grid      klwx      start_inst(ingest)        snuff_inst
 Radx2Grid      kmhx      start_inst(ingest)        snuff_inst
+Radx2Grid      kmkx      start_inst(ingest)        snuff_inst
 Radx2Grid      kokx      start_inst(ingest)        snuff_inst
 Radx2Grid      krax      start_inst(ingest)        snuff_inst
 Radx2Grid      ktyx      start_inst(ingest)        snuff_inst
+Radx2Grid      kvwx      start_inst(ingest)        snuff_inst
 #
 ###############################################################################
 # Create mosaic
 #
-MdvMerge2     mosaic     start_inst(ingest)        snuff_inst
+MdvMerge2     mosaic		start_inst(ingest)        snuff_inst
+MdvMerge2     mosaic_midwest    start_inst(ingest)        snuff_inst
 #
 ######################################################################
 #

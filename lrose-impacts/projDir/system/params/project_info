@@ -12,15 +12,25 @@ setenv project                    "impacts"
 
 # RADAR info
 
-setenv SITE_NAME                  "KOKX"
-setenv RADAR_NAME                 "KOKX"
-setenv radar_name                 "kokx"
-setenv RADAR_LAT                  40.5156
-setenv RADAR_LON                  -72.5150
+#setenv SITE_NAME                  "KOKX"
+#setenv RADAR_NAME                 "KOKX"
+#setenv radar_name                 "kokx"
+#setenv RADAR_LAT                  40.5156
+#setenv RADAR_LON                  -72.5150
+#setenv RADAR_ALT_KM               0.030
+#setenv RADAR_ALT_M                30
+#setenv RADAR_DESCRIPTION          "New York City NEXRAD"
+#setenv RADAR_DATA_INFO            "NEXRAD mosaic East Coast"
+
+setenv SITE_NAME                  "NPOL"
+setenv RADAR_NAME                 "NPOL"
+setenv radar_name                 "npol"
+setenv RADAR_LAT                  38.2625
+setenv RADAR_LON                  -75.3417
 setenv RADAR_ALT_KM               0.030
 setenv RADAR_ALT_M                30
-setenv RADAR_DESCRIPTION          "New York City NEXRAD"
-setenv RADAR_DATA_INFO            "NEXRAD mosaic East Coast"
+setenv RADAR_DESCRIPTION          "WFF NPOL Radar"
+setenv RADAR_DATA_INFO            "WFF NPOL Radar"
 
 # Host where the data is stored
 

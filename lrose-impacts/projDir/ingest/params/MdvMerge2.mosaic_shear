@@ -42,7 +42,7 @@ debug = DEBUG_NORM;
 // Type: string
 //
 
-instance = "mosaic";
+instance = "mosaic_shear";
 
 //======================================================================
 //
@@ -69,7 +69,7 @@ instance = "mosaic";
 //     REALTIME
 //
 
-mode = REALTIME;
+mode = ARCHIVE;
 
 ///////////// trigger /////////////////////////////////
 //
@@ -543,91 +543,91 @@ range_field_name = "range";
 
 input_urls = {
   {
-    url = "mdvp:://localhost::mdv/radarCart/kakq",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kakq",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kbgm",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kbgm",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kbox",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kbox",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kccx",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kccx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kdix",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kdix",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kdox",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kdox",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kenx",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kenx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kgyx",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kgyx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/klwx",
+    url = "/home/disk/bob/impacts/mdv/radarCart/klwx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kmhx",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kmhx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kokx",
+    url = "/home/disk/bob/impacts/mdv/radarCart/kokx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/krax",
+    url = "/home/disk/bob/impacts/mdv/radarCart/krax",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/ktyx",
+    url = "/home/disk/bob/impacts/mdv/radarCart/ktyx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
@@ -651,7 +651,7 @@ input_urls = {
 // Type: string
 //
 
-output_url = "mdvp:://localhost::mdv/radarCart/mosaic";
+output_url = "/home/disk/bob/impacts/mdv/radarCart/mosaic";
 
 ///////////// output_timestamp_correction /////////////
 //
@@ -677,7 +677,7 @@ output_timestamp_correction = -120;
 // Type: boolean
 //
 
-write_ldata = TRUE;
+write_ldata = FALSE;
 
 ///////////// write_as_forecast ///////////////////////
 //

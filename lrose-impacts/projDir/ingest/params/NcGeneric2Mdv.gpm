@@ -161,7 +161,7 @@ process_latest_file_only = TRUE;
 // Type: string
 //
 
-file_name_ext = "";
+file_name_ext = "nc";
 
 ///////////// file_name_substr ////////////////////////
 //
@@ -173,7 +173,7 @@ file_name_ext = "";
 // Type: string
 //
 
-file_name_substr = "";
+file_name_substr = "GPM";
 
 //======================================================================
 //
@@ -928,7 +928,7 @@ output_compression_type = COMPRESSION_GZIP;
 // Type: string
 //
 
-data_set_name = "GPM";
+data_set_name = "GPM_2Ku";
 
 ///////////// data_set_source /////////////////////////
 //

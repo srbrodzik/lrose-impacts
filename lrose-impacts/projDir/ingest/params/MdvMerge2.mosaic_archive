@@ -42,7 +42,7 @@ debug = DEBUG_NORM;
 // Type: string
 //
 
-instance = "mosaic";
+instance = "mosaic_archive";
 
 //======================================================================
 //
@@ -69,7 +69,7 @@ instance = "mosaic";
 //     REALTIME
 //
 
-mode = REALTIME;
+mode = ARCHIVE;
 
 ///////////// trigger /////////////////////////////////
 //

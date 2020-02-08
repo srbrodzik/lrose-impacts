@@ -15,18 +15,37 @@
 ####################################################################
 # NEXRAD RADAR INGEST FROM AWS
 #
-*/1 * * * *   csh -c "run_GetAwsRadar.kakq" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kbgm" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kbox" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kccx" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kdix" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kdox" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kenx" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kgyx" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.klwx" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kmhx" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.kokx" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.krax" 1> /dev/null 2> /dev/null
-*/1 * * * *   csh -c "run_GetAwsRadar.ktyx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kakq" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kbgm" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kbox" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kccx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kcle" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kdix" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kdox" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kdtx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kdvn" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kenx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kgrb" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kgrr" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kgyx" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kiln" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kilx" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kind" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kiwx" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.klot" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.klwx" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kmhx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kmkx" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kokx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.krax" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.ktyx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kvwx" 1> /dev/null 2> /dev/null
 #
 ####################################################################
+
+# GOES-R Mesoscale sector image generation - when applicable
+# M1
+#* * 7 2 * csh -c "/home/disk/ldm/local/bin/new_sat/timed_run.pl 20200207130000 20200207190200 /home/disk/ldm/local/bin/new_sat/testmeso.csh true_color_night 1 YYYYMMDD HH /home/disk/data/images/sat_east_meso_impacts" 1> /home/disk/bob/impacts/logs/fortesting/M1.log 2>&1
+#
+# M2
+#* * 5,6 2 * csh -c "/home/disk/ldm/local/bin/new_sat/timed_run.pl 20200205180000 20200206060200 /home/disk/ldm/local/bin/new_sat/testmeso.csh true_color_night 2 YYYYMMDD HH /home/disk/data/images/sat_east_meso_impacts" 1> /home/disk/bob/impacts/logs/fortesting/M2.log 2>&1

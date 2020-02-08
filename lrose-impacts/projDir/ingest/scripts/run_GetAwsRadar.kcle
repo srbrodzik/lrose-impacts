@@ -2,8 +2,11 @@
 
 # get the data from the $RADAR_NAME radar, using AWS
 
+#setenv PROJ_DIR /home/disk/bob/impacts/git/lrose-impacts/projDir
+#setenv DATA_DIR /home/disk/bob/impacts
+
 cd $PROJ_DIR/ingest/scripts
-setenv RADAR_NAME KAKQ
+setenv RADAR_NAME KCLE
 
 running "GetAwsRadar.py --radarName $RADAR_NAME"
 
@@ -12,7 +15,7 @@ if ($status == 1) then
     --realtime \
     --outputDir $DATA_DIR/raw/radar \
     --tmpDir /tmp/raw/radar \
-    --lookbackSecs 5400 \
+    --lookbackSecs 3600 \
     --sleepSecs 15 \
       |& LogFilter -d $ERRORS_LOG_DIR -p GetAwsRadar -i $RADAR_NAME \
       >& /dev/null &

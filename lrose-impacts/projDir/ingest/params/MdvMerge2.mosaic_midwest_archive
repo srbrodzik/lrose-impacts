@@ -42,7 +42,7 @@ debug = DEBUG_NORM;
 // Type: string
 //
 
-instance = "mosaic";
+instance = "mosaic_midwest_archive";
 
 //======================================================================
 //
@@ -69,7 +69,7 @@ instance = "mosaic";
 //     REALTIME
 //
 
-mode = REALTIME;
+mode = ARCHIVE;
 
 ///////////// trigger /////////////////////////////////
 //
@@ -543,91 +543,84 @@ range_field_name = "range";
 
 input_urls = {
   {
-    url = "mdvp:://localhost::mdv/radarCart/kakq",
+    url = "mdvp:://localhost::mdv/radarCart/kcle",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kbgm",
+    url = "mdvp:://localhost::mdv/radarCart/kdtx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kbox",
+    url = "mdvp:://localhost::mdv/radarCart/kdvn",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kccx",
+    url = "mdvp:://localhost::mdv/radarCart/kgrb",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kdix",
+    url = "mdvp:://localhost::mdv/radarCart/kgrr",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kdox",
+    url = "mdvp:://localhost::mdv/radarCart/kiln",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kenx",
+    url = "mdvp:://localhost::mdv/radarCart/kilx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kgyx",
+    url = "mdvp:://localhost::mdv/radarCart/kind",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/klwx",
+    url = "mdvp:://localhost::mdv/radarCart/kiwx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kmhx",
+    url = "mdvp:://localhost::mdv/radarCart/klot",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/kokx",
+    url = "mdvp:://localhost::mdv/radarCart/kmkx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
   }
   ,
   {
-    url = "mdvp:://localhost::mdv/radarCart/krax",
-    field_names = "",
-    is_required = FALSE,
-    must_update = FALSE
-  }
-  ,
-  {
-    url = "mdvp:://localhost::mdv/radarCart/ktyx",
+    url = "mdvp:://localhost::mdv/radarCart/kvwx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
@@ -651,7 +644,7 @@ input_urls = {
 // Type: string
 //
 
-output_url = "mdvp:://localhost::mdv/radarCart/mosaic";
+output_url = "mdvp:://localhost::mdv/radarCart/mosaic_midwest";
 
 ///////////// output_timestamp_correction /////////////
 //
@@ -677,7 +670,8 @@ output_timestamp_correction = -120;
 // Type: boolean
 //
 
-write_ldata = TRUE;
+//write_ldata = TRUE;
+write_ldata = FALSE;
 
 ///////////// write_as_forecast ///////////////////////
 //
@@ -729,11 +723,11 @@ output_projection = OUTPUT_PROJ_LATLON;
 //
 //
 
-// grid is 32-46N and 82-68W
+// grid is 36-46N and 93-79W
 // this is midpoint
 output_origin = {
-    lat = 39,
-    lon = -75
+    lat = 41,
+    lon = -86
 };
 
 ///////////// output_rotation /////////////////////////
@@ -791,13 +785,13 @@ output_std_parallels = {
 //
 //
 
-// grid is 32-46N and 82-68W
+// grid is 36-46N and 93-79W
 output_grid = {
     nx = 1400,
-    ny = 1400,
+    ny = 1000,
     nz = 30,
-    minx = -82.0,
-    miny = 32,
+    minx = -93.0,
+    miny = 36.0,
     minz = $(CART_GRID_START_HT),
     dx = 0.01,
     dy = 0.01,
@@ -829,7 +823,7 @@ output_compression = COMPRESSION_ZLIB;
 // Type: string
 //
 
-output_data_set_name = "3D-MOSAIC-EAST";
+output_data_set_name = "3D-MOSAIC-MIDWEST";
 
 ///////////// output_data_set_source //////////////////
 //
@@ -841,7 +835,7 @@ output_data_set_name = "3D-MOSAIC-EAST";
 // Type: string
 //
 
-output_data_set_source = "NEXRAD radars KAKQ,KBGM,KBOX,KCCX,KDIX,KDOX,KENX,KGYX,KLWX,KMHX,KOKX,KRAX,KTYX";
+output_data_set_source = "NEXRAD radars KCLE,KDTX,KDVN,KGRB,KGRR,KILN,KILX,KIND,KIWX,KLOT,KMKX,KVWX";
 
 ///////////// copyMetaDataFromInput ///////////////////
 //

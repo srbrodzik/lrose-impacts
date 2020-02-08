@@ -130,8 +130,7 @@ soilparm_path = "./SOILPARM.TBL";
 // Type: string
 //
 
-//realtime_input_dir = "$(DATA_DIR)/$(project)/raw/wrf";
-realtime_input_dir = "/home/bob/impacts/raw/wrf_reruns/gfs_36km";
+realtime_input_dir = "$(DATA_DIR)/raw/wrf/gfs_36km";
 
 ///////////// File_quiescence_secs ////////////////////
 //
@@ -195,7 +194,6 @@ DomainString = "wrfout_d01";
 // Type: string
 //
 
-//File_extension = "0000";
 File_extension = "";
 
 ///////////// use_ldata ///////////////////////////////
@@ -208,7 +206,7 @@ File_extension = "";
 // Type: boolean
 //
 
-use_ldata = FALSE;
+use_ldata = TRUE;
 
 ///////////// get_times_from_filenames ////////////////
 //
@@ -240,7 +238,7 @@ get_times_from_filenames = FALSE;
 // Type: int
 //
 
-max_realtime_valid_age = 86400;
+max_realtime_valid_age = 3600;
 
 ///////////// min_forecast_dtime //////////////////////
 //
@@ -267,7 +265,6 @@ min_forecast_dtime = 0;
 // Type: int
 //
 
-//max_forecast_dtime = 64800;
 max_forecast_dtime =  172800;
 
 ///////////// specify_lead_times //////////////////////
@@ -318,9 +315,7 @@ lead_times = {
 // Type: string
 //
 
-//output_url = "$(DATA_DIR)/$(project)/mdv/wrf";
-output_url = "/home/bob/impacts/mdv/wrf/gfs_36km";
-//output_url = "./output";
+output_url = "$(DATA_DIR)/mdv/wrf/gfs_36km";
 
 //======================================================================
 //
@@ -528,7 +523,27 @@ output_fields = {
   }
   ,
   {
+    name = W_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = WSPD_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = TC_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
     name = CLW_FIELD,
+
+
+
+
+
     encoding = OUT_INT16
   }
   ,
@@ -552,28 +567,38 @@ output_fields = {
     encoding = OUT_INT16
   }
   ,
+//  {
+//    name = PRESSURE_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
+//  {
+//    name = P_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
+//  {
+//    name = PB_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
+//  {
+//    name = HGT_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
+//  {
+//    name = PHB_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
+//  {
+//    name = PH_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
   {
-    name = W_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = P_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = PB_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = PHB_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = PH_FIELD,
+    name = DBZ_3D_FIELD,
     encoding = OUT_INT16
   }
   ,
@@ -588,30 +613,35 @@ output_fields = {
   }
   ,
   {
-    name = HGT_FIELD,
+    name = ICING_FIELD,
     encoding = OUT_INT16
   }
   ,
   {
-    name = GEO_POT_FIELD,
+    name = RH_FIELD,
     encoding = OUT_INT16
   }
   ,
-  {
-    name = SNOWCOVR_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
+//  {
+//    name = GEO_POT_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
+//  {
+//    name = SNOWCOVR_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
   {
     name = T2_FIELD,
     encoding = OUT_INT16
   }
   ,
-  {
-    name = Q2_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
+//  {
+//    name = Q2_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
   {
     name = U10_FIELD,
     encoding = OUT_INT16
@@ -622,11 +652,11 @@ output_fields = {
     encoding = OUT_INT16
   }
   ,
-  {
-    name = SNOWH_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
+//  {
+//    name = SNOWH_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
   {
     name = SFC_PRES_FIELD,
     encoding = OUT_INT16
@@ -637,11 +667,11 @@ output_fields = {
     encoding = OUT_INT16
   }
   ,
-  {
-    name = SNOW_NC_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
+//  {
+//    name = SNOW_NC_FIELD,
+//    encoding = OUT_INT16
+//  }
+//  ,
   {
     name = FZLEVEL_FIELD,
     encoding = OUT_INT16
@@ -787,6 +817,24 @@ field_name_map = {
   }
   ,
   {
+    original_name = W_FIELD,
+    name = "W",
+    long_name = "w-component of wind"
+  }
+  ,
+  {
+    original_name = WSPD_FIELD,
+    name = "Wspeed",
+    long_name = "Wind speed"
+  }
+  ,
+  {
+    original_name = TC_FIELD,
+    name = "Temp",
+    long_name = "Temperature"
+  }
+  ,
+  {
     original_name = CLW_FIELD,
     name = "QCLOUD",
     long_name = "Cloud liquid mixing ratio (kg kg-1)"
@@ -795,7 +843,7 @@ field_name_map = {
   {
     original_name = RNW_FIELD,
     name = "QRAIN",
-    long_name = "Rain water mixing ratio"
+    long_name = "Rain mixing ratio"
   }
   ,
   {
@@ -816,34 +864,46 @@ field_name_map = {
     long_name = "Graupel mixing ratio"
   }
   ,
+//  {
+//    original_name = PRESSURE_FIELD,
+//    name = "pressure",
+//    long_name = "absolute pressure"
+//  }
+//  ,
+//  {
+//    original_name = P_FIELD,
+//    name = "P",
+//    long_name = "perturbation pressure"
+//  }
+//  ,
+//  {
+//    original_name = PB_FIELD,
+//    name = "PB",
+//    long_name = "BASE STATE PRESSURE"
+//  }
+//  ,
+//  {
+//    original_name = HGT_FIELD,
+//    name = "geo_ht",
+//    long_name = "geopotential height"
+//  }
+//  ,
+//  {
+//    original_name = PHB_FIELD,
+//    name = "PHB",
+//    long_name = "base-state geopotential"
+//  }
+//  ,
+//  {
+//    original_name = PH_FIELD,
+//    name = "PH",
+//    long_name = "perturbation geopotential"
+//  }
+//  ,
   {
-    original_name = W_FIELD,
-    name = "W",
-    long_name = "w-component of wind"
-  }
-  ,
-  {
-    original_name = P_FIELD,
-    name = "P",
-    long_name = "perturbation pressure"
-  }
-  ,
-  {
-    original_name = PB_FIELD,
-    name = "PB",
-    long_name = "BASE STATE PRESSURE"
-  }
-  ,
-  {
-    original_name = PHB_FIELD,
-    name = "PHB",
-    long_name = "base-state geopotential"
-  }
-  ,
-  {
-    original_name = PH_FIELD,
-    name = "PH",
-    long_name = "perturbation geopotential"
+    original_name = DBZ_3D_FIELD,
+    name = "dbz_3d",
+    long_name = "dBZ-3D Estimated"
   }
   ,
   {
@@ -854,40 +914,46 @@ field_name_map = {
   ,
   {
     original_name = THETA_FIELD,
-    name = "T",
-    long_name = "Perturbation Potential Temperature (theta-t0)"
+    name = "THETA",
+    long_name = "Potential Temperature"
   }
   ,
   {
-    original_name = HGT_FIELD,
-    name = "geo_hgt",
-    long_name = "Geopotential Height"
+    original_name = ICING_FIELD,
+    name = "Icing",
+    long_name = "Icing severity index"
   }
   ,
   {
-    original_name = GEO_POT_FIELD,
-    name = "geo_pot",
-    long_name = "Geopotential"
+    original_name = RH_FIELD,
+    name = "RH",
+    long_name = "Relative humidity"
   }
   ,
-  {
-    original_name = SNOWCOVR_FIELD,
-    name = "SNOWC",
-    long_name = "Snow cover flags"
-  }
-  ,
+//  {
+//    original_name = GEO_POT_FIELD,
+//    name = "geo_pot",
+//    long_name = "Geopotential"
+//  }
+//  ,
+//  {
+//    original_name = SNOWCOVR_FIELD,
+//    name = "SNOWC",
+//    long_name = "Snow cover flags"
+//  }
+//  ,
   {
     original_name = T2_FIELD,
     name = "T2",
     long_name = "2-meter Temperature"
   }
   ,
-  {
-    original_name = Q2_FIELD,
-    name = "Q2",
-    long_name = "2-meter Mixing Ratio"
-  }
-  ,
+//  {
+//    original_name = Q2_FIELD,
+//    name = "Q2",
+//    long_name = "2-meter Mixing Ratio"
+//  }
+//  ,
   {
     original_name = U10_FIELD,
     name = "U10",
@@ -900,12 +966,12 @@ field_name_map = {
     long_name = "10-meter V Component"
   }
   ,
-  {
-    original_name = SNOWH_FIELD,
-    name = "SNOWH",
-    long_name = "Physical snow depth"
-  }
-  ,
+//  {
+//    original_name = SNOWH_FIELD,
+//    name = "SNOWH",
+//    long_name = "Physical snow depth"
+//  }
+//  ,
   {
     original_name = SFC_PRES_FIELD,
     name = "PSFC",
@@ -918,12 +984,12 @@ field_name_map = {
     long_name = "SNOW WATER EQUIVALENT"
   }
   ,
-  {
-    original_name = SNOW_NC_FIELD,
-    name = "SNOWNC",
-    long_name = "ACCUMULATED TOTAL GRID SCALE SNOW AND ICE"
-  }
-  ,
+//  {
+//    original_name = SNOW_NC_FIELD,
+//    name = "SNOWNC",
+//    long_name = "ACCUMULATED TOTAL GRID SCALE SNOW AND ICE"
+//  }
+//  ,
   {
     original_name = FZLEVEL_FIELD,
     name = "FZLevel",

@@ -90,8 +90,15 @@ DBZ_MOSAIC     DBZ_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz.color
 VEL_MOSAIC     VEL_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_MOSAIC   WIDTH_MOSAIC   $(DATA_DIR)/mdv/radarCart/mosaic&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_MOSAIC     ZDR_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_MOSAIC   RHOHV_MOSAIC   $(DATA_DIR)/mdv/radarCart/mosaic&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+RHOHV_MOSAIC   RHOHV_MOSAIC   $(DATA_DIR)/mdv/radarCart/mosaic&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
 PHIDP_MOSAIC   PHIDP_MOSAIC   $(DATA_DIR)/mdv/radarCart/mosaic&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+
+DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+VEL_MOSAIC_MW     VEL_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_MOSAIC_MW   WIDTH_MOSAIC_MW   $(DATA_DIR)/mdv/radarCart/mosaic_midwest&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_MOSAIC_MW     ZDR_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_MOSAIC_MW   RHOHV_MOSAIC_MW   $(DATA_DIR)/mdv/radarCart/mosaic_midwest&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
+PHIDP_MOSAIC_MW   PHIDP_MOSAIC_MW   $(DATA_DIR)/mdv/radarCart/mosaic_midwest&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
 DBZ_KAKQ      DBZ_KAKQ     $(DATA_DIR)/cfradial/kakq&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
 VEL_KAKQ      VEL_KAKQ     $(DATA_DIR)/cfradial/kakq&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
@@ -186,18 +193,18 @@ PHIDP_KTYX    PHIDP_KTYX   $(DATA_DIR)/cfradial/ktyx&PHIDP   phidp_360.colors  d
 
 ############################
 # NPOL data
-NPOL_DZ       NPOL_DZ      $(DATA_DIR)/cfradial/npol/ppi&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
-NPOL_VR       NPOL_VR      $(DATA_DIR)/cfradial/npol/ppi&VR   vel.colors    m/s    -5   80  5  dcont   1 0
-NPOL_ZDR      NPOL_ZDR     $(DATA_DIR)/cfradial/npol/ppi&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
-NPOL_RHOHV    NPOL_RHOHV   $(DATA_DIR)/cfradial/npol/ppi&RH   rhohv.colors  -      -5   80  5  dcont   1 0
-NPOL_PHIDP    NPOL_PHIDP   $(DATA_DIR)/cfradial/npol/ppi&PH   phidp_360.colors deg -5   80  5  dcont   1 0
-NPOL_======   ======       $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
+NPOL_DZ       NPOL_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
+NPOL_VR       NPOL_VR      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&VR   vel.colors    m/s    -5   80  5  dcont   1 0
+NPOL_ZDR      NPOL_ZDR     mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
+NPOL_RHOHV    NPOL_RHOHV   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
+NPOL_PHIDP    NPOL_PHIDP   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
+NPOL_======   ======       mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
 
 ############################
 # GPM Ku data
 
-#GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
-GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              dbz.colors                   dBZ        -5 80 5 dcont 1 0
+GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
+#GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              refl_imp.colors              dBZ        -5 80 5 dcont 1 0
 GPM_NEARSURFRAIN  GPM_NEAR_SURF_RAIN      $(DATA_DIR)/mdv/gpm_ku&near_surf_rain    rain_accum.colors            mm         -5 80 5 dcont 1 0
 GPM_RAINTYPE      GPM_RAIN_TYPE           $(DATA_DIR)/mdv/gpm_ku&rain_type         convsf_gpm.colors            -          -5 80 5 cart  1 0
 GPM_PHASETYPE     GPM_PHASE_TYPE          $(DATA_DIR)/mdv/gpm_ku&phase_type        phase_gpm.colors             -          -5 80 5 cart  1 0
@@ -314,7 +321,7 @@ WRF12_======     ======          $(DATA_DIR)/mdv/spacer/moments&Elevation none.c
 #WRFGFS36-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,metbarb yellow
 #WRFGFS12-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,metbarb black
 WRFGFS36-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,barb yellow
-WRFGFS12-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,barb black
+WRFGFS12-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,barb cyan
 
 </WINDS>
 
@@ -334,6 +341,7 @@ COUNTRIES  Countries       usa.map           1      0.0       1000000.0   yellow
 STATES     State_Borders   usa.map           1      0.0         10000.0   yellow
 NEXRADS    Nexrads         nexrads.map       1      0.0         10000.0   white
 RADARS     Radars          imp_radars.map    1      0.0         10000.0   cyan
+AIRFIELDS  Airfields       imp_airfields.map 1      0.0         10000.0   blue
 
 </MAPS>
 
@@ -575,8 +583,10 @@ cidd.domain_limit_max_y:         1000
  
 # The Lat, Long of the center of the display. Internal range rings
 # are relative to this point.
-cidd.origin_longitude:       $(RADAR_LON)
-cidd.origin_latitude:        $(RADAR_LAT)
+#cidd.origin_longitude:       $(RADAR_LON)
+#cidd.origin_latitude:        $(RADAR_LAT)
+cidd.origin_longitude:       -75.3417
+cidd.origin_latitude:        38.2625
 #
 #
 # Select the data fields/page to start on.
@@ -586,7 +596,7 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       5
+cidd.num_zoom_levels:       6
 cidd.start_zoom_level:      1
 #
 # Note, the Domain labels are used for automated output imagery.
@@ -610,18 +620,24 @@ cidd.level3_min_xkm:                -83
 cidd.level3_min_ykm:                36
 cidd.level3_max_xkm:                -65
 cidd.level3_max_ykm:                46
-##
-cidd.level4_label:                  NPOL
-cidd.level4_min_xkm:                -78.5
-cidd.level4_min_ykm:                36.5
-cidd.level4_max_xkm:                -72
-cidd.level4_max_ykm:                40
-
-cidd.level5_label:                  North America
-cidd.level5_min_xkm:                -135
-cidd.level5_min_ykm:                20
-cidd.level5_max_xkm:                -65
-cidd.level5_max_ykm:                70
+#
+cidd.level4_label:                  WRF 12km
+cidd.level4_min_xkm:                -91
+cidd.level4_min_ykm:                33
+cidd.level4_max_xkm:                -62
+cidd.level4_max_ykm:                47
+#
+cidd.level5_label:                  NPOL
+cidd.level5_min_xkm:                -78.0
+cidd.level5_min_ykm:                37.0
+cidd.level5_max_xkm:                -72.5
+cidd.level5_max_ykm:                39.6
+#
+cidd.level6_label:                  North America
+cidd.level6_min_xkm:                -135
+cidd.level6_min_ykm:                20
+cidd.level6_max_xkm:                -65
+cidd.level6_max_ykm:                70
 
 
 # Vertical Range and Resolution - Establishes a vertical coordinate system
