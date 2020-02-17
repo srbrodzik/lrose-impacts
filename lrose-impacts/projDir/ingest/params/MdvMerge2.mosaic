@@ -44,6 +44,23 @@ debug = DEBUG_NORM;
 
 instance = "mosaic";
 
+///////////// procmap_register_interval_secs //////////
+//
+// Interval for procmap registration.
+//
+// Set to a high value if processing takes a long time. This will 
+//   prevent the auto_restarter from killing and restarting the app. If 
+//   this value is less than or equal to the PROCMAP_REGISTER_INTERVAL 
+//   (60) then that value will be used.
+//
+// Minimum val: 60
+//
+// Type: int
+//
+
+//procmap_register_interval_secs = 60;
+procmap_register_interval_secs = 240;
+
 //======================================================================
 //
 // OPERATIONAL MODE AND TRIGGERING.
@@ -142,7 +159,6 @@ fcstLeadTimes = {
 // Type: int
 //
 
-//time_trigger_interval = 120;
 time_trigger_interval = 300;
 
 ///////////// time_trigger_offset /////////////////////
@@ -202,7 +218,6 @@ past_only = TRUE;
 // Type: int
 //
 
-//min_time_between_file_triggers = 120;
 min_time_between_file_triggers = 300;
 
 ///////////// min_number_updated_urls /////////////////
@@ -497,6 +512,29 @@ merge_fields = {
 
 range_field_name = "range";
 
+///////////// fcst_data_time_type /////////////////////
+//
+// This parameter defines what time to put in the time array when using 
+//   MERGE_LATEST. If one or more of the inputs is forecast data this 
+//   gives the option to use its gen time or its valid time. The default 
+//   is set to valid time in order for the algorithm to have the same 
+//   behavior as it had before this parameter was added.
+//
+// If set to GENTIME, then the forecast_delta is subtracted from the 
+//   forecast time (valid time) and this time is used in the time array. 
+//   If set to VALIDTIME the forecast time (valid time) is used in the 
+//   time array. This option was added for the times where you want the 
+//   non-forecast data to take priority over the forecast data. .
+//
+//
+// Type: enum
+// Options:
+//     GENTIME
+//     VALIDTIME
+//
+
+fcst_data_time_type = VALIDTIME;
+
 //======================================================================
 //
 // INPUT DATA SPECIFICATIONS.
@@ -729,8 +767,6 @@ output_projection = OUTPUT_PROJ_LATLON;
 //
 //
 
-// grid is 32-46N and 82-68W
-// this is midpoint
 output_origin = {
     lat = 39,
     lon = -75
@@ -791,16 +827,15 @@ output_std_parallels = {
 //
 //
 
-// grid is 32-46N and 82-68W
 output_grid = {
-    nx = 1400,
-    ny = 1400,
+    nx = 560,
+    ny = 560,
     nz = 30,
-    minx = -82.0,
+    minx = -82,
     miny = 32,
     minz = $(CART_GRID_START_HT),
-    dx = 0.01,
-    dy = 0.01,
+    dx = 0.025,
+    dy = 0.025,
     dz = 0.5
 };
 

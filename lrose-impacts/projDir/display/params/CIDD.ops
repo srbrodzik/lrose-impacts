@@ -654,7 +654,7 @@ cidd.level6_max_ykm:                70
 # Radial Radar:  min_ht = 0.0 max_ht = 25.0
 #  
 cidd.min_ht:               0
-cidd.max_ht:               15
+cidd.max_ht:               10
 cidd.start_ht:             2.5
 
 # Radial data Limits

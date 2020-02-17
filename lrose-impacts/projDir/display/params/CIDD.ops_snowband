@@ -86,105 +86,120 @@ GOES16_======  ======         $(DATA_DIR)/mdv/spacer/moments&Elevation none.colo
 ############################
 # NEXRAD data
 
-DBZ_MOSAIC     DBZ_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_MOSAIC     DBZ_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_MOSAIC     DBZ_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_MOSAIC     VEL_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_MOSAIC   WIDTH_MOSAIC   $(DATA_DIR)/mdv/radarCart/mosaic&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_MOSAIC     ZDR_MOSAIC     $(DATA_DIR)/mdv/radarCart/mosaic&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_MOSAIC   RHOHV_MOSAIC   $(DATA_DIR)/mdv/radarCart/mosaic&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
 PHIDP_MOSAIC   PHIDP_MOSAIC   $(DATA_DIR)/mdv/radarCart/mosaic&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_MOSAIC_MW     VEL_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_MOSAIC_MW   WIDTH_MOSAIC_MW   $(DATA_DIR)/mdv/radarCart/mosaic_midwest&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_MOSAIC_MW     ZDR_MOSAIC_MW     $(DATA_DIR)/mdv/radarCart/mosaic_midwest&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_MOSAIC_MW   RHOHV_MOSAIC_MW   $(DATA_DIR)/mdv/radarCart/mosaic_midwest&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
 PHIDP_MOSAIC_MW   PHIDP_MOSAIC_MW   $(DATA_DIR)/mdv/radarCart/mosaic_midwest&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KAKQ      DBZ_KAKQ     $(DATA_DIR)/cfradial/kakq&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KAKQ      DBZ_KAKQ     $(DATA_DIR)/cfradial/kakq&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KAKQ      DBZ_KAKQ     $(DATA_DIR)/cfradial/kakq&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KAKQ      VEL_KAKQ     $(DATA_DIR)/cfradial/kakq&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KAKQ    WIDTH_KAKQ   $(DATA_DIR)/cfradial/kakq&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KAKQ      ZDR_KAKQ     $(DATA_DIR)/cfradial/kakq&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KAKQ    RHOHV_KAKQ   $(DATA_DIR)/cfradial/kakq&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KAKQ    PHIDP_KAKQ   $(DATA_DIR)/cfradial/kakq&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KBGM      DBZ_KBGM     $(DATA_DIR)/cfradial/kbgm&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KBGM      DBZ_KBGM     $(DATA_DIR)/cfradial/kbgm&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KBGM      DBZ_KBGM     $(DATA_DIR)/cfradial/kbgm&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KBGM      VEL_KBGM     $(DATA_DIR)/cfradial/kbgm&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KBGM    WIDTH_KBGM   $(DATA_DIR)/cfradial/kbgm&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KBGM      ZDR_KBGM     $(DATA_DIR)/cfradial/kbgm&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KBGM    RHOHV_KBGM   $(DATA_DIR)/cfradial/kbgm&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KBGM    PHIDP_KBGM   $(DATA_DIR)/cfradial/kbgm&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KBOX      DBZ_KBOX     $(DATA_DIR)/cfradial/kbox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KBOX      DBZ_KBOX     $(DATA_DIR)/cfradial/kbox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KBOX      DBZ_KBOX     $(DATA_DIR)/cfradial/kbox&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KBOX      VEL_KBOX     $(DATA_DIR)/cfradial/kbox&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KBOX    WIDTH_KBOX   $(DATA_DIR)/cfradial/kbox&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KBOX      ZDR_KBOX     $(DATA_DIR)/cfradial/kbox&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KBOX    RHOHV_KBOX   $(DATA_DIR)/cfradial/kbox&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KBOX    PHIDP_KBOX   $(DATA_DIR)/cfradial/kbox&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KCCX      DBZ_KCCX     $(DATA_DIR)/cfradial/kccx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KCCX      DBZ_KCCX     $(DATA_DIR)/cfradial/kccx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KCCX      DBZ_KCCX     $(DATA_DIR)/cfradial/kccx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KCCX      VEL_KCCX     $(DATA_DIR)/cfradial/kccx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KCCX    WIDTH_KCCX   $(DATA_DIR)/cfradial/kccx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KCCX      ZDR_KCCX     $(DATA_DIR)/cfradial/kccx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KCCX    RHOHV_KCCX   $(DATA_DIR)/cfradial/kccx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KCCX    PHIDP_KCCX   $(DATA_DIR)/cfradial/kccx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KDIX      DBZ_KDIX     $(DATA_DIR)/cfradial/kdix&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KDIX      DBZ_KDIX     $(DATA_DIR)/cfradial/kdix&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KDIX      DBZ_KDIX     $(DATA_DIR)/cfradial/kdix&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KDIX      VEL_KDIX     $(DATA_DIR)/cfradial/kdix&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KDIX    WIDTH_KDIX   $(DATA_DIR)/cfradial/kdix&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KDIX      ZDR_KDIX     $(DATA_DIR)/cfradial/kdix&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KDIX    RHOHV_KDIX   $(DATA_DIR)/cfradial/kdix&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KDIX    PHIDP_KDIX   $(DATA_DIR)/cfradial/kdix&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KDOX      DBZ_KDOX     $(DATA_DIR)/cfradial/kdox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KDOX      DBZ_KDOX     $(DATA_DIR)/cfradial/kdox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KDOX      DBZ_KDOX     $(DATA_DIR)/cfradial/kdox&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KDOX      VEL_KDOX     $(DATA_DIR)/cfradial/kdox&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KDOX    WIDTH_KDOX   $(DATA_DIR)/cfradial/kdox&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KDOX      ZDR_KDOX     $(DATA_DIR)/cfradial/kdox&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KDOX    RHOHV_KDOX   $(DATA_DIR)/cfradial/kdox&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KDOX    PHIDP_KDOX   $(DATA_DIR)/cfradial/kdox&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KENX      DBZ_KENX     $(DATA_DIR)/cfradial/kenx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KENX      DBZ_KENX     $(DATA_DIR)/cfradial/kenx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KENX      DBZ_KENX     $(DATA_DIR)/cfradial/kenx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KENX      VEL_KENX     $(DATA_DIR)/cfradial/kenx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KENX    WIDTH_KENX   $(DATA_DIR)/cfradial/kenx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KENX      ZDR_KENX     $(DATA_DIR)/cfradial/kenx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KENX    RHOHV_KENX   $(DATA_DIR)/cfradial/kenx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KENX    PHIDP_KENX   $(DATA_DIR)/cfradial/kenx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KGYX      DBZ_KGYX     $(DATA_DIR)/cfradial/kgyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KGYX      DBZ_KGYX     $(DATA_DIR)/cfradial/kgyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KGYX      DBZ_KGYX     $(DATA_DIR)/cfradial/kgyx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KGYX      VEL_KGYX     $(DATA_DIR)/cfradial/kgyx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KGYX    WIDTH_KGYX   $(DATA_DIR)/cfradial/kgyx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KGYX      ZDR_KGYX     $(DATA_DIR)/cfradial/kgyx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KGYX    RHOHV_KGYX   $(DATA_DIR)/cfradial/kgyx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KGYX    PHIDP_KGYX   $(DATA_DIR)/cfradial/kgyx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KLWX      DBZ_KLWX     $(DATA_DIR)/cfradial/klwx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KLWX      DBZ_KLWX     $(DATA_DIR)/cfradial/klwx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KLWX      DBZ_KLWX     $(DATA_DIR)/cfradial/klwx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KLWX      VEL_KLWX     $(DATA_DIR)/cfradial/klwx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KLWX    WIDTH_KLWX   $(DATA_DIR)/cfradial/klwx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KLWX      ZDR_KLWX     $(DATA_DIR)/cfradial/klwx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KLWX    RHOHV_KLWX   $(DATA_DIR)/cfradial/klwx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KLWX    PHIDP_KLWX   $(DATA_DIR)/cfradial/klwx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KMHX      DBZ_KMHX     $(DATA_DIR)/cfradial/kmhx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KMHX      DBZ_KMHX     $(DATA_DIR)/cfradial/kmhx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KMHX      DBZ_KMHX     $(DATA_DIR)/cfradial/kmhx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KMHX      VEL_KMHX     $(DATA_DIR)/cfradial/kmhx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KMHX    WIDTH_KMHX   $(DATA_DIR)/cfradial/kmhx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KMHX      ZDR_KMHX     $(DATA_DIR)/cfradial/kmhx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KMHX    RHOHV_KMHX   $(DATA_DIR)/cfradial/kmhx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KMHX    PHIDP_KMHX   $(DATA_DIR)/cfradial/kmhx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KOKX      DBZ_KOKX     $(DATA_DIR)/cfradial/kokx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KOKX      DBZ_KOKX     $(DATA_DIR)/cfradial/kokx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KOKX      DBZ_KOKX     $(DATA_DIR)/cfradial/kokx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KOKX      VEL_KOKX     $(DATA_DIR)/cfradial/kokx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KOKX    WIDTH_KOKX   $(DATA_DIR)/cfradial/kokx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KOKX      ZDR_KOKX     $(DATA_DIR)/cfradial/kokx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KOKX    RHOHV_KOKX   $(DATA_DIR)/cfradial/kokx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KOKX    PHIDP_KOKX   $(DATA_DIR)/cfradial/kokx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KRAX      DBZ_KRAX     $(DATA_DIR)/cfradial/krax&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KRAX      DBZ_KRAX     $(DATA_DIR)/cfradial/krax&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KRAX      DBZ_KRAX     $(DATA_DIR)/cfradial/krax&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KRAX      VEL_KRAX     $(DATA_DIR)/cfradial/krax&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KRAX    WIDTH_KRAX   $(DATA_DIR)/cfradial/krax&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KRAX      ZDR_KRAX     $(DATA_DIR)/cfradial/krax&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
 RHOHV_KRAX    RHOHV_KRAX   $(DATA_DIR)/cfradial/krax&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
 PHIDP_KRAX    PHIDP_KRAX   $(DATA_DIR)/cfradial/krax&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-DBZ_KTYX      DBZ_KTYX     $(DATA_DIR)/cfradial/ktyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+#DBZ_KTYX      DBZ_KTYX     $(DATA_DIR)/cfradial/ktyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KTYX      DBZ_KTYX     $(DATA_DIR)/cfradial/ktyx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 VEL_KTYX      VEL_KTYX     $(DATA_DIR)/cfradial/ktyx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
 WIDTH_KTYX    WIDTH_KTYX   $(DATA_DIR)/cfradial/ktyx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
 ZDR_KTYX      ZDR_KTYX     $(DATA_DIR)/cfradial/ktyx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
@@ -193,7 +208,8 @@ PHIDP_KTYX    PHIDP_KTYX   $(DATA_DIR)/cfradial/ktyx&PHIDP   phidp_360.colors  d
 
 ############################
 # NPOL data
-NPOL_DZ       NPOL_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
+#NPOL_DZ       NPOL_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
+NPOL_DZ       NPOL_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
 NPOL_VR       NPOL_VR      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&VR   vel.colors    m/s    -5   80  5  dcont   1 0
 NPOL_ZDR      NPOL_ZDR     mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
 NPOL_RHOHV    NPOL_RHOHV   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
@@ -220,7 +236,8 @@ WRF36_WSPD       WRF36_WSPD     $(DATA_DIR)/mdv/wrf/gfs_36km&Wspeed    wspd_imp.
 WRF36_W          WRF36_W        $(DATA_DIR)/mdv/wrf/gfs_36km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
 WRF36_TEMP_C     WRF36_TEMP_C   $(DATA_DIR)/mdv/wrf/gfs_36km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
 #WRF36_REFL10CM   WRF36_REFL10CM $(DATA_DIR)/mdv/wrf/gfs_36km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
-WRF36_REFL       WRF36_REFL     $(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
+#WRF36_REFL       WRF36_REFL     $(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
+WRF36_REFL       WRF36_REFL     $(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
 WRF36_THETA      WRF36_THETA    $(DATA_DIR)/mdv/wrf/gfs_36km&THETA     tempK.colors          K      -5   80  5  cont    1 0
 WRF36_======     ======          $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
 
@@ -245,7 +262,8 @@ WRF12_WSPD       WRF12_WSPD     $(DATA_DIR)/mdv/wrf/gfs_12km&Wspeed    wspd_imp.
 WRF12_W          WRF12_W        $(DATA_DIR)/mdv/wrf/gfs_12km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
 WRF12_TEMP_C     WRF12_TEMP_C   $(DATA_DIR)/mdv/wrf/gfs_12km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
 #WRF12_REFL10CM   WRF12_REFL10CM $(DATA_DIR)/mdv/wrf/gfs_12km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
-WRF12_REFL       WRF12_REFL     $(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
+#WRF12_REFL       WRF12_REFL     $(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
+WRF12_REFL       WRF12_REFL     $(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
 WRF12_THETA      WRF12_THETA    $(DATA_DIR)/mdv/wrf/gfs_12km&THETA     tempK.colors          K      -5   80  5  cont    1 0
 WRF12_======     ======          $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
 
@@ -654,7 +672,7 @@ cidd.level6_max_ykm:                70
 # Radial Radar:  min_ht = 0.0 max_ht = 25.0
 #  
 cidd.min_ht:               0
-cidd.max_ht:               15
+cidd.max_ht:               10
 cidd.start_ht:             2.5
 
 # Radial data Limits
@@ -1377,8 +1395,8 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
+    minutes_allow_before = 30.0,
+    minutes_allow_after = 30.0,
     text_off_threshold = 0.4,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
@@ -1390,8 +1408,8 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
+    minutes_allow_before = 300.0,
+    minutes_allow_after = 300.0,
     text_off_threshold = 0.4,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
@@ -1403,8 +1421,8 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
+    minutes_allow_before = 600.0,
+    minutes_allow_after = 600.0,
     text_off_threshold = 0.4,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
@@ -1429,8 +1447,8 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
+    minutes_allow_before = 30.0,
+    minutes_allow_after = 30.0,
     text_off_threshold = 0.4,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
@@ -1442,8 +1460,8 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
+    minutes_allow_before = 300.0,
+    minutes_allow_after = 300.0,
     text_off_threshold = 0.4,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
@@ -1455,8 +1473,8 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
+    minutes_allow_before = 600.0,
+    minutes_allow_after = 600.0,
     text_off_threshold = 0.4,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
