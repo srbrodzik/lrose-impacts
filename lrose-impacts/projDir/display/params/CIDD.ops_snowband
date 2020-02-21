@@ -217,6 +217,16 @@ NPOL_PHIDP    NPOL_PHIDP   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&PH 
 NPOL_======   ======       mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
 
 ############################
+# UMaXX data
+#UMAXX_DZ       UMAXX_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz.colors    dBZ    -5   80  5  dcont   1 0
+UMAXX_DZ       UMAXX_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+UMAXX_VE       UMAXX_VE      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&VE   vel.colors    m/s    -5   80  5  dcont   1 0
+UMAXX_ZDR      UMAXX_ZDR     mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&ZD   zdr.colors    m/s    -5   80  5  dcont   1 0
+UMAXX_RHOHV    UMAXX_RHOHV   mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
+UMAXX_PHIDP    UMAXX_PHIDP   mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
+UMAXX_SW       UMAXX_SW      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&VW   width.colors  m/s    -5   80  5  dcont   1 0
+
+############################
 # GPM Ku data
 
 GPM_REFL          GPM_REFL                $(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
@@ -252,7 +262,7 @@ WRF36_RH         WRF36_RH       $(DATA_DIR)/mdv/wrf/gfs_36km&RH        rh_imp.co
 WRF36_T2         WRF36_T2       $(DATA_DIR)/mdv/wrf/gfs_36km&T2        tempK.colors        K      -5   80  5  dcont   1 0
 WRF36_PSFC       WRF36_PSFC     $(DATA_DIR)/mdv/wrf/gfs_36km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
 WRF36_SWE        WRF36_SWE      $(DATA_DIR)/mdv/wrf/gfs_36km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
-WRF36_FZLEVEL    WRF36_FZLEVEL  $(DATA_DIR)/mdv/wrf/gfs_36km&FZLevel   fzlevel.colors      FL     -5   80  5  dcont   1 0
+WRF36_FZLEVEL    WRF36_FZLEVEL  $(DATA_DIR)/mdv/wrf/gfs_36km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
 WRF36_ICING      WRF36_ICING    $(DATA_DIR)/mdv/wrf/gfs_36km&Icing     icing.colors        -      -5   80  5  dcont   1 0
 
 ############################
@@ -278,7 +288,7 @@ WRF12_RH         WRF12_RH       $(DATA_DIR)/mdv/wrf/gfs_12km&RH        rh_imp.co
 WRF12_T2         WRF12_T2       $(DATA_DIR)/mdv/wrf/gfs_12km&T2        tempK.colors        K      -5   80  5  dcont   1 0
 WRF12_PSFC       WRF12_PSFC     $(DATA_DIR)/mdv/wrf/gfs_12km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
 WRF12_SWE        WRF12_SWE      $(DATA_DIR)/mdv/wrf/gfs_12km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
-WRF12_FZLEVEL    WRF12_FZLEVEL  $(DATA_DIR)/mdv/wrf/gfs_12km&FZLevel   fzlevel.colors      FL     -5   80  5  dcont   1 0
+WRF12_FZLEVEL    WRF12_FZLEVEL  $(DATA_DIR)/mdv/wrf/gfs_12km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
 WRF12_ICING      WRF12_ICING    $(DATA_DIR)/mdv/wrf/gfs_12km&Icing     icing.colors        -      -5   80  5  dcont   1 0
 
 WRF12_======     ======          $(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
@@ -401,12 +411,12 @@ cidd.movie_frame_dir: /tmp
 
 #  This determines how many movie frames are in the loop to start with
 #  Setting this high will cause the X server to hog memory.
-cidd.starting_movie_frames:     16
+cidd.starting_movie_frames:     24
 
 # minutes per movie frame on startup
 # The display will atomatically update every this interval, throwing away its
 # oldest movie frame and creating and drawing a new one.
-cidd.time_interval:  4.0
+cidd.time_interval:  10.0
 
 # This parameter sets the maximum number of hours in the future a user can select
 # from the quick forecast menu. See SHOW_FORECAST_MENU menu bar button
@@ -601,8 +611,6 @@ cidd.domain_limit_max_y:         1000
  
 # The Lat, Long of the center of the display. Internal range rings
 # are relative to this point.
-#cidd.origin_longitude:       $(RADAR_LON)
-#cidd.origin_latitude:        $(RADAR_LAT)
 cidd.origin_longitude:       -75.3417
 cidd.origin_latitude:        38.2625
 #
@@ -614,7 +622,7 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       6
+cidd.num_zoom_levels:       7
 cidd.start_zoom_level:      1
 #
 # Note, the Domain labels are used for automated output imagery.
@@ -651,11 +659,17 @@ cidd.level5_min_ykm:                37.0
 cidd.level5_max_xkm:                -72.5
 cidd.level5_max_ykm:                39.6
 #
-cidd.level6_label:                  North America
-cidd.level6_min_xkm:                -135
-cidd.level6_min_ykm:                20
-cidd.level6_max_xkm:                -65
-cidd.level6_max_ykm:                70
+cidd.level6_label:                  UMaXX
+cidd.level6_min_xkm:                -74.6
+cidd.level6_min_ykm:                41.4
+cidd.level6_max_xkm:                -70.4
+cidd.level6_max_ykm:                43.4
+#
+cidd.level7_label:                  North America
+cidd.level7_min_xkm:                -135
+cidd.level7_min_ykm:                20
+cidd.level7_max_xkm:                -65
+cidd.level7_max_ykm:                70
 
 
 # Vertical Range and Resolution - Establishes a vertical coordinate system
@@ -683,8 +697,8 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
-cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
-cidd.map_file_subdir:     $(PROJ_DIR)/display/maps
+cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales, http://www.rap.ucar.edu/colorscales
+cidd.map_file_subdir:     $(PROJ_DIR)/display/maps, http://www.rap.ucar.edu/maps
 
 #
 # Station locator features
@@ -749,7 +763,6 @@ cidd.margin_color: black
 
 # Render values outside the data range of the color scale in this color
 # 'transparent' is the default
-#cidd.out_of_range_color: black
 cidd.out_of_range_color: transparent
 
 # Color of the cross section reference line 
@@ -892,7 +905,18 @@ cidd.vert_right_margin:      30
 
 
 # Set range_ring_spacing to a negative value to dynamically determing spacing.
-cidd.range_ring_spacing:        50.0
+cidd.range_ring_spacing:        25.0
+cidd.max_ring_range:            150.0
+
+#  Render Range rings at the origin of the data, instead of the origin of the display.
+cidd.range_ring_follows_data: 1
+
+#  Render Range rings only for radar type data.
+cidd.range_ring_for_radar_only: 1
+
+#  Shift the Domain if the data shifts.
+cidd.domain_follows_data: 0
+
 # x_space, y_space in pixels determine allowable space for range ring labels
 cidd.range_ring_x_space:    40
 cidd.range_ring_y_space:    13
@@ -901,6 +925,7 @@ cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
 cidd.range_rings:             0
+cidd.range_ring_labels:       1
 cidd.azmith_lines:            0
 
 # Starting state of the All Winds ON/OFF feature
@@ -913,6 +938,11 @@ cidd.ideal_x_vectors:        20
 cidd.ideal_y_vectors:        20
 cidd.wind_head_angle:        30.0
 #
+
+# Wind Vector interval scale factor.
+# Vectors will be drawn to show
+# cidd.wind_scaler * cidd.wind_time_scale_interval minutes of motion
+cidd.wind_scaler: 3
 
 #  Minutes between steps on the wind scaling slider. Wind vector 
 #  size starts at 3 times this interval.
@@ -934,7 +964,7 @@ cidd.wind_time_scale_interval: 10.0
 # m/sec for the scaling to work correctly. For the others (Barbs),
 # the units are arbitrary, but the flag units on the barbs will reflect
 # the data's native units.
-cidd.wind_marker_type:      vector
+cidd.wind_marker_type:      vector   # default is arrow
 cidd.wind_w_scale_factor:    10.0
 #
 # Set this value to convert from the your reference speed units 
@@ -996,12 +1026,12 @@ cidd.map_missing_to_min_value: 0
 #
 # Uncomment the following lines to set up fields on startup that will
 # appear as overlaid fields. Layers are on by default unless the
-#optional "off" string appears last. 
-#cidd.layer5_field:  KBGM-DBZ 
-#cidd.layer4_field:  KBOX-DBZ
-#cidd.layer3_field:  KCCX-DBZ
-#cidd.layer2_field:  KDIX-DBZ off
-#cidd.layer1_field:  KDOX-DBZ off
+# optional "off" string appears last. 
+#cidd.layer5_field:  KBGM-DBZ off
+#cidd.layer4_field:  KBOX-DBZ off
+cidd.layer3_field:  DBZ_MOSAIC_MW
+cidd.layer2_field:  DBZ_MOSAIC
+cidd.layer1_field:  GOES16_CH01
 
 
 # Place Cidd fonts in asending order of size. Cidd will choose the
@@ -1074,6 +1104,8 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # RESET - (Set display to starting zoom, field, products on/off state, etc)
 # SET_TO_NOW - (Sets the display to current time - canceling forecast mode)
 # SET_DRAW_MODE - (Enable the Human entered feature drawing mode)
+# SET_PICK_MODE - (Enable Symprod Picking Mode) 
+# SET_ROUTE_MODE - (Enable the Flight Route drawing mode)
 # PRINT_BUTTON - (Save and Print the plan view image) 
 # HELP_BUTTON - (Send Netscape to a useful help Page)
 # EXIT_BUTTON - Kills the Display
@@ -1085,6 +1117,7 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # WINDS_ONOFF - (Turn all winds on/off)
 # SYMPRODS_ONOFF - (Turn all Symbolic Products on/off)
 # REPORT_MODE_ONOFF - (Turn on/off COntinious REport Mode )
+# LANDUSE_ONOFF  - (Turn On/off the Land Use image)
 #
 #    --- Display Panels ---
 # SHOW_DPD_PANEL - (Show/Hide Page Definition Panel which configures individual pages)
@@ -1104,10 +1137,11 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # SHOW_BOOKMARK_MEN - (Show/Hide the helpful bookmark menu)
 # SHOW_GENTIME_MENU - (Show/Hide the Model Generation Time menu)
 # SHOW_CMD_MENU  -    (Show/Hide the Command menu)
+# ZOOM_BACK - (Go back to previous zoom)
 # 
 #
 #####################################################################################
-cidd.num_menu_bar_cells: 19
+cidd.num_menu_bar_cells: 20
 #
 cidd.menu_bar_label1: Fields...
 cidd.menu_bar_funct1: SHOW_DPD_MENU
@@ -1163,8 +1197,11 @@ cidd.menu_bar_funct17: REPORT_MODE_ONOFF
 cidd.menu_bar_label18: RESET
 cidd.menu_bar_funct18: RESET
 #
-cidd.menu_bar_label19: Exit
-cidd.menu_bar_funct19: EXIT_BUTTON
+cidd.menu_bar_label19: Clone
+cidd.menu_bar_funct19: CLONE_CIDD
+#
+cidd.menu_bar_label20: Exit
+cidd.menu_bar_funct20: EXIT_BUTTON
 
 
 #
@@ -1224,7 +1261,7 @@ cidd.status_info_file:
 cidd.canvas_help:              cidd_help:canvas
 cidd.frame_message_help:       cidd_help:frame_message
 
-cidd.help_command:   netscape_starter -remote 'openURL(http://www.rap.ucar.edu/CIDD/mds_user_manual/)'
+cidd.help_command:   /opt/google/chrome/chrome http://www.rap.ucar.edu/CIDD'
 
 #
 # This command is run whenever a BOOKMARK_MENU button is pressed.
@@ -1295,6 +1332,119 @@ cidd.scale_constant: 300.0
 
 </MAIN_PARAMS>
 
+<DRAW_EXPORT>
+/**********************************************************************
+ * TDRP params for Cdraw_P
+ **********************************************************************/
+
+//======================================================================
+//
+// Draw/Export Parameters.
+//
+//======================================================================
+ 
+///////////// dexport_info ////////////////////////////
+//
+// Human Drawn Products for Export Parameters.
+//  Each Entry needs:
+// ID_Label FMQ_URL Valid_Minutes Default_ID_no    ID_LABEL - This is 
+//   used to designate Product types
+//     FMQ_URL: example: fmqp:://host::dir/file 
+//    Valid_Minutes: How many minutes the product is valid by default
+//    Default_ID_no: Default Data Type (Enumerated ID)
+//    Default_label: Test to place into Label field by default.
+//
+// Type: struct
+//   typedef struct {
+//      char* id_label;
+//      char* url;
+//      double valid_minutes;
+//      int default_id_no;
+//      char* default_label;
+//   }
+//
+// 1D array - variable length.
+//
+
+dexport_info = {
+  { "Boundry", "/tmp/cidd.fmq", 60, 0, "A"},
+  { "Boundry-b", "/tmp/cidd.fmq", 60, 0, "B"}
+};
+
+</DRAW_EXPORT>
+
+<IMAGE_GENERATION>
+/**********************************************************************
+ * TDRP params for Cimages_P
+ **********************************************************************/
+
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// generate_vsection_images ////////////////
+//
+// Generate images for specified vertical sections.
+// If TRUE, and CIDD is in html_mode, it will generate vertical section 
+//   images in addition to the normal plan view images.
+//
+// Type: boolean
+//
+
+generate_vsection_images = FALSE;
+
+///////////// vsection_waypts_in_latlon ///////////////
+//
+// The specified waypts are in latlon degree units.
+// If TRUE, the waypts are specified in lat/lon degrees. If FALSE, they 
+//   are specified in (xkm, ykm) units in the current projection.
+//
+// Type: boolean
+//
+
+vsection_waypts_in_latlon = FALSE;
+
+///////////// vsection_spec ///////////////////////////
+//
+// Vertical section information array.
+// The fields in the structure are as follows:
+//
+//   vsection_label: label to be used for the specified vertical 
+//   section.
+//
+//   n_waypts: number of waypts for specifying the vert section.
+//             Normally this is 2 - for a single vertical section 
+//   segment.
+//
+//   waypt_locs: location of way points. This is a string with pairs of 
+//   points in it, with the following format: (x, y) (x, y) ..... (x, y).
+//
+// Type: struct
+//   typedef struct {
+//      string vsection_label;
+//      int n_waypts;
+//      string waypt_locs;
+//   }
+//
+// 1D array - variable length.
+//
+
+vsection_spec = {
+  { "RHI-north", 2, "(0, 0) (0, 150)"}
+};
+
+</IMAGE_GENERATION>
+
 <SYMPRODS>
 ///////////// debug ///////////////////////////////////
 //
@@ -1303,11 +1453,33 @@ cidd.scale_constant: 300.0
 //
 // Type: enum
 // Options:
-//   DEBUG_OFF, DEBUG_NORM, DEBUG_VERBOSE
-//
+//   DEBUG_OFF
+//   DEBUG_NORM
+//   DEBUG_VERBOSE
 //
 
 debug = DEBUG_OFF;
+
+///////////// short_requests //////////////////////////
+//
+// Gather Data Frame by Frame, Otherwise by loop span.
+// Gathers Products valid for the current frame only - Speeds up 
+//   gathering of large data sets, like METAR data.
+//
+// Type: boolean
+//
+
+short_requests = FALSE;
+
+///////////// gzip_requests ///////////////////////////
+//
+// Request data using GZIP compression.
+// If true, symprod data will be GZIP compressed by the server.
+//
+// Type: boolean
+//
+
+gzip_requests = FALSE;
 
 ///////////// prod_info ///////////////////////////////
 //
@@ -1329,11 +1501,15 @@ debug = DEBUG_OFF;
 //      RENDER_VALID_IN_LAST_FRAME: Render all Valid in the last frame
 //      RENDER_LATEST_IN_FRAME: Render the latest product in the frame.
 //      RENDER_LATEST_IN_LOOP:  Render the latest product valid in the movie loop
+//	RENDER_FIRST_BEFORE_FRAME_TIME: Render the latest product before the end of frame time
 //      RENDER_FIRST_BEFORE_DATA_TIME: Render the latest product before the data time in each frame.
 //      RENDER_FIRST_AFTER_DATA_TIME:Render the earliest product after the data time in each frame.
 //      RENDER_ALL_BEFORE_DATA_TIME: Render all valid products before the data time in each frame.
 //      RENDER_ALL_AFTER_DATA_TIME:  Render all valid products after the data time in each frame.
-//        Note: all comparisions are less than or equal or greater than or equal  
+//     	RENDER_GET_VALID: Render all valid products returned with a GetValid Spdb call.
+//	RENDER_GET_VALID_AT_FRAME_TIME:  Render products which have not expired at the frame time
+//
+//	Note: all comparisions are less than or equal or greater than or equal  
 //
 //   on_by_default: True or False
 //
@@ -1346,6 +1522,48 @@ debug = DEBUG_OFF;
 //         log10(scale_constant /km_distance_across_screen ) + 1.0
 //         Use 0 to disable the off feature. (always displayed)
 //         Note: scale_constant set in MAIN_PARAM section.      
+//
+//  request_data_on_zoom: Flag indicating whether to request new data for
+//       this product whenever the user changes the zoom.  Normally, this
+//       should be set to false for efficiency reasons.  If the products
+//       to be rendered would change with a zoom change then this should be
+//       set to true.
+//
+//  request_data_on_vert_change: Flag indicating whether to request new data
+//       for this product whenever the user changes the currently displayed
+//       vertical level.  Normally, this should be set to false for efficiency
+//       reasons.  If the products to be rendered would change with a zoom
+//       change then this should be set to true.
+//
+// Type: struct
+//   typedef struct {
+//      string menu_label;
+//      string url;
+//      int data_type;
+//      render_type_t render_type;
+//        Options:
+//          RENDER_ALL
+//          RENDER_ALL_VALID
+//          RENDER_VALID_IN_LAST_FRAME
+//          RENDER_LATEST_IN_FRAME
+//          RENDER_LATEST_IN_LOOP
+//          RENDER_FIRST_BEFORE_FRAME_TIME
+//          RENDER_FIRST_BEFORE_DATA_TIME
+//          RENDER_FIRST_AFTER_DATA_TIME
+//          RENDER_ALL_BEFORE_DATA_TIME
+//          RENDER_ALL_AFTER_DATA_TIME
+//          RENDER_GET_VALID
+//          RENDER_GET_VALID_AT_FRAME_TIME
+//      boolean on_by_default;
+//      double minutes_allow_before;
+//      double minutes_allow_after;
+//      double text_off_threshold;
+//      boolean request_data_on_zoom;
+//      boolean request_data_on_vert_change;
+//   }
+//
+// 1D array - variable length.
+//
 
 prod_info = {
   {
@@ -1482,3 +1700,327 @@ prod_info = {
 };
 
 </SYMPRODS> 
+
+
+<TERRAIN>
+/**********************************************************************
+ * TDRP params for Cterrain_P
+ **********************************************************************/
+
+//======================================================================
+//
+// Terrain Parameters.
+//
+//======================================================================
+ 
+///////////// id_label ////////////////////////////////
+//
+// Label used for legends.
+//
+// Type: string
+//
+
+id_label = "Terrain";
+
+///////////// terrain_url /////////////////////////////
+//
+// Used to located gridded terrain data.
+// Terrain_URL 
+//  Note example URL:
+//   mdvp::static//venus::mdv/terrain&Elevation
+//  Field name follows the Ampersand. Use #N for field number override   
+//   Use caret: ^ as a substitute for spaces in field names.
+//
+// Type: string
+//
+
+terrain_url = "";
+
+///////////// height_scaler ///////////////////////////
+//
+// Conversion from terrain units to local coords.
+// Choose a scaler which converts plane height values
+// Default is Hecto-feet (FL) per meter.
+//
+// Type: double
+//
+
+height_scaler = 0.0328083;
+
+///////////// landuse_url /////////////////////////////
+//
+// Used to located gridded land use data.
+// Land Use URL 
+//  Note URL is of the form 
+//   mdvp::[param_file]//host.dom::dir/dir&field_name
+//  Field name follows the Ampersand. Use #N for field number override   
+//   Use caret: ^ as a substitute for spaces in field names.
+//
+// Type: string
+//
+
+landuse_url = "mdvp:://tempest:0:topo/relief/mdv&RGBA";
+
+///////////// landuse_colorscale //////////////////////
+//
+// Color lookup table for Land use.
+// Land Use colorscale file name
+//  Note: CIDD looks in the colorscale dir, then in the current dir for 
+//   this file.
+//
+// Type: string
+//
+
+landuse_colorscale = "terrain.colors";
+
+///////////// land_use_render_method //////////////////
+//
+// Land Use rendering style.
+// Use Contours only for continious data like elevation.
+//
+// Type: enum
+// Options:
+//     RENDER_FILLED_CONT
+//     RENDER_RECTANGLES
+//     RENDER_DYNAMIC_CONTOURS
+//
+
+land_use_render_method = RENDER_RECTANGLES;
+
+///////////// landuse_active //////////////////////////
+//
+// Default Display state of Land Use/ Basemap.
+//
+// Type: boolean
+//
+
+landuse_active = FALSE;
+
+///////////// earth_color1 ////////////////////////////
+//
+// Earth's skin color.
+//
+// Type: string
+//
+
+earth_color1 = "sienna";
+
+///////////// earth_color2 ////////////////////////////
+//
+// Earth's core color.
+//
+// Type: string
+//
+
+earth_color2 = "red4";
+
+</TERRAIN>
+
+<ROUTE_WINDS>
+/**********************************************************************
+ * TDRP params for Croutes_P
+ **********************************************************************/
+
+//======================================================================
+//
+// Route Winds Parameters.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Set to DEBUG_NORM or DEBUG_VERBOSE for diagnostic output.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// font_height /////////////////////////////
+//
+//  Maximum height in Pixels of labels.
+//
+// Type: int
+//
+
+font_height = 13;
+
+///////////// add_waypoints_labels ////////////////////
+//
+// Default state of the add_waypoints_labels.
+// 0 = off, 1 = on.
+//
+// Type: int
+//
+
+add_waypoints_labels = 1;
+
+///////////// add_wind_text ///////////////////////////
+//
+// Default state of the add_wind_text labels.
+// 0 = off, 1 = on.
+//
+// Type: int
+//
+
+add_wind_text = 1;
+
+///////////// label_style /////////////////////////////
+//
+// Set to REGULAR_INTERVALS or EQUAL_DIVISIONS.
+//
+// Type: enum
+// Options:
+//     REGULAR_INTERVALS
+//     EQUAL_DIVISIONS
+//
+
+label_style = REGULAR_INTERVALS;
+
+///////////// label_interval //////////////////////////
+//
+// Distance in km between winds labels.
+// Used if label_style is set to REGULAR_INTERVALS.
+//
+// Type: double
+//
+
+label_interval = 55.6;
+
+///////////// num_route_labels ////////////////////////
+//
+// number of route wind labels to plot along the route.
+// Typically this should be set between 5 and 20.
+// Minimum val: 2
+// Maximum val: 100
+//
+// Type: int
+//
+
+num_route_labels = 10;
+
+///////////// route_track_line_width //////////////////
+//
+// Width in pixels of the route winds track.
+// Minimum val: 1
+// Maximum val: 20
+//
+// Type: int
+//
+
+route_track_line_width = 3;
+
+///////////// u_url ///////////////////////////////////
+//
+// U Wind Componet.
+//  URL's take the form  mdvp::[paramfile]//host.dom::dir/dir&fieldname.
+//
+// Type: string
+//
+
+u_url = "mdvp::zoom_mds//neptune::mdv/mm5&U";
+
+///////////// v_url ///////////////////////////////////
+//
+// v Wind Componet.
+//
+// Type: string
+//
+
+v_url = "mdvp::zoom_mds//neptune::mdv/mm5&V";
+
+///////////// turb_url ////////////////////////////////
+//
+// Turbulence Index.
+//
+// Type: string
+//
+
+turb_url = "mdvp::d3_d4//neptune::mdv/mm5&Turb";
+
+///////////// turb_low_thresh /////////////////////////
+//
+// Value at which the turbulence is considered Low.
+//
+// Type: double
+//
+
+turb_low_thresh = 0.25;
+
+///////////// turb_mod_thresh /////////////////////////
+//
+// Value at which the turbulence is considered Moderate.
+//
+// Type: double
+//
+
+turb_mod_thresh = 0.5;
+
+///////////// turb_hi_thresh //////////////////////////
+//
+// Value at which the turbulence is considered High.
+//
+// Type: double
+//
+
+turb_hi_thresh = 0.75;
+
+///////////// icing_url ///////////////////////////////
+//
+// Icing Index.
+//
+// Type: string
+//
+
+icing_url = "mdvp::d3_d4//neptune::mdv/mm5&Icing";
+
+///////////// icing_low_thresh ////////////////////////
+//
+// Value at which the icing is considered Light.
+//
+// Type: double
+//
+
+icing_low_thresh = 0.25;
+
+///////////// icing_mod_thresh ////////////////////////
+//
+// Value at which the icing is considered Moderate.
+//
+// Type: double
+//
+
+icing_mod_thresh = 0.5;
+
+///////////// icing_hi_thresh /////////////////////////
+//
+// Value at which the icing is considered Heavy.
+//
+// Type: double
+//
+
+icing_hi_thresh = 0.75;
+
+///////////// route_paths /////////////////////////////
+//
+//  Route path strings - Format of each string isROUTE_LABEL NPOINTS  
+//   ID_String Lat Lon ID_String LAT Lon ...
+// ROUTE_LABEL will be used in the menu, 
+// NPoints = Number of way points in route 
+//   Followed by NPoint triplets of the following:
+// ID_string -> usually a Airport or VOR 
+// Lat Lon :  decimal degrees.
+//
+// Type: string
+// 1D array - variable length.
+//
+
+route_paths = { "A-1 8 BULAN 27.0917 124.0000 OSTAR 26.3317 123.0000 SHARK 25.8333 122.3583 ANNNA 25.5717 122.0217 APU 25.1767 121.5233 HLG 24.6400 120.7833 MKG 23.5583 119.6283 ELATO 22.3333 117.5000 ", "M-750 12 MOLKA 26.6583 124.0000 MORSU 25.9100 123.0000 LEKOS 25.5100 122.4717 ROBIN 25.4200 122.2083 NOKAS 25.1317 121.9917 SANAS 24.8967 121.6917 PILOX 24.4150 121.0250 ANLOT 23.9417 120.5233 TOROX 23.3533 119.9083 RENOT 22.5683 118.5117 DADON 22.2767 118.0033 ENVAR 21.9917 117.5000 ", "G-581 7 IGURU 23.9500 124.0000 TULTO 23.3233 123.0000 HCN 21.9283 120.8433 PARPA 22.0150 120.1683 CYRUS 22.2167 118.5317 DADON 22.2767 118.0033 ELATO 22.3333 117.5000 ", "B-591 9 APU 25.1767 121.5233 SANAS 24.8967 121.6917 TINHO 24.3533 122.0283 TITUS 23.8283 121.8517 TACLE 22.9933 121.5867 GID 22.6733 121.4867 TUNNY 22.3600 121.2150 HCN 21.9283 120.8433 DOREX 21.0000 120.7833 ", "R-583 5 BORDO 26.0167 124.0000 KIKIT 25.8817 123.5917 PABSO 25.6517 122.8750 LEKOS 25.5100 122.4717 APU 25.1767 121.5233 ", "G-86 3 HCN 21.9283 120.8433 ANDRE 21.7783 120.1683 KAPLI 21.1667 117.5000 ", "B-576 3 SALMI 28.3150 124.0000 BERBA 27.0783 123.0000 APU 25.1767 121.5233 " };
+
+</ROUTE_WINDS>
+
+
