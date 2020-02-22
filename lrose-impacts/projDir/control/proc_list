@@ -29,8 +29,10 @@ Ltg2Symprod       manager  start_inst(no-params)     snuff_inst
 RadxConvert   kakq       start_inst(ingest)        snuff_inst
 RadxConvert   kbgm       start_inst(ingest)        snuff_inst
 RadxConvert   kbox       start_inst(ingest)        snuff_inst
+RadxConvert   kbuf       start_inst(ingest)        snuff_inst
 RadxConvert   kccx       start_inst(ingest)        snuff_inst
 RadxConvert   kcle       start_inst(ingest)        snuff_inst
+RadxConvert   kcxx       start_inst(ingest)        snuff_inst
 RadxConvert   kdix       start_inst(ingest)        snuff_inst
 RadxConvert   kdox       start_inst(ingest)        snuff_inst
 RadxConvert   kdtx       start_inst(ingest)        snuff_inst
@@ -48,6 +50,7 @@ RadxConvert   klwx       start_inst(ingest)        snuff_inst
 RadxConvert   kmhx       start_inst(ingest)        snuff_inst
 RadxConvert   kmkx       start_inst(ingest)        snuff_inst
 RadxConvert   kokx       start_inst(ingest)        snuff_inst
+RadxConvert   kpbz       start_inst(ingest)        snuff_inst
 RadxConvert   krax       start_inst(ingest)        snuff_inst
 RadxConvert   ktyx       start_inst(ingest)        snuff_inst
 RadxConvert   kvwx       start_inst(ingest)        snuff_inst
@@ -58,8 +61,10 @@ RadxConvert   kvwx       start_inst(ingest)        snuff_inst
 Radx2Grid      kakq      start_inst(ingest)        snuff_inst
 Radx2Grid      kbgm      start_inst(ingest)        snuff_inst
 Radx2Grid      kbox      start_inst(ingest)        snuff_inst
+Radx2Grid      kbuf      start_inst(ingest)        snuff_inst
 Radx2Grid      kccx      start_inst(ingest)        snuff_inst
 Radx2Grid      kcle      start_inst(ingest)        snuff_inst
+Radx2Grid      kcxx      start_inst(ingest)        snuff_inst
 Radx2Grid      kdix      start_inst(ingest)        snuff_inst
 Radx2Grid      kdox      start_inst(ingest)        snuff_inst
 Radx2Grid      kdtx      start_inst(ingest)        snuff_inst
@@ -77,6 +82,7 @@ Radx2Grid      klwx      start_inst(ingest)        snuff_inst
 Radx2Grid      kmhx      start_inst(ingest)        snuff_inst
 Radx2Grid      kmkx      start_inst(ingest)        snuff_inst
 Radx2Grid      kokx      start_inst(ingest)        snuff_inst
+Radx2Grid      kpbz      start_inst(ingest)        snuff_inst
 Radx2Grid      krax      start_inst(ingest)        snuff_inst
 Radx2Grid      ktyx      start_inst(ingest)        snuff_inst
 Radx2Grid      kvwx      start_inst(ingest)        snuff_inst

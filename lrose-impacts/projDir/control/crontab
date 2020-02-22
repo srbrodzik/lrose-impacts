@@ -18,8 +18,10 @@
 */2 * * * *   csh -c "run_GetAwsRadar.kakq" 1> /dev/null 2> /dev/null
 */2+1 * * * *   csh -c "run_GetAwsRadar.kbgm" 1> /dev/null 2> /dev/null
 */2 * * * *   csh -c "run_GetAwsRadar.kbox" 1> /dev/null 2> /dev/null
-*/2+1 * * * *   csh -c "run_GetAwsRadar.kccx" 1> /dev/null 2> /dev/null
-*/2 * * * *   csh -c "run_GetAwsRadar.kcle" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kbuf" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kccx" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kcle" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kcxx" 1> /dev/null 2> /dev/null
 */2+1 * * * *   csh -c "run_GetAwsRadar.kdix" 1> /dev/null 2> /dev/null
 */2 * * * *   csh -c "run_GetAwsRadar.kdox" 1> /dev/null 2> /dev/null
 */2+1 * * * *   csh -c "run_GetAwsRadar.kdtx" 1> /dev/null 2> /dev/null
@@ -37,9 +39,10 @@
 */2+1 * * * *   csh -c "run_GetAwsRadar.kmhx" 1> /dev/null 2> /dev/null
 */2 * * * *   csh -c "run_GetAwsRadar.kmkx" 1> /dev/null 2> /dev/null
 */2+1 * * * *   csh -c "run_GetAwsRadar.kokx" 1> /dev/null 2> /dev/null
-*/2 * * * *   csh -c "run_GetAwsRadar.krax" 1> /dev/null 2> /dev/null
-*/2+1 * * * *   csh -c "run_GetAwsRadar.ktyx" 1> /dev/null 2> /dev/null
-*/2 * * * *   csh -c "run_GetAwsRadar.kvwx" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.kpbz" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.krax" 1> /dev/null 2> /dev/null
+*/2 * * * *   csh -c "run_GetAwsRadar.ktyx" 1> /dev/null 2> /dev/null
+*/2+1 * * * *   csh -c "run_GetAwsRadar.kvwx" 1> /dev/null 2> /dev/null
 #
 ####################################################################
 
