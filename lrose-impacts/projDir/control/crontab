@@ -48,7 +48,7 @@
 
 # GOES-R Mesoscale sector image generation - when applicable
 # M1
-#* * 20,21 2 * csh -c "/home/disk/ldm/local/bin/new_sat/timed_run.pl 20200220120000 20200221120200 /home/disk/ldm/local/bin/new_sat/testmeso.csh true_color_night 1 YYYYMMDD HH /home/disk/data/images/sat_east_meso_impacts" 1> /home/disk/bob/impacts/logs/fortesting/M1.log 2>&1
+#* * 25,26 2 * csh -c "/home/disk/ldm/local/bin/new_sat/timed_run.pl 20200225120000 20200226120200 /home/disk/ldm/local/bin/new_sat/testmeso.csh true_color_night 1 YYYYMMDD HH /home/disk/data/images/sat_east_meso_impacts" 1> /home/disk/bob/impacts/logs/fortesting/M1.log 2>&1
 #
 # M2
-#* * 20,21 2 * csh -c "/home/disk/ldm/local/bin/new_sat/timed_run.pl 20200220120000 20200221120200 /home/disk/ldm/local/bin/new_sat/testmeso.csh true_color_night 2 YYYYMMDD HH /home/disk/data/images/sat_east_meso_impacts" 1> /home/disk/bob/impacts/logs/fortesting/M2.log 2>&1
+* * 25,26 2 * csh -c "/home/disk/ldm/local/bin/new_sat/timed_run.pl 20200225120000 20200226120200 /home/disk/ldm/local/bin/new_sat/testmeso.csh true_color_night 2 YYYYMMDD HH /home/disk/data/images/sat_east_meso_impacts" 1> /home/disk/bob/impacts/logs/fortesting/M2.log 2>&1

@@ -948,7 +948,7 @@ cidd.azmith_interval:       30.0
 cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
-cidd.range_rings:             0
+cidd.range_rings:             1
 cidd.range_ring_labels:       1
 cidd.azmith_lines:            0
 
@@ -1055,7 +1055,7 @@ cidd.map_missing_to_min_value: 0
 #cidd.layer4_field:  KBOX-DBZ off
 cidd.layer3_field:  DBZ_MOSAIC_MW
 cidd.layer2_field:  DBZ_MOSAIC
-cidd.layer1_field:  GOES16_CH01
+#cidd.layer1_field:  GOES16_CH01
 
 
 # Place Cidd fonts in asending order of size. Cidd will choose the

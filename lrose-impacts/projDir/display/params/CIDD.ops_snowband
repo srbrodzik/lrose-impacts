@@ -948,7 +948,7 @@ cidd.azmith_interval:       30.0
 cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
-cidd.range_rings:             0
+cidd.range_rings:             1
 cidd.range_ring_labels:       1
 cidd.azmith_lines:            0
 
@@ -1055,7 +1055,7 @@ cidd.map_missing_to_min_value: 0
 #cidd.layer4_field:  KBOX-DBZ off
 cidd.layer3_field:  DBZ_MOSAIC_MW
 cidd.layer2_field:  DBZ_MOSAIC
-cidd.layer1_field:  GOES16_CH01
+#cidd.layer1_field:  GOES16_CH01
 
 
 # Place Cidd fonts in asending order of size. Cidd will choose the
@@ -1596,7 +1596,6 @@ prod_info = {
     url = "spdbp:Ltg2Symprod://localhost:0:$(DATA_DIR)/spdb/ltg/glm16",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
-    // render_type = RENDER_ALL_BEFORE_DATA_TIME,
     on_by_default = FALSE,
     minutes_allow_before = 20.0,
     minutes_allow_after = 0.0,
@@ -1645,6 +1644,19 @@ prod_info = {
   }
   ,                        
   {
+    menu_label = "ER2 2_hr",
+    url = "spdbp:AcTrack2Symprod:N809NA.2_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 60.0,
+    minutes_allow_after = 60.0,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,                        
+  {
     menu_label = "ER2 5_hr",
     url = "spdbp:AcTrack2Symprod:N809NA.5_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
@@ -1674,7 +1686,7 @@ prod_info = {
     menu_label = "P3 15_min",
     url = "spdbp:AcTrack2Symprod:N426NA.15_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    render_type = RENDER_FIRST_BEFORE_DATA_TIME,
     on_by_default = FALSE,
     minutes_allow_before = 15.0,
     minutes_allow_after = 15.0,
@@ -1687,7 +1699,7 @@ prod_info = {
     menu_label = "P3 30_min",
     url = "spdbp:AcTrack2Symprod:N426NA.30_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    render_type = RENDER_FIRST_BEFORE_DATA_TIME,
     on_by_default = FALSE,
     minutes_allow_before = 30.0,
     minutes_allow_after = 30.0,
@@ -1700,7 +1712,7 @@ prod_info = {
     menu_label = "P3 5_hr",
     url = "spdbp:AcTrack2Symprod:N426NA.5_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    render_type = RENDER_FIRST_BEFORE_DATA_TIME,
     on_by_default = FALSE,
     minutes_allow_before = 300.0,
     minutes_allow_after = 300.0,
@@ -1713,7 +1725,7 @@ prod_info = {
     menu_label = "P3 10_hr",
     url = "spdbp:AcTrack2Symprod:N426NA.10_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    render_type = RENDER_FIRST_BEFORE_DATA_TIME,
     on_by_default = FALSE,
     minutes_allow_before = 600.0,
     minutes_allow_after = 600.0,
