@@ -1,6 +1,6 @@
 #!/bin/csh
 
-GetAwsRadar.py --radarName KRLX \
+GetAwsRadar.py --radarName KVWX \
     --verbose \
     --start  "2020 01 02 00 00 00" \
     --end    "2020 03 01 00 00 00" \

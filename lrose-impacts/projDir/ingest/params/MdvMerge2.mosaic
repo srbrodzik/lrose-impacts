@@ -644,7 +644,21 @@ input_urls = {
   }
   ,
   {
+    url = "mdvp:://localhost::mdv/radarCart/kfcx",
+    field_names = "",
+    is_required = FALSE,
+    must_update = FALSE
+  }
+  ,
+  {
     url = "mdvp:://localhost::mdv/radarCart/kgyx",
+    field_names = "",
+    is_required = FALSE,
+    must_update = FALSE
+  }
+  ,
+  {
+    url = "mdvp:://localhost::mdv/radarCart/kjkl",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
@@ -680,6 +694,13 @@ input_urls = {
   ,
   {
     url = "mdvp:://localhost::mdv/radarCart/krax",
+    field_names = "",
+    is_required = FALSE,
+    must_update = FALSE
+  }
+  ,
+  {
+    url = "mdvp:://localhost::mdv/radarCart/krlx",
     field_names = "",
     is_required = FALSE,
     must_update = FALSE
@@ -849,11 +870,11 @@ output_std_parallels = {
 //
 
 output_grid = {
-    nx = 560,
-    ny = 560,
+    nx = 720,
+    ny = 580,
     nz = 30,
-    minx = -82,
-    miny = 32,
+    minx = -85,
+    miny = 32.5,
     minz = $(CART_GRID_START_HT),
     dx = 0.025,
     dy = 0.025,
@@ -897,7 +918,7 @@ output_data_set_name = "3D-MOSAIC-EAST";
 // Type: string
 //
 
-output_data_set_source = "NEXRAD radars KAKQ,KBGM,KBOX,KBUF,KCCX,KCXX,KDIX,KDOX,KENX,KGYX,KLWX,KMHX,KOKX,KPBZ,KRAX,KTYX";
+output_data_set_source = "NEXRAD radars KAKQ,KBGM,KBOX,KBUF,KCCX,KCXX,KDIX,KDOX,KENX,KFCX,KGYX,KJKL,KLWX,KMHX,KOKX,KPBZ,KRAX,KRLX,KTYX";
 
 ///////////// copyMetaDataFromInput ///////////////////
 //

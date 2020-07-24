@@ -76,251 +76,251 @@
 ############################
 # Satellite data
 
-GOES16_CH01    GOES16_CH01    mdvp:://localhost:0:$(DATA_DIR)/mdv/goes16_ch01&GOESR_CH01   sat_cloud.colors %   -5   80  5  cart    1 0
-GOES16_CH08    GOES16_CH08    mdvp:://localhost:0:$(DATA_DIR)/mdv/goes16_ch08&GOESR_CH08   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_CH09    GOES16_CH09    mdvp:://localhost:0:$(DATA_DIR)/mdv/goes16_ch09&GOESR_CH09   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_CH10    GOES16_CH10    mdvp:://localhost:0:$(DATA_DIR)/mdv/goes16_ch10&GOESR_CH10   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_CH13    GOES16_CH13    mdvp:://localhost:0:$(DATA_DIR)/mdv/goes16_ch13&GOESR_CH13   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_======  ======         mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
+GOES16_CH01    GOES16_CH01    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch01&GOESR_CH01   sat_cloud.colors %   -5   80  5  cart    1 0
+GOES16_CH08    GOES16_CH08    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch08&GOESR_CH08   sat_tempC.colors C   -5   80  5  cart    1 0
+GOES16_CH09    GOES16_CH09    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch09&GOESR_CH09   sat_tempC.colors C   -5   80  5  cart    1 0
+GOES16_CH10    GOES16_CH10    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch10&GOESR_CH10   sat_tempC.colors C   -5   80  5  cart    1 0
+GOES16_CH13    GOES16_CH13    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch13&GOESR_CH13   sat_tempC.colors C   -5   80  5  cart    1 0
+GOES16_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
 
 ############################
 # NEXRAD data
 
-#DBZ_MOSAIC     DBZ_MOSAIC     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_MOSAIC     DBZ_MOSAIC     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_MOSAIC     VEL_MOSAIC     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_MOSAIC   WIDTH_MOSAIC   mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_MOSAIC     ZDR_MOSAIC     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_MOSAIC   RHOHV_MOSAIC   mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
-PHIDP_MOSAIC   PHIDP_MOSAIC   mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_MOSAIC     DBZ_MOSAIC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_MOSAIC     DBZ_MOSAIC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_MOSAIC     VEL_MOSAIC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_MOSAIC   WIDTH_MOSAIC   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_MOSAIC     ZDR_MOSAIC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_MOSAIC   RHOHV_MOSAIC   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
+PHIDP_MOSAIC   PHIDP_MOSAIC   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_MOSAIC_MW     VEL_MOSAIC_MW     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_MOSAIC_MW   WIDTH_MOSAIC_MW   mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_MOSAIC_MW     ZDR_MOSAIC_MW     mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_MOSAIC_MW   RHOHV_MOSAIC_MW   mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
-PHIDP_MOSAIC_MW   PHIDP_MOSAIC_MW   mdvp:://localhost:0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_MOSAIC_MW     DBZ_MOSAIC_MW     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_MOSAIC_MW     VEL_MOSAIC_MW     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_MOSAIC_MW   WIDTH_MOSAIC_MW   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_MOSAIC_MW     ZDR_MOSAIC_MW     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_MOSAIC_MW   RHOHV_MOSAIC_MW   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&RHOHV   rhohv.colors  -      -5   80  5  dcont   1 0
+PHIDP_MOSAIC_MW   PHIDP_MOSAIC_MW   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_midwest&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KAKQ      DBZ_KAKQ     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kakq&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KAKQ      DBZ_KAKQ     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kakq&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KAKQ      VEL_KAKQ     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kakq&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KAKQ    WIDTH_KAKQ   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kakq&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KAKQ      ZDR_KAKQ     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kakq&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KAKQ    RHOHV_KAKQ   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kakq&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KAKQ    PHIDP_KAKQ   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kakq&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KAKQ      DBZ_KAKQ     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kakq&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KAKQ      DBZ_KAKQ     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kakq&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KAKQ      VEL_KAKQ     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kakq&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KAKQ    WIDTH_KAKQ   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kakq&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KAKQ      ZDR_KAKQ     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kakq&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KAKQ    RHOHV_KAKQ   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kakq&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KAKQ    PHIDP_KAKQ   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kakq&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KBGM      DBZ_KBGM     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbgm&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KBGM      DBZ_KBGM     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbgm&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KBGM      VEL_KBGM     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbgm&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KBGM    WIDTH_KBGM   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbgm&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KBGM      ZDR_KBGM     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbgm&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KBGM    RHOHV_KBGM   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbgm&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KBGM    PHIDP_KBGM   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbgm&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KBGM      DBZ_KBGM     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbgm&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KBGM      DBZ_KBGM     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbgm&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KBGM      VEL_KBGM     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbgm&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KBGM    WIDTH_KBGM   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbgm&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KBGM      ZDR_KBGM     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbgm&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KBGM    RHOHV_KBGM   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbgm&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KBGM    PHIDP_KBGM   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbgm&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KBOX      DBZ_KBOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KBOX      DBZ_KBOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbox&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KBOX      VEL_KBOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbox&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KBOX    WIDTH_KBOX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbox&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KBOX      ZDR_KBOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbox&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KBOX    RHOHV_KBOX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbox&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KBOX    PHIDP_KBOX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbox&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KBOX      DBZ_KBOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KBOX      DBZ_KBOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbox&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KBOX      VEL_KBOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbox&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KBOX    WIDTH_KBOX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbox&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KBOX      ZDR_KBOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbox&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KBOX    RHOHV_KBOX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbox&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KBOX    PHIDP_KBOX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbox&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KBUF      DBZ_KBUF     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbuf&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KBUF      DBZ_KBUF     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbuf&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KBUF      VEL_KBUF     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbuf&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KBUF    WIDTH_KBUF   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbuf&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KBUF      ZDR_KBUF     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbuf&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KBUF    RHOHV_KBUF   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbuf&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KBUF    PHIDP_KBUF   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kbuf&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KBUF      DBZ_KBUF     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbuf&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KBUF      DBZ_KBUF     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbuf&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KBUF      VEL_KBUF     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbuf&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KBUF    WIDTH_KBUF   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbuf&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KBUF      ZDR_KBUF     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbuf&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KBUF    RHOHV_KBUF   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbuf&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KBUF    PHIDP_KBUF   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kbuf&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KCCX      DBZ_KCCX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kccx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KCCX      DBZ_KCCX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kccx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KCCX      VEL_KCCX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kccx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KCCX    WIDTH_KCCX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kccx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KCCX      ZDR_KCCX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kccx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KCCX    RHOHV_KCCX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kccx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KCCX    PHIDP_KCCX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kccx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KCCX      DBZ_KCCX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kccx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KCCX      DBZ_KCCX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kccx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KCCX      VEL_KCCX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kccx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KCCX    WIDTH_KCCX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kccx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KCCX      ZDR_KCCX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kccx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KCCX    RHOHV_KCCX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kccx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KCCX    PHIDP_KCCX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kccx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KCXX      DBZ_KCXX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kcxx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KCXX      DBZ_KCXX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kcxx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KCXX      VEL_KCXX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kcxx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KCXX    WIDTH_KCXX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kcxx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KCXX      ZDR_KCXX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kcxx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KCXX    RHOHV_KCXX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kcxx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KCXX    PHIDP_KCXX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kcxx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KCXX      DBZ_KCXX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kcxx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KCXX      DBZ_KCXX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kcxx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KCXX      VEL_KCXX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kcxx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KCXX    WIDTH_KCXX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kcxx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KCXX      ZDR_KCXX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kcxx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KCXX    RHOHV_KCXX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kcxx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KCXX    PHIDP_KCXX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kcxx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KDIX      DBZ_KDIX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdix&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KDIX      DBZ_KDIX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdix&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KDIX      VEL_KDIX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdix&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KDIX    WIDTH_KDIX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdix&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KDIX      ZDR_KDIX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdix&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KDIX    RHOHV_KDIX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdix&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KDIX    PHIDP_KDIX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdix&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KDIX      DBZ_KDIX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdix&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KDIX      DBZ_KDIX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdix&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KDIX      VEL_KDIX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdix&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KDIX    WIDTH_KDIX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdix&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KDIX      ZDR_KDIX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdix&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KDIX    RHOHV_KDIX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdix&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KDIX    PHIDP_KDIX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdix&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KDOX      DBZ_KDOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KDOX      DBZ_KDOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdox&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KDOX      VEL_KDOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdox&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KDOX    WIDTH_KDOX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdox&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KDOX      ZDR_KDOX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdox&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KDOX    RHOHV_KDOX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdox&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KDOX    PHIDP_KDOX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kdox&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KDOX      DBZ_KDOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdox&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KDOX      DBZ_KDOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdox&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KDOX      VEL_KDOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdox&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KDOX    WIDTH_KDOX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdox&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KDOX      ZDR_KDOX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdox&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KDOX    RHOHV_KDOX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdox&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KDOX    PHIDP_KDOX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kdox&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KENX      DBZ_KENX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kenx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KENX      DBZ_KENX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kenx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KENX      VEL_KENX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kenx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KENX    WIDTH_KENX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kenx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KENX      ZDR_KENX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kenx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KENX    RHOHV_KENX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kenx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KENX    PHIDP_KENX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kenx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KENX      DBZ_KENX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kenx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KENX      DBZ_KENX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kenx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KENX      VEL_KENX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kenx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KENX    WIDTH_KENX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kenx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KENX      ZDR_KENX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kenx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KENX    RHOHV_KENX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kenx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KENX    PHIDP_KENX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kenx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KGYX      DBZ_KGYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kgyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KGYX      DBZ_KGYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kgyx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KGYX      VEL_KGYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kgyx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KGYX    WIDTH_KGYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kgyx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KGYX      ZDR_KGYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kgyx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KGYX    RHOHV_KGYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kgyx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KGYX    PHIDP_KGYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kgyx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KGYX      DBZ_KGYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kgyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KGYX      DBZ_KGYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kgyx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KGYX      VEL_KGYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kgyx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KGYX    WIDTH_KGYX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kgyx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KGYX      ZDR_KGYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kgyx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KGYX    RHOHV_KGYX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kgyx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KGYX    PHIDP_KGYX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kgyx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KLWX      DBZ_KLWX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/klwx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KLWX      DBZ_KLWX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/klwx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KLWX      VEL_KLWX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/klwx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KLWX    WIDTH_KLWX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/klwx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KLWX      ZDR_KLWX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/klwx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KLWX    RHOHV_KLWX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/klwx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KLWX    PHIDP_KLWX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/klwx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KLWX      DBZ_KLWX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/klwx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KLWX      DBZ_KLWX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/klwx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KLWX      VEL_KLWX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/klwx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KLWX    WIDTH_KLWX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/klwx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KLWX      ZDR_KLWX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/klwx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KLWX    RHOHV_KLWX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/klwx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KLWX    PHIDP_KLWX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/klwx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KMHX      DBZ_KMHX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kmhx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KMHX      DBZ_KMHX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kmhx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KMHX      VEL_KMHX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kmhx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KMHX    WIDTH_KMHX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kmhx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KMHX      ZDR_KMHX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kmhx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KMHX    RHOHV_KMHX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kmhx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KMHX    PHIDP_KMHX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kmhx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KMHX      DBZ_KMHX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kmhx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KMHX      DBZ_KMHX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kmhx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KMHX      VEL_KMHX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kmhx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KMHX    WIDTH_KMHX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kmhx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KMHX      ZDR_KMHX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kmhx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KMHX    RHOHV_KMHX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kmhx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KMHX    PHIDP_KMHX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kmhx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KOKX      DBZ_KOKX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kokx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KOKX      DBZ_KOKX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kokx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KOKX      VEL_KOKX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kokx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KOKX    WIDTH_KOKX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kokx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KOKX      ZDR_KOKX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kokx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KOKX    RHOHV_KOKX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kokx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KOKX    PHIDP_KOKX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kokx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KOKX      DBZ_KOKX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kokx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KOKX      DBZ_KOKX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kokx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KOKX      VEL_KOKX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kokx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KOKX    WIDTH_KOKX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kokx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KOKX      ZDR_KOKX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kokx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KOKX    RHOHV_KOKX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kokx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KOKX    PHIDP_KOKX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kokx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KPBX      DBZ_KPBX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kpbx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KPBX      DBZ_KPBX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kpbx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KPBX      VEL_KPBX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kpbx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KPBX    WIDTH_KPBX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kpbx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KPBX      ZDR_KPBX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/kpbx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KPBX    RHOHV_KPBX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kpbx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KPBX    PHIDP_KPBX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/kpbx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KPBX      DBZ_KPBX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kpbx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KPBX      DBZ_KPBX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kpbx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KPBX      VEL_KPBX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kpbx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KPBX    WIDTH_KPBX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kpbx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KPBX      ZDR_KPBX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kpbx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KPBX    RHOHV_KPBX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kpbx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KPBX    PHIDP_KPBX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/kpbx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KRAX      DBZ_KRAX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KRAX      DBZ_KRAX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KRAX      VEL_KRAX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KRAX    WIDTH_KRAX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KRAX      ZDR_KRAX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KRAX    RHOHV_KRAX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KRAX    PHIDP_KRAX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/krax&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KRAX      DBZ_KRAX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/krax&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KRAX      DBZ_KRAX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/krax&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KRAX      VEL_KRAX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/krax&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KRAX    WIDTH_KRAX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/krax&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KRAX      ZDR_KRAX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/krax&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KRAX    RHOHV_KRAX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/krax&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KRAX    PHIDP_KRAX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/krax&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-#DBZ_KTYX      DBZ_KTYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-DBZ_KTYX      DBZ_KTYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-VEL_KTYX      VEL_KTYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH_KTYX    WIDTH_KTYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR_KTYX      ZDR_KTYX     mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV_KTYX    RHOHV_KTYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP_KTYX    PHIDP_KTYX   mdvp:://localhost:0:$(DATA_DIR)/cfradial/ktyx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+#DBZ_KTYX      DBZ_KTYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/ktyx&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+DBZ_KTYX      DBZ_KTYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/ktyx&DBZ     dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+VEL_KTYX      VEL_KTYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/ktyx&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_KTYX    WIDTH_KTYX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/ktyx&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_KTYX      ZDR_KTYX     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/ktyx&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_KTYX    RHOHV_KTYX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/ktyx&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_KTYX    PHIDP_KTYX   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/ktyx&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
 ############################
 # NPOL data
-#NPOL_DZ       NPOL_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
-NPOL_DZ       NPOL_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-NPOL_VR       NPOL_VR      mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&VR   vel.colors    m/s    -5   80  5  dcont   1 0
-NPOL_ZDR      NPOL_ZDR     mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
-NPOL_RHOHV    NPOL_RHOHV   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
-NPOL_PHIDP    NPOL_PHIDP   mdvp:://localhost:0:$(DATA_DIR)/cfradial/npol/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
-NPOL_======   ======       mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
+#NPOL_DZ       NPOL_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
+NPOL_DZ       NPOL_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+NPOL_VR       NPOL_VR      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&VR   vel.colors    m/s    -5   80  5  dcont   1 0
+NPOL_ZDR      NPOL_ZDR     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
+NPOL_RHOHV    NPOL_RHOHV   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
+NPOL_PHIDP    NPOL_PHIDP   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
+NPOL_======   ======       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
 
 ############################
 # UMaXX data
-#UMAXX_DZ       UMAXX_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz.colors    dBZ    -5   80  5  dcont   1 0
-UMAXX_DZ       UMAXX_DZ      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-UMAXX_VE       UMAXX_VE      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&VE   vel.colors    m/s    -5   80  5  dcont   1 0
-UMAXX_ZDR      UMAXX_ZDR     mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&ZD   zdr.colors    m/s    -5   80  5  dcont   1 0
-UMAXX_RHOHV    UMAXX_RHOHV   mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
-UMAXX_PHIDP    UMAXX_PHIDP   mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
-UMAXX_SW       UMAXX_SW      mdvp:://localhost:0:$(DATA_DIR)/cfradial/umaxx/sur&VW   width.colors  m/s    -5   80  5  dcont   1 0
+#UMAXX_DZ       UMAXX_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz.colors    dBZ    -5   80  5  dcont   1 0
+UMAXX_DZ       UMAXX_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+UMAXX_VE       UMAXX_VE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&VE   vel.colors    m/s    -5   80  5  dcont   1 0
+UMAXX_ZDR      UMAXX_ZDR     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZD   zdr.colors    m/s    -5   80  5  dcont   1 0
+UMAXX_RHOHV    UMAXX_RHOHV   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
+UMAXX_PHIDP    UMAXX_PHIDP   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
+UMAXX_SW       UMAXX_SW      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&VW   width.colors  m/s    -5   80  5  dcont   1 0
 
 ############################
 # GPM Ku data
 
-GPM_REFL          GPM_REFL                mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
-#GPM_REFL          GPM_REFL                mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&refl              refl_imp.colors               dBZ        -5 80 5 dcont 1 0
-GPM_NEARSURFRAIN  GPM_NEAR_SURF_RAIN      mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&near_surf_rain    rain_accum.colors            mm         -5 80 5 dcont 1 0
-GPM_RAINTYPE      GPM_RAIN_TYPE           mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&rain_type         convsf_gpm.colors            -          -5 80 5 cart  1 0
-GPM_PHASETYPE     GPM_PHASE_TYPE          mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&phase_type        phase_gpm.colors             -          -5 80 5 cart  1 0
-GPM_SRTYPE        GPM_SHAL_RAIN_TYPE      mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&shallow_rain_type srt_gpm.colors               -          -5 80 5 cart  1 0
-#GPM_BBHGT         GPM_BB_HGT              mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&height_bb         bb_hgt_gpm.colors            -          -5 80 5 cart  1 0
-#GPM_BBWID         GPM_BB_WID              mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&width_bb          bb_wid_gpm.colors            -          -5 80 5 cart  1 0
-GPM_SWATH         GPM_SWATH               mdvp:://localhost:0:$(DATA_DIR)/mdv/gpm_ku&swath             swath_gpm.colors             -          0 1 0.5 cont  1 0
+GPM_REFL          GPM_REFL                mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
+#GPM_REFL          GPM_REFL                mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&refl              refl_imp.colors               dBZ        -5 80 5 dcont 1 0
+GPM_NEARSURFRAIN  GPM_NEAR_SURF_RAIN      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&near_surf_rain    rain_accum.colors            mm         -5 80 5 dcont 1 0
+GPM_RAINTYPE      GPM_RAIN_TYPE           mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&rain_type         convsf_gpm.colors            -          -5 80 5 cart  1 0
+GPM_PHASETYPE     GPM_PHASE_TYPE          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&phase_type        phase_gpm.colors             -          -5 80 5 cart  1 0
+GPM_SRTYPE        GPM_SHAL_RAIN_TYPE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&shallow_rain_type srt_gpm.colors               -          -5 80 5 cart  1 0
+#GPM_BBHGT         GPM_BB_HGT              mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&height_bb         bb_hgt_gpm.colors            -          -5 80 5 cart  1 0
+#GPM_BBWID         GPM_BB_WID              mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&width_bb          bb_wid_gpm.colors            -          -5 80 5 cart  1 0
+GPM_SWATH         GPM_SWATH               mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&swath             swath_gpm.colors             -          0 1 0.5 cont  1 0
 
 ############################
 # WRF data - 36km
 
-WRF36_WSPD       WRF36_WSPD     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&Wspeed    wspd_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF36_W          WRF36_W        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF36_TEMP_C     WRF36_TEMP_C   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
-#WRF36_REFL10CM   WRF36_REFL10CM mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
-#WRF36_REFL       WRF36_REFL     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
-WRF36_REFL       WRF36_REFL     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
-WRF36_THETA      WRF36_THETA    $mdvp:://localhost:0:(DATA_DIR)/mdv/wrf/gfs_36km&THETA     tempK.colors          K      -5   80  5  cont    1 0
-WRF36_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF36_WSPD       WRF36_WSPD     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&Wspeed    wspd_imp.colors       m/s    -5   80  5  dcont   1 0
+WRF36_W          WRF36_W        mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
+WRF36_TEMP_C     WRF36_TEMP_C   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
+#WRF36_REFL10CM   WRF36_REFL10CM mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
+#WRF36_REFL       WRF36_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
+WRF36_REFL       WRF36_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
+WRF36_THETA      WRF36_THETA    $mdvp:://$(DATA_HOST):0:(DATA_DIR)/mdv/wrf/gfs_36km&THETA     tempK.colors          K      -5   80  5  cont    1 0
+WRF36_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
 
-WRF36_QCLOUD     WRF36_QCLOUD   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&QCLOUD    mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QRAIN      WRF36_QRAIN    mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&QRAIN     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QICE       WRF36_QICE     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&QICE      mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QSNOW      WRF36_QSNOW    mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&QSNOW     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QGRAUPEL   WRF36_QGRAUPEL mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&QGRAUPEL  mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF36_QCLOUD     WRF36_QCLOUD   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QCLOUD    mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF36_QRAIN      WRF36_QRAIN    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QRAIN     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF36_QICE       WRF36_QICE     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QICE      mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF36_QSNOW      WRF36_QSNOW    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QSNOW     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF36_QGRAUPEL   WRF36_QGRAUPEL mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QGRAUPEL  mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF36_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
 
-WRF36_RH         WRF36_RH       mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&RH        rh_imp.colors       %      -5   80  5  dcont   1 0
-WRF36_T2         WRF36_T2       mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&T2        tempK.colors        K      -5   80  5  dcont   1 0
-WRF36_PSFC       WRF36_PSFC     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
-WRF36_SWE        WRF36_SWE      mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
-WRF36_FZLEVEL    WRF36_FZLEVEL  mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
-WRF36_ICING      WRF36_ICING    mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&Icing     icing.colors        -      -5   80  5  dcont   1 0
+WRF36_RH         WRF36_RH       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&RH        rh_imp.colors       %      -5   80  5  dcont   1 0
+WRF36_T2         WRF36_T2       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&T2        tempK.colors        K      -5   80  5  dcont   1 0
+WRF36_PSFC       WRF36_PSFC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
+WRF36_SWE        WRF36_SWE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
+WRF36_FZLEVEL    WRF36_FZLEVEL  mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
+WRF36_ICING      WRF36_ICING    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&Icing     icing.colors        -      -5   80  5  dcont   1 0
 
 ############################
 # WRF data - 12km
 
-WRF12_WSPD       WRF12_WSPD     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&Wspeed    wspd_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF12_W          WRF12_W        mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF12_TEMP_C     WRF12_TEMP_C   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
-#WRF12_REFL10CM   WRF12_REFL10CM mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
-#WRF12_REFL       WRF12_REFL     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
-WRF12_REFL       WRF12_REFL     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
-WRF12_THETA      WRF12_THETA    $mdvp:://localhost:0:(DATA_DIR)/mdv/wrf/gfs_12km&THETA     tempK.colors          K      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_WSPD       WRF12_WSPD     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&Wspeed    wspd_imp.colors       m/s    -5   80  5  dcont   1 0
+WRF12_W          WRF12_W        mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
+WRF12_TEMP_C     WRF12_TEMP_C   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
+#WRF12_REFL10CM   WRF12_REFL10CM mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
+#WRF12_REFL       WRF12_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
+WRF12_REFL       WRF12_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
+WRF12_THETA      WRF12_THETA    $mdvp:://$(DATA_HOST):0:(DATA_DIR)/mdv/wrf/gfs_12km&THETA     tempK.colors          K      -5   80  5  cont    1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
 
-WRF12_QCLOUD     WRF12_QCLOUD   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&QCLOUD    mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QRAIN      WRF12_QRAIN    mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&QRAIN     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QICE       WRF12_QICE     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&QICE      mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QSNOW      WRF12_QSNOW    mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&QSNOW     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QGRAUPEL   WRF12_QGRAUPEL mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&QGRAUPEL  mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_QCLOUD     WRF12_QCLOUD   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QCLOUD    mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF12_QRAIN      WRF12_QRAIN    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QRAIN     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF12_QICE       WRF12_QICE     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QICE      mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF12_QSNOW      WRF12_QSNOW    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QSNOW     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF12_QGRAUPEL   WRF12_QGRAUPEL mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QGRAUPEL  mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
 
-WRF12_RH         WRF12_RH       mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&RH        rh_imp.colors       %      -5   80  5  dcont   1 0
-WRF12_T2         WRF12_T2       mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&T2        tempK.colors        K      -5   80  5  dcont   1 0
-WRF12_PSFC       WRF12_PSFC     mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
-WRF12_SWE        WRF12_SWE      mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
-WRF12_FZLEVEL    WRF12_FZLEVEL  mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
-WRF12_ICING      WRF12_ICING    mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&Icing     icing.colors        -      -5   80  5  dcont   1 0
+WRF12_RH         WRF12_RH       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&RH        rh_imp.colors       %      -5   80  5  dcont   1 0
+WRF12_T2         WRF12_T2       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&T2        tempK.colors        K      -5   80  5  dcont   1 0
+WRF12_PSFC       WRF12_PSFC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
+WRF12_SWE        WRF12_SWE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
+WRF12_FZLEVEL    WRF12_FZLEVEL  mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
+WRF12_ICING      WRF12_ICING    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&Icing     icing.colors        -      -5   80  5  dcont   1 0
 
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
 
 </GRIDS>
 
@@ -370,10 +370,10 @@ WRF12_======     ======          mdvp:://localhost:0:$(DATA_DIR)/mdv/spacer/mome
 # Legend_label  URL U V W_fieldnames units  Style [Color]
 #----------------------------------------------------------------------------
 
-#WRFGFS36-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,metbarb yellow
-#WRFGFS12-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,metbarb black
-WRFGFS36-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,barb yellow
-WRFGFS12-10m   mdvp:://localhost:0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,barb cyan
+#WRFGFS36-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,metbarb yellow
+#WRFGFS12-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,metbarb black
+WRFGFS36-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,barb yellow
+WRFGFS12-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,barb cyan
 
 </WINDS>
 
@@ -1493,7 +1493,7 @@ debug = DEBUG_OFF;
 // Type: boolean
 //
 
-short_requests = FALSE;
+short_requests = TRUE;
 
 ///////////// gzip_requests ///////////////////////////
 //
@@ -1592,8 +1592,8 @@ gzip_requests = FALSE;
 prod_info = {
   {
     menu_label = "GLM" ,
-    //url = "spdbp:Ltg2Symprod://localhost:0:spdb/ltg/glm16",
-    url = "spdbp:Ltg2Symprod://localhost:0:$(DATA_DIR)/spdb/ltg/glm16",
+    //url = "spdbp:Ltg2Symprod://$(DATA_HOST):0:spdb/ltg/glm16",
+    url = "spdbp:Ltg2Symprod://$(DATA_HOST):0:$(DATA_DIR)/spdb/ltg/glm16",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     // render_type = RENDER_ALL_BEFORE_DATA_TIME,
@@ -1607,7 +1607,7 @@ prod_info = {
   ,                        
   {
     menu_label = "RHI-NPOL",
-    url = "spdbp:Rhi2Symprod:ticks//localhost:0:$(DATA_DIR)/spdb/rhi/npol",
+    url = "spdbp:Rhi2Symprod:ticks//$(DATA_HOST):0:$(DATA_DIR)/spdb/rhi/npol",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     on_by_default = FALSE,
@@ -1620,7 +1620,7 @@ prod_info = {
   , 
   {
     menu_label = "ER2 15_min",
-    url = "spdbp:AcTrack2Symprod:N809NA.15_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N809NA.15_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1633,7 +1633,7 @@ prod_info = {
   ,                        
   {
     menu_label = "ER2 30_min",
-    url = "spdbp:AcTrack2Symprod:N809NA.30_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N809NA.30_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1646,7 +1646,7 @@ prod_info = {
   ,                        
   {
     menu_label = "ER2 5_hr",
-    url = "spdbp:AcTrack2Symprod:N809NA.5_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N809NA.5_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1659,7 +1659,7 @@ prod_info = {
   ,                        
   {
     menu_label = "ER2 10_hr",
-    url = "spdbp:AcTrack2Symprod:N809NA.10_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N809NA.10_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1672,7 +1672,7 @@ prod_info = {
   ,                        
   {
     menu_label = "P3 15_min",
-    url = "spdbp:AcTrack2Symprod:N426NA.15_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N426NA.15_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1685,7 +1685,7 @@ prod_info = {
   ,                        
   {
     menu_label = "P3 30_min",
-    url = "spdbp:AcTrack2Symprod:N426NA.30_min//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N426NA.30_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1698,7 +1698,7 @@ prod_info = {
   ,                        
   {
     menu_label = "P3 5_hr",
-    url = "spdbp:AcTrack2Symprod:N426NA.5_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N426NA.5_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1711,7 +1711,7 @@ prod_info = {
   ,                        
   {
     menu_label = "P3 10_hr",
-    url = "spdbp:AcTrack2Symprod:N426NA.10_hr//localhost:0:$(DATA_DIR)/spdb/ac_posn",
+    url = "spdbp:AcTrack2Symprod:N426NA.10_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,

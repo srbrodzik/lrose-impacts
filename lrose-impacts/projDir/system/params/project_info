@@ -34,7 +34,7 @@ setenv RADAR_DATA_INFO            "WFF NPOL Radar"
 
 # Host where the data is stored
 
-setenv DATA_HOST                  localhost
+setenv DATA_HOST                  bob.atmos.washington.edu
 
 # typical time between volumes (secs)
 
