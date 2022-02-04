@@ -65,7 +65,7 @@ mode = FILELIST;
 // Type: string
 //
 
-input_dir = "/home/disk/bob/impacts/netcdf/mrms";
+input_dir = "/home/disk/bob/impacts/netcdf/mrms/2DBaseRefl/$(DATE)";
 
 ///////////// max_valid_realtime_age_min //////////////
 //
@@ -151,8 +151,7 @@ end_time = "";
 // Type: string
 //
 
-//output_url = "mdvp:://localhost::/tmp/mdv";
-output_url = "/home/disk/bob/impacts/mdv/radarCart/mrms";
+output_url = "/home/disk/bob/impacts/mdv/mrms/2DBaseRefl";
 
 ///////////// field_names /////////////////////////////
 //

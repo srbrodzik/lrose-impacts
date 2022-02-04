@@ -67,6 +67,7 @@ instance = "mrms_refl";
 //
 
 input_dir = "/home/disk/data/nexrad/mrms/3DRefl";
+//input_dir = "$(DATA_DIR)/mdv/mrms/3DRefl";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -118,7 +119,7 @@ max_valid_age = 900;
 // Type: boolean
 //
 
-latest_data_info_avail = FALSE;
+latest_data_info_avail = TRUE;
 
 ///////////// latest_file_only ////////////////////////
 //
@@ -229,6 +230,7 @@ use_inotify = TRUE;
 //
 
 search_ext = "grib2";
+//search_ext = "nc";
 
 ///////////// search_substr ///////////////////////////
 //
@@ -242,6 +244,7 @@ search_ext = "grib2";
 //
 
 search_substr = "MRMS_MergedReflectivityQC";
+//search_substr = "";
 
 ///////////// save_latest_read_time ///////////////////
 //
@@ -256,7 +259,7 @@ search_substr = "MRMS_MergedReflectivityQC";
 // Type: boolean
 //
 
-save_latest_read_time = FALSE;
+save_latest_read_time = TRUE;
 
 //======================================================================
 //
@@ -652,7 +655,8 @@ write_latest_data_info_file = FALSE;
 // Type: string
 //
 
-data_type = "grib2";
+//data_type = "grib2";
+data_type = "mdv";
 
 ///////////// write_latest_data_info_to_proxy_dir /////
 //
@@ -668,7 +672,8 @@ data_type = "grib2";
 // Type: boolean
 //
 
-write_latest_data_info_to_proxy_dir = TRUE;
+//write_latest_data_info_to_proxy_dir = TRUE;
+write_latest_data_info_to_proxy_dir = FALSE;
 
 ///////////// latest_data_info_proxy_dir //////////////
 //

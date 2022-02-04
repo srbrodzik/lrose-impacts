@@ -44,7 +44,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "mrms_refl";
+instance = "mrms_kdp";
 
 ///////////// procmap_register_interval_secs //////////
 //
@@ -57,7 +57,7 @@ instance = "mrms_refl";
 // Type: int
 //
 
-procmap_register_interval_secs = 120;
+procmap_register_interval_secs = 60;
 
 //======================================================================
 //
@@ -81,7 +81,7 @@ procmap_register_interval_secs = 120;
 //     FILELIST
 //
 
-mode = REALTIME;
+mode = FILELIST;
 
 ///////////// input_dir ///////////////////////////////
 //
@@ -94,8 +94,8 @@ mode = REALTIME;
 // Type: string
 //
 
-//input_dir = "/home/disk/data/nexrad/mrms/3DRefl";
-input_dir = "$(DATA_DIR)/raw/mrms/3DRefl";
+input_dir = "/home/disk/data/nexrad/mrms";
+//input_dir = "/home/disk/bob/impacts/raw/mrms/3DKdp";
 
 ///////////// input_extension /////////////////////////
 //
@@ -108,7 +108,7 @@ input_dir = "$(DATA_DIR)/raw/mrms/3DRefl";
 // Type: string
 //
 
-input_extension = "grib2";
+input_extension = "";
 
 ///////////// input_substring /////////////////////////
 //
@@ -121,7 +121,7 @@ input_extension = "grib2";
 // Type: string
 //
 
-input_substring = "MergedReflectivityQC";
+input_substring = "MergedKdp";
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -171,7 +171,7 @@ max_recursion_depth = 5;
 // Type: boolean
 //
 
-latest_file_only = FALSE;
+latest_file_only = TRUE;
 
 ///////////// data_check_interval_secs ////////////////
 //
@@ -264,13 +264,13 @@ rename_fields = TRUE;
 
 field_rename = {
   {
-    grib_name = "ConusMergedReflectivityQC",
-    output_name = "DBZ"
+    grib_name = "var209_255_1_161_9_1",
+    output_name = "KDP"
   }
   ,
   {
     grib_name = "MREF",
-    output_name = "DBZ"
+    output_name = "KDP"
   }
 };
 
@@ -288,7 +288,8 @@ field_rename = {
 // Type: string
 //
 
-output_url = "mdvp:://localhost:0:$(DATA_DIR)/mdv/mrms/3DRefl";
+//output_url = "mdvp:://localhost:0:$(project)/mdv/mrms3D/3DRhoHV;
+output_url = "/home/disk/bob/impacts/mdv/mrms/3DKdp";
 
 ///////////// data_set_info ///////////////////////////
 //

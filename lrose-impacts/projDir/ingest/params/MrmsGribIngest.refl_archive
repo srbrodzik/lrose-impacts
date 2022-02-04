@@ -380,9 +380,9 @@ set_output_bounding_box = TRUE;
 //    max_lon = -65
 //};
 output_bounding_box = {
-    min_lat = 30,
-    min_lon = -96,
-    max_lat = 47,
+    min_lat = 32,
+    min_lon = -100,
+    max_lat = 48,
     max_lon = -66
 };
 

@@ -117,7 +117,7 @@ COUNTRIES  Countries       usa.map           $(PLOT_MAPS)      0.0       1000000
 STATES     State_Borders   usa.map           $(PLOT_MAPS)      0.0         10000.0   yellow
 NEXRADS    Nexrads         nexrads.map       $(PLOT_MAPS)      0.0         10000.0   white
 RADARS     Radars          imp_radars.map    $(PLOT_MAPS)      0.0         10000.0   green
-AIRFIELDS  Airfields       imp_airfields.map $(PLOT_MAPS)      0.0         10000.0   cyan
+AIRFIELDS  Airfields       imp_airfields_2022.map $(PLOT_MAPS)      0.0         10000.0   cyan
 
 
 </MAPS>

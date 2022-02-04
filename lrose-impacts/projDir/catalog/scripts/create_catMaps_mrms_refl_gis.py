@@ -1,8 +1,5 @@
 #!/usr/bin/python
 
-# cd /pub/incoming/catalog/impacts
-# mput gis.*.vis_ch01.png
-
 import os
 import sys
 from datetime import datetime
@@ -29,7 +26,7 @@ DATA_DIR = os.getenv('DATA_DIR')
 
 # Set some environment variables
 os.environ['CATEGORY'] = 'gis'
-os.environ['PLATFORM_NAME'] = 'GOES-16'
+os.environ['PLATFORM_NAME'] = 'MRMS_MOSAIC'
 os.environ['NUM_MENU_BAR_CELLS'] = '1'
 os.environ['RENDER_LTG'] = 'TRUE'
 os.environ['CIDD_LABEL'] = 'IMPACTS'
@@ -51,11 +48,11 @@ os.environ['COLOR_SCALE_WIDTH'] = '0'
 os.environ['PROJECTION'] = 'MERCATOR'
 os.environ['ZOOM_LIMITS_IN_LATLON'] = '1'
 os.environ['ORIGIN_LAT'] = '0.0'
-os.environ['ORIGIN_LON'] = '-85.0'
-os.environ['MINX'] = '-105.0'
-os.environ['MAXX'] = '-65.0'
-os.environ['MINY'] =  '25.0'
-os.environ['MAXY'] =  '50.0'
+os.environ['ORIGIN_LON'] = '-83.0'
+os.environ['MINX'] = '-100.0'
+os.environ['MAXX'] = '-66.0'
+os.environ['MINY'] =  '32.0'
+os.environ['MAXY'] =  '48.0'
 
 # Run image every ten minutes starting at 20200101 00:00
 # Time string must be in format 'hh:mm MM/DD/YYYY'
@@ -68,6 +65,6 @@ while next_time_obj < end_time_obj:
     print(next_time_str)
     os.environ['CIDD_DEMO_TIME'] = next_time_str
     os.chdir(PROJ_DIR+'/catalog/params')
-    command = 'CIDD -p CIDD.catalog.goes_ch01_archive -i mosaic.web.transparent -fn fixed -v 2'
+    command = 'CIDD -p CIDD.catalog.mrms_refl_archive -i mosaic.web.transparent -fn fixed -v 2'
     os.system(command)
     next_time_obj = next_time_obj + timedelta(minutes=minutes_between_images)

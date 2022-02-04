@@ -23,12 +23,35 @@
 #
 #####################################################################################
 
+<GUI_CONFIG>
+
+///////////// field_list //////////////////////////////
+//
+//  Groups Grids into Sets.
+//  Each Entry needs:
+// ID_Label  List
+// 	List - Space Delimited list of grid legend names match strings.
+// 	If a group is "ON", then any grid whose legend label contains any  
+//   of the match strings in the group list becomes active.
+//
+// Type: struct
+//   typedef struct {
+//      char* id_label;
+//      char* grid_list;
+//   }
+//
+// 1D array - variable length.
+//
+
+field_list = {
+};
+
+</GUI_CONFIG>
 
 <GRIDS>
 # Legend Label: used for all on-screen labels and for movie/html file naming.
 #           An Empty grid field can be obtained by using the keyword "None"
-#
-# Button Label:  used for all menus.
+## Button Label:  used for all menus.
 #
 # URL:  is of the form:  mdvp:://host.domain:[port]:dir/dir&Field_name.
 #                          (Run the DsServerMgr executable for mdvp service)
@@ -71,128 +94,33 @@
 #Legend   Button                                                             Rendering
 #Label    Label       URL           Colorscale Units Cont-lo-hi-interv Format Display_in_menu Bkgnd_Render
 #----------------------------------------------------------------------------------------------------------
-#IMPACTS
+# Front Range
+#
 
-############################
-# Satellite data
-
-GOES16_CH01    GOES16_CH01    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch01&GOESR_CH01   sat_cloud.colors %   -5   80  5  cart    1 0
-GOES16_CH08    GOES16_CH08    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch08&GOESR_CH08   sat_tempC.colors C   -5   80  5  cart    1 0
-#GOES16_CH13    GOES16_CH13    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch13&GOESR_CH13   sat_tempC.colors C   -5   80  5  cart    1 0
-GOES16_CH13    GOES16_CH13    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch13&GOESR_CH13   sat_tempC_gray.colors C   -5   80  5  cart    1 0
-GOES16_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-GOES16_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-GOES16_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-
-############################
-# MRMS data
-
-MRMS_REFL_BASE	MRMS_REFL_BASE		mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/2DBaseRefl&DBZ_base	dbz_carbone17.colors	dBZ         0 50 5 dcont 1 0
-MRMS_REFL_COMP	MRMS_REFL_COMP		mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/2DCompRefl&DBZ_comp	dbz_carbone17.colors	dBZ         0 50 5 dcont 1 0
-MRMS_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-MRMS_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-MRMS_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-MRMS_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-MRMS_KDP	MRMS_KDP    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/3DKdp&KDP		kdp.colors   	      	deg/km      0 50 5 dcont 1 0
-MRMS_REFL	MRMS_REFL   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/3DRefl&DBZ		dbz_carbone17.colors	dBZ         0 50 5 dcont 1 0
-MRMS_RHOHV	MRMS_RHOHV  mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/3DRhoHV&RHOHV		rhohv.colors		-          -5 80 5 dcont 1 0
-MRMS_SW		MRMS_SW	    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/3DSpw&SW		width.colors		m/s        -5 80 5 dcont 1 0
-MRMS_ZDR	MRMS_ZDR    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/3DZdr&ZDR		zdr.colors		dB         -5 80 5 dcont 1 0
-MRMS_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
-
-############################
-# NPOL data
-#NPOL_DZ       NPOL_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
-NPOL_DZ       NPOL_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-NPOL_VR       NPOL_VR      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&VR   vel.colors    m/s    -5   80  5  dcont   1 0
-NPOL_ZDR      NPOL_ZDR     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
-NPOL_RHOHV    NPOL_RHOHV   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
-NPOL_PHIDP    NPOL_PHIDP   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
-NPOL_======   ======       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
-
-############################
-# UMaXX data
-#UMAXX_DZ       UMAXX_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz.colors    dBZ    -5   80  5  dcont   1 0
-UMAXX_DZ       UMAXX_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-UMAXX_VE       UMAXX_VE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&VE   vel.colors    m/s    -5   80  5  dcont   1 0
-UMAXX_ZDR      UMAXX_ZDR     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZD   zdr.colors    m/s    -5   80  5  dcont   1 0
-UMAXX_RHOHV    UMAXX_RHOHV   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
-UMAXX_PHIDP    UMAXX_PHIDP   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
-UMAXX_SW       UMAXX_SW      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&VW   width.colors  m/s    -5   80  5  dcont   1 0
-
-############################
-# GPM Ku data
-
-GPM_REFL          GPM_REFL                mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&refl              dbz_carbone17.colors         dBZ         0 50 5 dcont 1 0
-#GPM_REFL          GPM_REFL                mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&refl              refl_imp.colors               dBZ        -5 80 5 dcont 1 0
-GPM_NEARSURFRAIN  GPM_NEAR_SURF_RAIN      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&near_surf_rain    rain_accum.colors            mm         -5 80 5 dcont 1 0
-GPM_RAINTYPE      GPM_RAIN_TYPE           mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&rain_type         convsf_gpm.colors            -          -5 80 5 cart  1 0
-GPM_PHASETYPE     GPM_PHASE_TYPE          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&phase_type        phase_gpm.colors             -          -5 80 5 cart  1 0
-GPM_SRTYPE        GPM_SHAL_RAIN_TYPE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&shallow_rain_type srt_gpm.colors               -          -5 80 5 cart  1 0
-#GPM_BBHGT         GPM_BB_HGT              mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&height_bb         bb_hgt_gpm.colors            -          -5 80 5 cart  1 0
-#GPM_BBWID         GPM_BB_WID              mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&width_bb          bb_wid_gpm.colors            -          -5 80 5 cart  1 0
-GPM_SWATH         GPM_SWATH               mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/gpm_ku&swath             swath_gpm.colors             -          0 1 0.5 cont  1 0
-
-############################
-# WRF data - 36km
-
-WRF36_WSPD       WRF36_WSPD     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&Wspeed    wspd_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF36_W          WRF36_W        mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF36_TEMP_C     WRF36_TEMP_C   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
-#WRF36_REFL10CM   WRF36_REFL10CM mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
-#WRF36_REFL       WRF36_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
-WRF36_REFL       WRF36_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
-WRF36_THETA      WRF36_THETA    $mdvp:://$(DATA_HOST):0:(DATA_DIR)/mdv/wrf/gfs_36km&THETA     tempK.colors          K      -5   80  5  cont    1 0
-WRF36_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-
-WRF36_QCLOUD     WRF36_QCLOUD   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QCLOUD    mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QRAIN      WRF36_QRAIN    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QRAIN     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QICE       WRF36_QICE     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QICE      mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QSNOW      WRF36_QSNOW    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QSNOW     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_QGRAUPEL   WRF36_QGRAUPEL mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&QGRAUPEL  mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF36_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-
-WRF36_RH         WRF36_RH       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&RH        rh_imp.colors       %      -5   80  5  dcont   1 0
-WRF36_T2         WRF36_T2       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&T2        tempK.colors        K      -5   80  5  dcont   1 0
-WRF36_PSFC       WRF36_PSFC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
-WRF36_SWE        WRF36_SWE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
-WRF36_FZLEVEL    WRF36_FZLEVEL  mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
-WRF36_ICING      WRF36_ICING    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&Icing     icing.colors        -      -5   80  5  dcont   1 0
-
-############################
-# WRF data - 12km
-
-WRF12_WSPD       WRF12_WSPD     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&Wspeed    wspd_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF12_W          WRF12_W        mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&W         wvel_imp.colors       m/s    -5   80  5  dcont   1 0
-WRF12_TEMP_C     WRF12_TEMP_C   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&Temp      temp_imp.colors       C      -5   80  5  dcont   1 0
-#WRF12_REFL10CM   WRF12_REFL10CM mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&REFL_10CM refl_imp.colors       dBZ    -5   80  5  cont    1 0
-#WRF12_REFL       WRF12_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    refl_imp.colors       dBZ    -5   80  5  cont    1 0
-WRF12_REFL       WRF12_REFL     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&dbz_3d    dbz_carbone17.colors       dBZ    0   50  5  cont    1 0
-WRF12_THETA      WRF12_THETA    $mdvp:://$(DATA_HOST):0:(DATA_DIR)/mdv/wrf/gfs_12km&THETA     tempK.colors          K      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-
-WRF12_QCLOUD     WRF12_QCLOUD   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QCLOUD    mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QRAIN      WRF12_QRAIN    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QRAIN     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QICE       WRF12_QICE     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QICE      mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QSNOW      WRF12_QSNOW    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QSNOW     mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_QGRAUPEL   WRF12_QGRAUPEL mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&QGRAUPEL  mixr_kgpkg_nmq.colors kg/kg  -5   80  5  dcont   1 0
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-
-WRF12_RH         WRF12_RH       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&RH        rh_imp.colors       %      -5   80  5  dcont   1 0
-WRF12_T2         WRF12_T2       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&T2        tempK.colors        K      -5   80  5  dcont   1 0
-WRF12_PSFC       WRF12_PSFC     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&PSFC      pres_sealevel_Pa_imp.colors  Pa     -5   80  5  dcont   1 0
-WRF12_SWE        WRF12_SWE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&SNOW      wind_jet.colors     kg/m2  -5   80  5  dcont   1 0
-WRF12_FZLEVEL    WRF12_FZLEVEL  mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&FZLevel   fzlevel.colors      hft    -5   80  5  dcont   1 0
-WRF12_ICING      WRF12_ICING    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&Icing     icing.colors        -      -5   80  5  dcont   1 0
-
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
-WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors    m      -5   80  5  cont    1 0
+#DBZ_max_column DBZ_max_column$(IS_TRANS)  mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/radarCart/mosaic_nexrad?use_http=true&DBZ      dbz_carbone17.colors     dBZ  0 50 5 dcont,comp 1 0
+GOES16_CH13    GOES16_CH13$(IS_TRANS)  mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/goes16_ch13?use_http=true&GOESR_CH13   sat_tempC_gray.colors C   -5   80  5  cart    1 0
 
 </GRIDS>
+
+<MAPS>
+#
+# MAP_CODE Must be less than 16 characters, Color must be regualr X color name
+# Complete map file name used is  map_file_subdir/Map_file_name
+# 0 = OFF, > 0 = ON, line of width N
+# Detail thresholds are in Km across the image.#
+#
+#------------------------------------------------------------------------------------------
+# MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
+#------------------------------------------------------------------------------------------
+
+COUNTRIES  Countries       usa.map           $(PLOT_MAPS)      0.0       1000000.0   yellow
+STATES     State_Borders   usa.map           $(PLOT_MAPS)      0.0         10000.0   yellow
+NEXRADS    Nexrads         nexrads.map       $(PLOT_MAPS)      0.0         10000.0   white
+RADARS     Radars          imp_radars.map    $(PLOT_MAPS)      0.0         10000.0   green
+AIRFIELDS  Airfields       imp_airfields.map $(PLOT_MAPS)      0.0         10000.0   cyan
+
+
+</MAPS>
 
 <WINDS>
 #----------------------------------------------------------------------------
@@ -239,36 +167,9 @@ WRF12_======     ======          mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/m
 #
 # Legend_label  URL U V W_fieldnames units  Style [Color]
 #----------------------------------------------------------------------------
-
-#WRFGFS36-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,metbarb yellow
-#WRFGFS12-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,metbarb black
-WRFGFS36-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_36km&  U10   V10   None m/s -2,barb yellow
-WRFGFS12-10m   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/wrf/gfs_12km&  U10   V10   None m/s -2,barb cyan
+#Surf  mdvp:://front.eol.ucar.edu:8080:front/mdv/surf_interp?use_http=true& Uwind Vwind None m/s 1 orange
 
 </WINDS>
-
-<MAPS>
-#
-# MAP_CODE Must be less than 16 characters, Color must be regualr X color name
-# Complete map file name used is  map_file_subdir/Map_file_name
-# 0 = OFF, > 0 = ON, line of width N
-# Detail thresholds are in Km across the image.#
-#
-#------------------------------------------------------------------------------------------
-# MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
-#------------------------------------------------------------------------------------------
-
-COUNTRIES  Countries       usa.map           1      0.0       1000000.0   yellow
-#COUNTIES   US_Counties     us_counties.map   1      0.0         10000.0   blue
-STATES     State_Borders   usa.map           1      0.0         10000.0   yellow
-NEXRADS    Nexrads         nexrads.map       1      0.0         10000.0   white
-#NEXRADS    Nexrads         nexrads.map       1      0.0         100000.0   black
-#RADARS     Radars          imp_radars.map    1      0.0         10000.0   cyan
-RADARS     Radars          imp_radars.map    1      0.0         10000.0   green
-#AIRFIELDS  Airfields       imp_airfields.map 1      0.0         10000.0   blue
-AIRFIELDS  Airfields       imp_airfields_2022.map 1      0.0         10000.0   cyan
-
-</MAPS>
 
 ######################################################################################
 ######################################################################################
@@ -297,10 +198,10 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-# cidd.demo_time:  20:00 5/25/2000
+cidd.demo_time:  $(CIDD_DEMO_TIME)
 
 # Set times to the nearest value divisible by the number of seconds
-cidd.temporal_rounding:    360
+cidd.temporal_rounding:    1
 
 #  MOVIE Related resources
 
@@ -308,13 +209,12 @@ cidd.movie_frame_dir: /tmp
 
 #  This determines how many movie frames are in the loop to start with
 #  Setting this high will cause the X server to hog memory.
-cidd.starting_movie_frames:     24
-#cidd.starting_movie_frames:     12
+cidd.starting_movie_frames:  12
 
 # minutes per movie frame on startup
 # The display will atomatically update every this interval, throwing away its
 # oldest movie frame and creating and drawing a new one.
-cidd.time_interval:  10.0
+cidd.time_interval:  $(TIME_INTERVAL)
 
 # This parameter sets the maximum number of hours in the future a user can select
 # from the quick forecast menu. See SHOW_FORECAST_MENU menu bar button
@@ -329,8 +229,7 @@ cidd.past_interval:  96
 # forecast (model) data, which is often output on a more coarse time interval.
 # When "Now" is selected the magnification is undone. Default is 1.0
 # 
-cidd.movie_magnify_factor:  10.0
-#cidd.movie_magnify_factor:  1.0
+cidd.movie_magnify_factor:  1.0
 
 # Set this paramet to 1 to get CIDD to check and reject for rendering
 # Any data that falls outside the movie frame interval + the
@@ -340,8 +239,7 @@ cidd.check_data_times:  0
 # Sets the allowable time error for data to appear in movie frames
 # (times the time_interval) (6 min * 6 = 36 minutes before or after
 # the beginning or end of the movie frame times
-cidd.stretch_factor:     6.0
-#cidd.stretch_factor:     10.0
+cidd.stretch_factor:     20.0
 
 # Sets whether Cidd request data closest to the midpoint of a movie
 # frame (0) or the end (1). 
@@ -406,26 +304,26 @@ cidd.idle_reset_seconds: 0
 
 # HTML Mode - Set this to 1 to put CIDD into the automatic HTML output mode.
 # Note: cidd.image_dir MUST be set.
-cidd.html_mode: 0
+cidd.html_mode: $(CREATING_IMAGES)
 
 # Set tranparency of generated images.
 # If 0, the normal background color is used.
 # Set to 1 for tranparent background.
-#cidd.transparent_images: 0
+cidd.transparent_images: $(TRANSPARENT_IMAGES)
 
 # Image Generation related resources
-# Set this to a value to get cidd to output imagery as XWD in this directory
-cidd.image_dir: /tmp
+# Set this to a value to get cidd to output imagery in this directory
+cidd.image_dir: $(IMAGE_DIR)
 # CATALOG NOTE: horiz prefix is used as category in catalog
-#cidd.image_horiz_prefix: 
-#cidd.image_vert_prefix: Surface
+cidd.image_horiz_prefix: $(CATEGORY)
+cidd.image_vert_prefix: Surface
 
 # The separator used in the image file names
-#cidd.image_name_separator: .
+cidd.image_name_separator: .
 
 # Set to 1 if one wants CIDD to run once through it's HTML output
 # plot list and then exit - Currently all fields at each zoom level
-cidd.run_once_and_exit: 0
+cidd.run_once_and_exit: $(CREATING_IMAGES)
 
 # The HTML MODE Output file name is built from parts:
 # 'cidd' + fieldname + zoom_level + [height] +
@@ -441,29 +339,30 @@ cidd.add_gen_time_to_filename: 0
 
 # When set to 1 forces the output filename to contain height
 # information in it's file name.  See the comment above on the order
-#cidd.add_frame_num_to_filename: 0
-#cidd.add_frame_time_to_filename: 0
-#cidd.add_height_to_filename: 0
+cidd.add_frame_num_to_filename: 0
+cidd.add_frame_time_to_filename: 0
+cidd.add_height_to_filename: 0
 
 # When set to 1 forces the output filename to contain  the data's valid
 # time in it's file name.  See the comment above on the order
-cidd.add_valid_time_to_filename: 0
+cidd.add_valid_time_to_filename: 1
 
 # When set to 1 forces the output filename to contain the button_name
 # See the comment above on the order.
-#cidd.add_button_name_to_filename: 1
+cidd.add_button_name_to_filename: 1
+#cidd.add_button_name_to_filename: 0
 
 # Output an imagename.xml file which contains geo referencing information.
 # If use_latlon_in_geo_xml is true, then the georeferencing information
 # will be given in latitude/longitude values.  Otherwise, projection values
 # will be used. (For a lat/lon projection, information is always given in
-# latitude/longitude.)
-#cidd.output_geo_xml: 
-#cidd.use_latlon_in_geo_xml: 
+* latitude/longitude.)
+cidd.output_geo_xml: $(OUTPUT_GEO_XML)
+cidd.use_latlon_in_geo_xml: 1
 
 # Set the format for the time fields in the names of output xwd images.
 # See strftime(3) for options.  Default is: %H%M
-cidd.movieframe_time_format:  %H%M
+cidd.movieframe_time_format:  %Y%m%d%H%M%S
 
 # This script will be exec'd if set whenever an html_mode image is output.
 # The full path name of the xwd image will be sent as the script argument
@@ -481,22 +380,23 @@ cidd.series_convert_script: make_anim.csh
 
 # Set to 1 to ask that data be compressed during the MDV Protocol
 # data requests. Default is = 0
-cidd.request_compressed_data: 1
+cidd.request_compressed_data: 0
  
 
 #                  DOMAIN RELATED RESOURCES 
 #
 # Sets the projection for cidd's plan view - Current valid choices are:
 # CARTESIAN, LAT_LON, LAMBERT,  STEREOGRAPHIC
-cidd.projection_type:    LAT_LON
+cidd.projection_type:    $(PROJECTION)
 
 # These must be set if using a Lambert conformal projection - Ignored otherwise
 cidd.lambert_lat1: 20.0
 cidd.lambert_lat2: 60.0 
 
 # These must be set when using a STEREOGRAPHIC (Polar stereo or Oblique stereo)
-cidd.tangent_lat: 20.0
-cidd.tangent_lon: -104.0
+cidd.tangent_lat: $(RADAR_LAT)
+cidd.tangent_lon: $(RADAR_LON)
+
 
 # Set this to the amount grids are rotated clockwise to true north.
 # Overlays will rotate counterclockwise. - In Degrees
@@ -504,7 +404,7 @@ cidd.tangent_lon: -104.0
 cidd.north_angle:        0.0
 
 # Set the scale factor and label for Range rings and Distance scales.
-#cidd.units_per_km:          0.5395932
+#cidd.units_per_km:      1.0
 
 # Set the following to Deg for LAT_LON projections - Default is "km"
 #cidd.scale_units_label:  nm
@@ -517,31 +417,30 @@ cidd.always_get_full_domain:  0
 # If set <= 0.0, CIDD will compute the aspect ratio based on the extent of the
 # first domain.
 cidd.aspect_ratio:   0.0
-#cidd.aspect_ratio:   1.3
 
 # Switch to enable the status window. 0 = off
 cidd.enable_status_window: 0
  
 # Switch to enable the single middle button click save image feature
 # Warning - WiLL allow users shell access, or to write to other dirs.
-cidd.enable_save_image_panel: 0
+cidd.enable_save_image_panel: 1
  
 # On startup and each time the reset button is pressed, the display
 # will indicate a click at this point, as if the user had clicked..
-cidd.reset_click_longitude: -75.0
-cidd.reset_click_latitude:  38.0
+cidd.reset_click_longitude:  -104.89133
+cidd.reset_click_latitude:   40.123333
 #
 # The Outer most domain: Overlays are clipped to this domain and 
 # pan/moves cannot exceed these edge limits.
-cidd.domain_limit_min_x:        -1000
-cidd.domain_limit_max_x:         1000
-cidd.domain_limit_min_y:        -1000
-cidd.domain_limit_max_y:         1000
+cidd.domain_limit_min_x:        -10000
+cidd.domain_limit_max_x:         10000
+cidd.domain_limit_min_y:        -10000
+cidd.domain_limit_max_y:         10000
  
 # The Lat, Long of the center of the display. Internal range rings
 # are relative to this point.
-cidd.origin_longitude:       -75.3417
-cidd.origin_latitude:        38.2625
+cidd.origin_longitude:       $(ORIGIN_LON)
+cidd.origin_latitude:        $(ORIGIN_LAT)
 #
 #
 # Select the data fields/page to start on.
@@ -551,60 +450,24 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       7
+cidd.num_zoom_levels:       1
 cidd.start_zoom_level:      1
-#cidd.zoom_limits_in_latlon: 
+cidd.zoom_limits_in_latlon: $(ZOOM_LIMITS_IN_LATLON)
 
 # The number of Cached images for zooms.
-#cidd.num_cache_zooms:       0
+cidd.num_cache_zooms:       0
 #
 # Note, the Domain labels are used for automated output imagery.
 # It's suggested that names without spaces be used when running
 # in.
 #
 # CATALOG NOTE: label is used as platform in catalog 
-cidd.level1_label:                  FULL DOMAIN
-cidd.level1_min_xkm:                -105.0
-cidd.level1_min_ykm:                 25
-cidd.level1_max_xkm:                -65
-cidd.level1_max_ykm:                 50
+cidd.level1_label:                  $(PLATFORM_NAME)
+cidd.level1_min_xkm:                $(MINX)
+cidd.level1_max_xkm:                $(MAXX)
+cidd.level1_min_ykm:                $(MINY)
+cidd.level1_max_ykm:                $(MAXY)
 #
-cidd.level2_label:                  NEXRADS
-cidd.level2_min_xkm:                -93
-cidd.level2_min_ykm:                32
-cidd.level2_max_xkm:                -67
-cidd.level2_max_ykm:                47
-#
-cidd.level3_label:                  Northeast
-cidd.level3_min_xkm:                -83
-cidd.level3_min_ykm:                36
-cidd.level3_max_xkm:                -65
-cidd.level3_max_ykm:                46
-#
-cidd.level4_label:                  WRF 12km
-cidd.level4_min_xkm:                -91
-cidd.level4_min_ykm:                33
-cidd.level4_max_xkm:                -62
-cidd.level4_max_ykm:                47
-#
-cidd.level5_label:                  NPOL
-cidd.level5_min_xkm:                -78.0
-cidd.level5_min_ykm:                37.0
-cidd.level5_max_xkm:                -72.5
-cidd.level5_max_ykm:                39.6
-#
-cidd.level6_label:                  UMaXX
-cidd.level6_min_xkm:                -74.6
-cidd.level6_min_ykm:                41.4
-cidd.level6_max_xkm:                -70.4
-cidd.level6_max_ykm:                43.4
-#
-cidd.level7_label:                  North America
-cidd.level7_min_xkm:                -135
-cidd.level7_min_ykm:                20
-cidd.level7_max_xkm:                -65
-cidd.level7_max_ykm:                70
-
 
 # Vertical Range and Resolution - Establishes a vertical coordinate system
 # for the cross sectional imagery.
@@ -619,9 +482,9 @@ cidd.level7_max_ykm:                70
 # Pressure : min_ht = 1100.0, max_ht = 100.0
 # Radial Radar:  min_ht = 0.0 max_ht = 25.0
 #  
-cidd.min_ht:               0
-cidd.max_ht:               10
-cidd.start_ht:             2.5
+cidd.min_ht:               0.0
+cidd.max_ht:               20.0
+cidd.start_ht:             2.0
 
 # Radial data Limits
 cidd.min_rkm:                0.0
@@ -631,17 +494,17 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
-cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales, http://www.rap.ucar.edu/colorscales
-cidd.map_file_subdir:     $(PROJ_DIR)/display/maps, http://www.rap.ucar.edu/maps
+cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
+cidd.map_file_subdir:     $(PROJ_DIR)/display/maps
 
 #
 # Station locator features
 #
 # Maximum allowed  Distance in km between request point and station
-#cidd.locator_margin_km:   50
+cidd.locator_margin_km:   50
 # Full Path File name or http URL to a station data file.
 # The format of each line is:  ID, LAT, LON, ALT(m), TYPE
-#cidd.station_loc_url: http://www.rap.ucar.edu/maps/Taiwan_stations.dat 
+#cidd.station_loc_url: http://front.eol.ucar.edu/content/htdocs/maps/Taiwan_stations.dat 
 
 #
 # FMQ Type URL for Receiving Remote commands
@@ -687,17 +550,17 @@ cidd.map_file_subdir:     $(PROJ_DIR)/display/maps, http://www.rap.ucar.edu/maps
 #  Plan View and Cross Section COLORS
 #
 # Legends, scales, etc use this color
-cidd.foreground_color: white
+cidd.foreground_color: $(FOREGROUND_COLOR)
 
 # Background of Images use this color
-cidd.background_color: black
+cidd.background_color: $(BACKGROUND_COLOR)
 
 # Background of margins will be this color
 cidd.margin_color: black
 
 # Render values outside the data range of the color scale in this color
 # 'transparent' is the default
-cidd.out_of_range_color: transparent
+cidd.out_of_range_color: $(MISSING_DATA_COLOR)
 
 # Color of the cross section reference line 
 cidd.route_path_color: yellow
@@ -721,11 +584,8 @@ cidd.range_ring_color: gray
 # Set the follwing colors to 'transparent' to avoid having these
 # plotted. (This is the default) Otherwise, these data will be
 # plotted in the indicated color
-#cidd.missing_data_color: grey20
-#cidd.bad_data_color: grey20
-cidd.missing_data_color: transparent
-cidd.bad_data_color: transparent
-
+cidd.missing_data_color: $(MISSING_DATA_COLOR)
+cidd.bad_data_color: $(MISSING_DATA_COLOR)
 #
 # Time Control (Movie) Popup Colors
 cidd.epoch_indicator_color: orange
@@ -739,11 +599,11 @@ cidd.time_tick_color6: blue
 
 #Toggle for displaying the height Selector in Right Margin
 # Note Right Margin shoud be at least 50 pixels wide
-cidd.show_height_sel:       1
+cidd.show_height_sel:       $(SHOW_HEIGHT_SEL)
 
 # Display data access and rendering messages - This is probably not
 # necessary in situations where all data is small and local.
-cidd.show_data_messages: 0
+cidd.show_data_messages: -
 
 # Sets the relative intensity of the image, relative to the overlays on startup
 # Set between 0.2 and 1.0.
@@ -772,25 +632,28 @@ cidd.latlon_mode:        0
 # Set the format for the time strings. See 'man strftime' for format options.
 # Can add additional text as part of the Time string.
 # Default is: "%m/%d/%Y %H:%M:%S"
-cidd.label_time_format:  %Y/%m/%d %H:%M
+cidd.label_time_format:  %m/%d/%Y %H:%M:%S
 
 # Plot a Legend for each Grid overlay; 0=Off, 1=On
-cidd.layer_legends_on: 1  
+#cidd.layer_legends_on: 1  
+cidd.layer_legends_on: 0  
 
 # Plot a Legend for each Contour overlay; 0=Off, 1=On
-cidd.cont_legends_on: 1
+cidd.cont_legends_on: 0
 
 # Plot a Legend for each Wind overlay; 0=Off, 1=On
+#cidd.wind_legends_on: 1
 cidd.wind_legends_on: 0
 
 # Plot a Legend for each Symbolic Product overlay; 0=Off, 1=On
 cidd.symprod_legends_on: 0
     
 # Switch to turn off all data labels on the display
-cidd.display_labels: 1
+#cidd.display_labels: 1  
+cidd.display_labels: 0  
 #
 # Switch to turn on/off Height and Route reference lines
-cidd.display_ref_lines: 1
+cidd.display_ref_lines: 0
 # 
 
 # TOP Margin styles:
@@ -803,63 +666,59 @@ cidd.top_margin_render_style: 1
 # Bottom Margin Styles
 # 1 - Distance Scale
 # 2 - Time Scale
-cidd.bot_margin_render_style: 2
+cidd.bot_margin_render_style: 1
 
 #
-# Explicitly set the Label start coords, and delta Y.
+# Explititly set the Label start coords, and delta Y.
 # If left unset, ledgends start relative to the top and left margins.
 #
 cidd.horiz_legends_start_x:  30
-cidd.horiz_legends_start_y:  30
+cidd.horiz_legends_start_y:  40
 cidd.horiz_legends_delta_y:  30
 
 #
 # WINDOW SIZE PARAMS
 #
-cidd.horiz_default_height:    800
+cidd.horiz_default_height:     $(HORIZ_DEFAULT_HEIGHT)
 cidd.horiz_min_height:        400
 cidd.horiz_min_width:         400
 cidd.horiz_default_x_pos:     0
 cidd.horiz_default_y_pos:     0
 
-cidd.horiz_top_margin:        20
-cidd.horiz_bot_margin:        20
-cidd.horiz_left_margin:       20
-cidd.horiz_right_margin:      60
+cidd.horiz_top_margin:        0
+cidd.horiz_bot_margin:        $(MARGIN_WIDTH)
+cidd.horiz_left_margin:       $(MARGIN_WIDTH)
+cidd.horiz_right_margin:      $(COLOR_SCALE_WIDTH)
 
 cidd.vert_min_height:        120
 cidd.vert_min_width:         120
 cidd.vert_default_height:    440
 cidd.vert_default_width:     600
 
-cidd.vert_top_margin:        20
+cidd.vert_top_margin:        40
 cidd.vert_bot_margin:        20
 cidd.vert_left_margin:       20
 cidd.vert_right_margin:      30
 
 
 # Set range_ring_spacing to a negative value to dynamically determing spacing.
-cidd.range_ring_spacing:        25.0
-cidd.max_ring_range:            150.0
+cidd.range_ring_spacing:     25.0
+cidd.max_ring_range:     150.0
 
 #  Render Range rings at the origin of the data, instead of the origin of the display.
 cidd.range_ring_follows_data: 1
 
-#  Render Range rings only for radar type data.
-cidd.range_ring_for_radar_only: 1
-
 #  Shift the Domain if the data shifts.
 cidd.domain_follows_data: 0
 
-# x_space, y_space in pixels determine allowable space for range ring labels
+# x_space, y_space in pixels determine allowable space for range ring xblabels
 cidd.range_ring_x_space:    40
 cidd.range_ring_y_space:    13
 cidd.azmith_interval:       30.0
 cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
-cidd.range_rings:             1
-cidd.range_ring_labels:       1
+cidd.range_rings:             0
 cidd.azmith_lines:            0
 
 # Starting state of the All Winds ON/OFF feature
@@ -872,11 +731,6 @@ cidd.ideal_x_vectors:        20
 cidd.ideal_y_vectors:        20
 cidd.wind_head_angle:        30.0
 #
-
-# Wind Vector interval scale factor.
-# Vectors will be drawn to show
-# cidd.wind_scaler * cidd.wind_time_scale_interval minutes of motion
-cidd.wind_scaler: 3
 
 #  Minutes between steps on the wind scaling slider. Wind vector 
 #  size starts at 3 times this interval.
@@ -898,20 +752,20 @@ cidd.wind_time_scale_interval: 10.0
 # m/sec for the scaling to work correctly. For the others (Barbs),
 # the units are arbitrary, but the flag units on the barbs will reflect
 # the data's native units.
-cidd.wind_marker_type:      vector   # default is arrow
+cidd.wind_marker_type:      metbarb
 cidd.wind_w_scale_factor:    10.0
 #
 # Set this value to convert from the your reference speed units 
 # to m/sec.  ie wind_units_scale_factor =  m/sec / chosen units
 # default = 1.0
-cidd.wind_units_scale_factor:     0.2778
+cidd.wind_units_scale_factor:     1.0
 
 # Sets the length of the wind vector reference speed legend.
-cidd.wind_reference_speed: 30.0
+cidd.wind_reference_speed: 10.0
 
 # Select the label to be printed next to the reference bar
 # Default = m/sec
-cidd.wind_units_label:  km/hr
+cidd.wind_units_label:  m/sec
 
 # Uncomment the following lines to turn on default contour fields
 # Uses the contour levels and the Field Label string in data.info
@@ -947,7 +801,7 @@ cidd.use_alt_contours: 0
 # Contours at this value will have a wider line
 # 
 # 
-#cidd.special_contour_value: 0.25
+cidd.special_contour_value: 0.25
 
 # Sometimes, for CONTOURING it is useful to make
 # the assumption that the bad and/or missing values
@@ -961,17 +815,17 @@ cidd.map_missing_to_min_value: 0
 # Uncomment the following lines to set up fields on startup that will
 # appear as overlaid fields. Layers are on by default unless the
 # optional "off" string appears last. 
-#cidd.layer5_field:  
-#cidd.layer4_field:  
-#cidd.layer3_field:  
-cidd.layer2_field:  GOES16_CH13 off
-cidd.layer1_field:  MRMS_REFL
-
+#cidd.layer5_field:  KCYS-DBZ 
+#cidd.layer4_field:  KPUX-DBZ
+#cidd.layer3_field:  KGJX-DBZ
+#cidd.layer1_field:  IR
+#cidd.layer2_field:  DBZ_F_MDV
 
 # Rendering order for layers:
 #  0: render main field first then layers
 #  1: render main field on top of layers.
-#cidd.draw_main_on_top: 0
+cidd.draw_main_on_top: 0
+
 
 # Place Cidd fonts in asending order of size. Cidd will choose the
 # highest font number that will fit in a given screen space.
@@ -979,24 +833,19 @@ cidd.layer1_field:  MRMS_REFL
 # CIDD currently accepts up to 16 different fonts
 cidd.num_fonts: 4
 #
-cidd.font1: 6x10
-cidd.font2: 6x13
-cidd.font3: 7x13
-cidd.font4: fixed
-# From newer version of CIDD??
-#cidd.font1: 6x9
-#cidd.font2: -*-courier-medium-r-normal-*-10-*-*-*-*-*-*-*
-#cidd.font3: -*-courier-medium-r-normal-*-12-*-*-*-*-*-*-*
-#cidd.font4: -*-courier-bold-r-normal-*-12-*-*-*-*-*-*-*
-#cidd.font5: -*-courier-bold-r-normal-*-14-*-*-*-*-*-*-*
-#cidd.font6: -*-courier-bold-r-normal-*-15-*-*-*-*-*-*-*
-#cidd.font7: -*-courier-bold-r-normal-*-16-*-*-*-*-*-*-*
-#cidd.font8: -*-courier-bold-r-normal-*-18-*-*-*-*-*-*-*
-#cidd.font9: -*-courier-bold-r-normal-*-24-*-*-*-*-*-*-*
-#cidd.font10: -*-courier-bold-r-normal-*-30-*-*-*-*-*-*-*
+cidd.font1: 6x9
+cidd.font2: -*-courier-medium-r-normal-*-10-*-*-*-*-*-*-*
+cidd.font3: -*-courier-medium-r-normal-*-12-*-*-*-*-*-*-*
+cidd.font4: -*-courier-bold-r-normal-*-12-*-*-*-*-*-*-*
+cidd.font5: -*-courier-bold-r-normal-*-14-*-*-*-*-*-*-*
+cidd.font6: -*-courier-bold-r-normal-*-15-*-*-*-*-*-*-*
+cidd.font7: -*-courier-bold-r-normal-*-16-*-*-*-*-*-*-*
+cidd.font8: -*-courier-bold-r-normal-*-18-*-*-*-*-*-*-*
+cidd.font9: -*-courier-bold-r-normal-*-24-*-*-*-*-*-*-*
+cidd.font10: -*-courier-bold-r-normal-*-30-*-*-*-*-*-*-*
 
 # font_display_mode = 1 - Clears background behind label text., 0 - No
-cidd.font_display_mode: 0 
+cidd.font_display_mode: 0
 # 
 # 
 # Manual Image save resources    
@@ -1023,7 +872,7 @@ cidd.show_clock:       0
 cidd.draw_clock_local: 0
 
 cidd.one_click_rhi: 1
-#cidd.click_posn_rel_to_origin: 1
+cidd.click_posn_rel_to_origin: 1
 
 #####################################################################################
 # GUI RELATED STUFF
@@ -1031,7 +880,7 @@ cidd.one_click_rhi: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 6
+cidd.num_field_menu_cols: 8
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
@@ -1051,8 +900,6 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # RESET - (Set display to starting zoom, field, products on/off state, etc)
 # SET_TO_NOW - (Sets the display to current time - canceling forecast mode)
 # SET_DRAW_MODE - (Enable the Human entered feature drawing mode)
-# SET_PICK_MODE - (Enable Symprod Picking Mode) 
-# SET_ROUTE_MODE - (Enable the Flight Route drawing mode)
 # PRINT_BUTTON - (Save and Print the plan view image) 
 # HELP_BUTTON - (Send Netscape to a useful help Page)
 # EXIT_BUTTON - Kills the Display
@@ -1064,7 +911,6 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # WINDS_ONOFF - (Turn all winds on/off)
 # SYMPRODS_ONOFF - (Turn all Symbolic Products on/off)
 # REPORT_MODE_ONOFF - (Turn on/off COntinious REport Mode )
-# LANDUSE_ONOFF  - (Turn On/off the Land Use image)
 #
 #    --- Display Panels ---
 # SHOW_DPD_PANEL - (Show/Hide Page Definition Panel which configures individual pages)
@@ -1084,13 +930,12 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # SHOW_BOOKMARK_MEN - (Show/Hide the helpful bookmark menu)
 # SHOW_GENTIME_MENU - (Show/Hide the Model Generation Time menu)
 # SHOW_CMD_MENU  -    (Show/Hide the Command menu)
-# ZOOM_BACK - (Go back to previous zoom)
 # 
 #
 #####################################################################################
-cidd.num_menu_bar_cells: 20
+cidd.num_menu_bar_cells: $(NUM_MENU_BAR_CELLS)
 #
-cidd.menu_bar_label1: Fields...
+cidd.menu_bar_label1: Fields
 cidd.menu_bar_funct1: SHOW_DPD_MENU
 # 
 cidd.menu_bar_label2: Zoom
@@ -1099,10 +944,10 @@ cidd.menu_bar_funct2: SHOW_VIEW_MENU
 cidd.menu_bar_label3: Back
 cidd.menu_bar_funct3: ZOOM_BACK
 #
-cidd.menu_bar_label4: Maps...
+cidd.menu_bar_label4: Maps
 cidd.menu_bar_funct4: SHOW_MAP_MENU
 #
-cidd.menu_bar_label5: Movie...
+cidd.menu_bar_label5: Movie
 cidd.menu_bar_funct5: SHOW_TIME_PANEL
 #
 cidd.menu_bar_label6: Loop
@@ -1110,50 +955,42 @@ cidd.menu_bar_funct6: LOOP_ONOFF
 #  
 cidd.menu_bar_label7: Now
 cidd.menu_bar_funct7: SET_TO_NOW
-#  
-cidd.menu_bar_label8: Forecast
-cidd.menu_bar_funct8: SHOW_FORECAST_MENU
 #
-cidd.menu_bar_label9: Products
-cidd.menu_bar_funct9: SHOW_PRODUCT_MENU
+cidd.menu_bar_label8: Products
+cidd.menu_bar_funct8: SHOW_PRODUCT_MENU
 #
-cidd.menu_bar_label10: All-Prods
-cidd.menu_bar_funct10: SYMPRODS_ONOFF
+cidd.menu_bar_label9: All-Prods
+cidd.menu_bar_funct9: SYMPRODS_ONOFF
 #
-cidd.menu_bar_label11: Vsection
-cidd.menu_bar_funct11: SHOW_XSECT_PANEL
+cidd.menu_bar_label10: Vsection
+cidd.menu_bar_funct10: SHOW_XSECT_PANEL
+#
+cidd.menu_bar_label11: Reset
+cidd.menu_bar_funct11: RESET
 #
 cidd.menu_bar_label12: Reload
 cidd.menu_bar_funct12: RELOAD
 #
-cidd.menu_bar_label13: Overlays...
-cidd.menu_bar_funct13: SHOW_DPD_PANEL
+cidd.menu_bar_label13: Value
+cidd.menu_bar_funct13: REPORT_MODE_ONOFF
 #
-cidd.menu_bar_label14: Config
-cidd.menu_bar_funct14: SHOW_GRID_PANEL
+cidd.menu_bar_label14: Overlays
+cidd.menu_bar_funct14: SHOW_DPD_PANEL
 #
-cidd.menu_bar_label15: Status
-cidd.menu_bar_funct15: SHOW_STATUS_PANEL
+cidd.menu_bar_label15: Config
+cidd.menu_bar_funct15: SHOW_GRID_PANEL
 #
-cidd.menu_bar_label16: Winds
-cidd.menu_bar_funct16: WINDS_ONOFF
+cidd.menu_bar_label16: Status
+cidd.menu_bar_funct16: SHOW_STATUS_PANEL
 #
-cidd.menu_bar_label17: Value
-cidd.menu_bar_funct17: REPORT_MODE_ONOFF
+cidd.menu_bar_label17: Help
+cidd.menu_bar_funct17: HELP_BUTTON
 #
-cidd.menu_bar_label18: RESET
-cidd.menu_bar_funct18: RESET
+cidd.menu_bar_label18: Winds
+cidd.menu_bar_funct18: WINDS_ONOFF
 #
-cidd.menu_bar_label19: Clone
-cidd.menu_bar_funct19: CLONE_CIDD
-#
-cidd.menu_bar_label20: Exit
-cidd.menu_bar_funct20: EXIT_BUTTON
-
-
-#
-#cidd.menu_bar_label13: Print
-#cidd.menu_bar_funct13: PRINT_BUTTON
+cidd.menu_bar_label19: Exit
+cidd.menu_bar_funct19: EXIT_BUTTON
 #
 #cidd.menu_bar_label7: URL...
 #cidd.menu_bar_funct7: SHOW_BOOKMARK_MENU
@@ -1161,20 +998,21 @@ cidd.menu_bar_funct20: EXIT_BUTTON
 #cidd.menu_bar_label8: Model Run...
 #cidd.menu_bar_funct8: SHOW_GENTIME_MENU
 #
+#
+#cidd.menu_bar_label12: Print
+#cidd.menu_bar_funct12: PRINT_BUTTON
+#
+#cidd.menu_bar_label14: Fcast
+#cidd.menu_bar_funct14: SHOW_FORECAST_MENU
+#
 #cidd.menu_bar_label15: Past
 #cidd.menu_bar_funct15: SHOW_PAST_MENU
-#  
+#
 #cidd.menu_bar_label17: Close Popups
 #cidd.menu_bar_funct17: CLOSE_POPUPS
 #
 #cidd.menu_bar_label24: Draw Mode
 #cidd.menu_bar_funct24: SET_DRAW_MODE
-#
-#cidd.menu_bar_label25: CLONE
-#cidd.menu_bar_funct25: CLONE_CIDD
-#
-#cidd.menu_bar_label12: Help...
-#cidd.menu_bar_funct12: HELP_BUTTON
 #
 #cidd.menu_bar_label27: Commands
 #cidd.menu_bar_funct27: SHOW_CMD_MENU
@@ -1186,9 +1024,10 @@ cidd.menu_bar_funct20: EXIT_BUTTON
 #cidd.menu_bar_funct29: LANDUSE_ONOFF
 #
 
+
 ##########################################
 
-cidd.horiz_frame_label:  ** IMPACTS 2020 **
+cidd.horiz_frame_label: $(CIDD_LABEL)
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
@@ -1208,7 +1047,7 @@ cidd.status_info_file:
 cidd.canvas_help:              cidd_help:canvas
 cidd.frame_message_help:       cidd_help:frame_message
 
-cidd.help_command:   /opt/google/chrome/chrome http://www.rap.ucar.edu/CIDD'
+cidd.help_command:   netscape_starter -remote 'openURL(http://www.rap.ucar.edu/CIDD/mds_user_manual/)'
 
 #
 # This command is run whenever a BOOKMARK_MENU button is pressed.
@@ -1224,14 +1063,15 @@ cidd.help_command:   /opt/google/chrome/chrome http://www.rap.ucar.edu/CIDD'
 # cidd.bookmarkN: - The exact URL text for use in the cidd.bookmark_command.
 # cidd.bookmark_labelN: The Label that appears in the menu
 #
-#cidd.bookmark1: http://mars/aoaws/doc/roc_mds.html
-#cidd.bookmark_label1: ROC
-#cidd.bookmark2: http://www.rap.ucar.edu/weather/
-#cidd.bookmark_label2: RAP Weather
-#cidd.bookmark3: http://adds.awc-kc.noaa.gov/
-#cidd.bookmark_label3: ADDS
-#cidd.bookmark4: http://cessna/
-#cidd.bookmark_label4: ADDS-Cessna
+cidd.bookmark1: http://mars/aoaws/doc/roc_mds.html
+cidd.bookmark_label1: ROC
+cidd.bookmark2: http://www.rap.ucar.edu/weather/
+cidd.bookmark_label2: RAP Weather
+cidd.bookmark3: http://adds.awc-kc.noaa.gov/
+cidd.bookmark_label3: ADDS
+cidd.bookmark4: http://cessna/
+cidd.bookmark_label4: ADDS-Cessna
+
 
 # Resources for compatibility with TITAN-TIME HISTORY Program
 
@@ -1275,135 +1115,41 @@ cidd.product_detail_adjustment3: +1
 # Product Scaling Constant. - Set this constant to determine
 # at what zoom icons and will have a scale factor of 1.0
 # Default = 300. Function = log10(Constant /km_across_screen) + 1.0;
-cidd.scale_constant: 300.0 
+# Set to 0 or less to leave icons unscaled
+cidd.scale_constant: -1
 
 # prevent CIDD from closing popup windows when changing desktops
 
-#cidd.close_popups: 0
+cidd.close_popups: 0
 
 # RHI support
 
 # CIDD uses the number pad keys 7,9,4,6,1,3 to rotate the RHI
 # by +/- these amounts (degrees)
 # 7-9 is coarse 4-6 is medium and 1-3 is fine.
-#cidd.rotate_coarse_adjust: 6
-#cidd.rotate_medium_adjust: 2
-#cidd.rotate_fine_adjust:  1
+cidd.rotate_coarse_adjust: 6
+cidd.rotate_medium_adjust: 2
+cidd.rotate_fine_adjust:  1
 
 </MAIN_PARAMS>
 
-<DRAW_EXPORT>
-/**********************************************************************
- * TDRP params for Cdraw_P
- **********************************************************************/
-
-//======================================================================
+<#DRAW_EXPORT>
+///////////// dexport_info ///////////////////////////////
+// Draw/Export Parameters
 //
-// Draw/Export Parameters.
-//
-//======================================================================
- 
-///////////// dexport_info ////////////////////////////
-//
-// Human Drawn Products for Export Parameters.
-//  Each Entry needs:
-// ID_Label FMQ_URL Valid_Minutes Default_ID_no    ID_LABEL - This is 
-//   used to designate Product types
-//     FMQ_URL: example: fmqp:://host::dir/file 
+// Each Entry needs:
+// ID_Label FMQ_URL Valid_Minutes Default_ID_no
+//    ID_LABEL - This is used to designate Product types
+//    FMQ_URL: example: fmqp:://host::dir/file
 //    Valid_Minutes: How many minutes the product is valid by default
 //    Default_ID_no: Default Data Type (Enumerated ID)
-//    Default_label: Test to place into Label field by default.
-//
-// Type: struct
-//   typedef struct {
-//      char* id_label;
-//      char* url;
-//      double valid_minutes;
-//      int default_id_no;
-//      char* default_label;
-//   }
-//
-// 1D array - variable length.
 //
 
 dexport_info = {
-  { "Boundry", "/tmp/cidd.fmq", 60, 0, "A"},
-  { "Boundry-b", "/tmp/cidd.fmq", 60, 0, "B"}
+    {"Boundry",         "/tmp/cidd.fmq",                           60, 0}
 };
+<#/DRAW_EXPORT>
 
-</DRAW_EXPORT>
-
-<IMAGE_GENERATION>
-/**********************************************************************
- * TDRP params for Cimages_P
- **********************************************************************/
-
-///////////// debug ///////////////////////////////////
-//
-// Debug option.
-// If set, debug messages will be printed appropriately.
-//
-// Type: enum
-// Options:
-//     DEBUG_OFF
-//     DEBUG_NORM
-//     DEBUG_VERBOSE
-//
-
-debug = DEBUG_OFF;
-
-///////////// generate_vsection_images ////////////////
-//
-// Generate images for specified vertical sections.
-// If TRUE, and CIDD is in html_mode, it will generate vertical section 
-//   images in addition to the normal plan view images.
-//
-// Type: boolean
-//
-
-generate_vsection_images = FALSE;
-
-///////////// vsection_waypts_in_latlon ///////////////
-//
-// The specified waypts are in latlon degree units.
-// If TRUE, the waypts are specified in lat/lon degrees. If FALSE, they 
-//   are specified in (xkm, ykm) units in the current projection.
-//
-// Type: boolean
-//
-
-vsection_waypts_in_latlon = FALSE;
-
-///////////// vsection_spec ///////////////////////////
-//
-// Vertical section information array.
-// The fields in the structure are as follows:
-//
-//   vsection_label: label to be used for the specified vertical 
-//   section.
-//
-//   n_waypts: number of waypts for specifying the vert section.
-//             Normally this is 2 - for a single vertical section 
-//   segment.
-//
-//   waypt_locs: location of way points. This is a string with pairs of 
-//   points in it, with the following format: (x, y) (x, y) ..... (x, y).
-//
-// Type: struct
-//   typedef struct {
-//      string vsection_label;
-//      int n_waypts;
-//      string waypt_locs;
-//   }
-//
-// 1D array - variable length.
-//
-
-vsection_spec = {
-  { "RHI-north", 2, "(0, 0) (0, 150)"}
-};
-
-</IMAGE_GENERATION>
 
 <SYMPRODS>
 ///////////// debug ///////////////////////////////////
@@ -1413,9 +1159,8 @@ vsection_spec = {
 //
 // Type: enum
 // Options:
-//   DEBUG_OFF
-//   DEBUG_NORM
-//   DEBUG_VERBOSE
+//   DEBUG_OFF, DEBUG_NORM, DEBUG_VERBOSE
+//
 //
 
 debug = DEBUG_OFF;
@@ -1423,23 +1168,11 @@ debug = DEBUG_OFF;
 ///////////// short_requests //////////////////////////
 //
 // Gather Data Frame by Frame, Otherwise by loop span.
-// Gathers Products valid for the current frame only - Speeds up 
-//   gathering of large data sets, like METAR data.
-//
+// Gathers Products valid for the current frame only.
 // Type: boolean
 //
-
+   
 short_requests = TRUE;
-
-///////////// gzip_requests ///////////////////////////
-//
-// Request data using GZIP compression.
-// If true, symprod data will be GZIP compressed by the server.
-//
-// Type: boolean
-//
-
-gzip_requests = FALSE;
 
 ///////////// prod_info ///////////////////////////////
 //
@@ -1461,15 +1194,11 @@ gzip_requests = FALSE;
 //      RENDER_VALID_IN_LAST_FRAME: Render all Valid in the last frame
 //      RENDER_LATEST_IN_FRAME: Render the latest product in the frame.
 //      RENDER_LATEST_IN_LOOP:  Render the latest product valid in the movie loop
-//	RENDER_FIRST_BEFORE_FRAME_TIME: Render the latest product before the end of frame time
 //      RENDER_FIRST_BEFORE_DATA_TIME: Render the latest product before the data time in each frame.
 //      RENDER_FIRST_AFTER_DATA_TIME:Render the earliest product after the data time in each frame.
 //      RENDER_ALL_BEFORE_DATA_TIME: Render all valid products before the data time in each frame.
 //      RENDER_ALL_AFTER_DATA_TIME:  Render all valid products after the data time in each frame.
-//     	RENDER_GET_VALID: Render all valid products returned with a GetValid Spdb call.
-//	RENDER_GET_VALID_AT_FRAME_TIME:  Render products which have not expired at the frame time
-//
-//      Note: all comparisions are less than or equal or greater than or equal  
+//        Note: all comparisions are less than or equal or greater than or equal  
 //
 //   on_by_default: True or False
 //
@@ -1482,201 +1211,32 @@ gzip_requests = FALSE;
 //         log10(scale_constant /km_distance_across_screen ) + 1.0
 //         Use 0 to disable the off feature. (always displayed)
 //         Note: scale_constant set in MAIN_PARAM section.      
-//
-//  request_data_on_zoom: Flag indicating whether to request new data for
-//       this product whenever the user changes the zoom.  Normally, this
-//       should be set to false for efficiency reasons.  If the products
-//       to be rendered would change with a zoom change then this should be
-//       set to true.
-//
-//  request_data_on_vert_change: Flag indicating whether to request new data
-//       for this product whenever the user changes the currently displayed
-//       vertical level.  Normally, this should be set to false for efficiency
-//       reasons.  If the products to be rendered would change with a zoom
-//       change then this should be set to true.
-//
-// Type: struct
-//   typedef struct {
-//      string menu_label;
-//      string url;
-//      int data_type;
-//      render_type_t render_type;
-//        Options:
-//          RENDER_ALL
-//          RENDER_ALL_VALID
-//          RENDER_VALID_IN_LAST_FRAME
-//          RENDER_LATEST_IN_FRAME
-//          RENDER_LATEST_IN_LOOP
-//          RENDER_FIRST_BEFORE_FRAME_TIME
-//          RENDER_FIRST_BEFORE_DATA_TIME
-//          RENDER_FIRST_AFTER_DATA_TIME
-//          RENDER_ALL_BEFORE_DATA_TIME
-//          RENDER_ALL_AFTER_DATA_TIME
-//          RENDER_GET_VALID
-//          RENDER_GET_VALID_AT_FRAME_TIME
-//      boolean on_by_default;
-//      double minutes_allow_before;
-//      double minutes_allow_after;
-//      double text_off_threshold;
-//      boolean request_data_on_zoom;
-//      boolean request_data_on_vert_change;
-//   }
-//
-// 1D array - variable length.
-//
 
-prod_info = {
-  {
-    menu_label = "GLM" ,
-    //url = "spdbp:Ltg2Symprod://$(DATA_HOST):0:spdb/ltg/glm16",
-    url = "spdbp:Ltg2Symprod://$(DATA_HOST):0:$(DATA_DIR)/spdb/ltg/glm16",
-    data_type = 0,
-    render_type = RENDER_ALL_VALID,
-    // render_type = RENDER_ALL_BEFORE_DATA_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 20.0,
-    minutes_allow_after = 0.0,
-    text_off_threshold = 0.0,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "RHI-NPOL",
-    url = "spdbp:Rhi2Symprod:ticks//$(DATA_HOST):0:$(DATA_DIR)/spdb/rhi/npol",
-    data_type = 0,
-    render_type = RENDER_ALL_VALID,
-    on_by_default = FALSE,
-    minutes_allow_before = 20,
-    minutes_allow_after = 10,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  , 
-  {
-    menu_label = "ER2 15_min",
-    url = "spdbp:AcTrack2Symprod:N809NA.15_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "ER2 30_min",
-    url = "spdbp:AcTrack2Symprod:N809NA.30_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "ER2 5_hr",
-    url = "spdbp:AcTrack2Symprod:N809NA.5_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "ER2 10_hr",
-    url = "spdbp:AcTrack2Symprod:N809NA.10_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "P3 15_min",
-    url = "spdbp:AcTrack2Symprod:N426NA.15_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "P3 30_min",
-    url = "spdbp:AcTrack2Symprod:N426NA.30_min//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "P3 5_hr",
-    url = "spdbp:AcTrack2Symprod:N426NA.5_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,                        
-  {
-    menu_label = "P3 10_hr",
-    url = "spdbp:AcTrack2Symprod:N426NA.10_hr//$(DATA_HOST):0:$(DATA_DIR)/spdb/ac_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-};
+//prod_info = {
+//  {
+//    menu_label = "NLDN" ,
+//    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:front/spdb/ltg/nldn?use_http=true",
+//    data_type = 0,
+//    render_type = RENDER_ALL_BEFORE_DATA_TIME,
+//    on_by_default = $(RENDER_LTG),
+//    minutes_allow_before = 60.0,
+//    minutes_allow_after = 0.0,
+//    text_off_threshold = 0.0,
+//    FALSE,
+//    FALSE
+//  }
+//};
 
 </SYMPRODS> 
-
 
 <TERRAIN>
 /**********************************************************************
  * TDRP params for Cterrain_P
+ * Note: Terrain Fields must be on the same projection as the Display
  **********************************************************************/
-
-//======================================================================
-//
-// Terrain Parameters.
-//
-//======================================================================
- 
 ///////////// id_label ////////////////////////////////
 //
 // Label used for legends.
-//
 // Type: string
 //
 
@@ -1685,12 +1245,9 @@ id_label = "Terrain";
 ///////////// terrain_url /////////////////////////////
 //
 // Used to located gridded terrain data.
-// Terrain_URL 
-//  Note example URL:
-//   mdvp::static//venus::mdv/terrain&Elevation
-//  Field name follows the Ampersand. Use #N for field number override   
-//   Use caret: ^ as a substitute for spaces in field names.
-//
+// Terrain_URL
+//  Note URL is of the form
+//   mdvp::[param_file]//host.dom::dir/dir&field_name.
 // Type: string
 //
 
@@ -1699,39 +1256,32 @@ terrain_url = "";
 ///////////// height_scaler ///////////////////////////
 //
 // Conversion from terrain units to local coords.
-// Choose a scaler which converts plane height values
-// Default is Hecto-feet (FL) per meter.
-//
+// Choose a scaler which converts plane height values.
 // Type: double
 //
-
-height_scaler = 0.0328083;
+height_scaler = 0.001;
 
 ///////////// landuse_url /////////////////////////////
 //
 // Used to located gridded land use data.
-// Land Use URL 
-//  Note URL is of the form 
-//   mdvp::[param_file]//host.dom::dir/dir&field_name
-//  Field name follows the Ampersand. Use #N for field number override   
-//   Use caret: ^ as a substitute for spaces in field names.
-//
+// Land Use URL
+//  Note URL is of the form
+//   mdvp::[param_file]//host.dom::dir/dir&field_name.
 // Type: string
 //
 
-landuse_url = "mdvp:://tempest:0:topo/relief/mdv&RGBA";
+landuse_url = "";
 
-///////////// landuse_colorscale //////////////////////
+ ///////////// landuse_colorscale //////////////////////
 //
 // Color lookup table for Land use.
 // Land Use colorscale file name
-//  Note: CIDD looks in the colorscale dir, then in the current dir for 
+//  Note: CIDD looks in the colorscale dir, then in the current dir for
 //   this file.
-//
 // Type: string
 //
 
-landuse_colorscale = "terrain.colors";
+landuse_colorscale = "terrain_front.colors";
 
 ///////////// land_use_render_method //////////////////
 //
@@ -1740,26 +1290,14 @@ landuse_colorscale = "terrain.colors";
 //
 // Type: enum
 // Options:
-//     RENDER_FILLED_CONT
-//     RENDER_RECTANGLES
-//     RENDER_DYNAMIC_CONTOURS
+//   RENDER_FILLED_CONT, RENDER_RECTANGLES
 //
-
-land_use_render_method = RENDER_RECTANGLES;
-
-///////////// landuse_active //////////////////////////
 //
-// Default Display state of Land Use/ Basemap.
-//
-// Type: boolean
-//
-
-landuse_active = FALSE;
+land_use_render_method = RENDER_FILLED_CONT;
 
 ///////////// earth_color1 ////////////////////////////
 //
-// Earth's skin color.
-//
+// Earth s skin color.
 // Type: string
 //
 
@@ -1767,220 +1305,9 @@ earth_color1 = "sienna";
 
 ///////////// earth_color2 ////////////////////////////
 //
-// Earth's core color.
-//
+// Earth s core color.
 // Type: string
 //
-
 earth_color2 = "red4";
-
 </TERRAIN>
-
-<ROUTE_WINDS>
-/**********************************************************************
- * TDRP params for Croutes_P
- **********************************************************************/
-
-//======================================================================
-//
-// Route Winds Parameters.
-//
-//======================================================================
- 
-///////////// debug ///////////////////////////////////
-//
-// Set to DEBUG_NORM or DEBUG_VERBOSE for diagnostic output.
-//
-// Type: enum
-// Options:
-//     DEBUG_OFF
-//     DEBUG_NORM
-//     DEBUG_VERBOSE
-//
-
-debug = DEBUG_OFF;
-
-///////////// font_height /////////////////////////////
-//
-//  Maximum height in Pixels of labels.
-//
-// Type: int
-//
-
-font_height = 13;
-
-///////////// add_waypoints_labels ////////////////////
-//
-// Default state of the add_waypoints_labels.
-// 0 = off, 1 = on.
-//
-// Type: int
-//
-
-add_waypoints_labels = 1;
-
-///////////// add_wind_text ///////////////////////////
-//
-// Default state of the add_wind_text labels.
-// 0 = off, 1 = on.
-//
-// Type: int
-//
-
-add_wind_text = 1;
-
-///////////// label_style /////////////////////////////
-//
-// Set to REGULAR_INTERVALS or EQUAL_DIVISIONS.
-//
-// Type: enum
-// Options:
-//     REGULAR_INTERVALS
-//     EQUAL_DIVISIONS
-//
-
-label_style = REGULAR_INTERVALS;
-
-///////////// label_interval //////////////////////////
-//
-// Distance in km between winds labels.
-// Used if label_style is set to REGULAR_INTERVALS.
-//
-// Type: double
-//
-
-label_interval = 55.6;
-
-///////////// num_route_labels ////////////////////////
-//
-// number of route wind labels to plot along the route.
-// Typically this should be set between 5 and 20.
-// Minimum val: 2
-// Maximum val: 100
-//
-// Type: int
-//
-
-num_route_labels = 10;
-
-///////////// route_track_line_width //////////////////
-//
-// Width in pixels of the route winds track.
-// Minimum val: 1
-// Maximum val: 20
-//
-// Type: int
-//
-
-route_track_line_width = 3;
-
-///////////// u_url ///////////////////////////////////
-//
-// U Wind Componet.
-//  URL's take the form  mdvp::[paramfile]//host.dom::dir/dir&fieldname.
-//
-// Type: string
-//
-
-u_url = "mdvp::zoom_mds//neptune::mdv/mm5&U";
-
-///////////// v_url ///////////////////////////////////
-//
-// v Wind Componet.
-//
-// Type: string
-//
-
-v_url = "mdvp::zoom_mds//neptune::mdv/mm5&V";
-
-///////////// turb_url ////////////////////////////////
-//
-// Turbulence Index.
-//
-// Type: string
-//
-
-turb_url = "mdvp::d3_d4//neptune::mdv/mm5&Turb";
-
-///////////// turb_low_thresh /////////////////////////
-//
-// Value at which the turbulence is considered Low.
-//
-// Type: double
-//
-
-turb_low_thresh = 0.25;
-
-///////////// turb_mod_thresh /////////////////////////
-//
-// Value at which the turbulence is considered Moderate.
-//
-// Type: double
-//
-
-turb_mod_thresh = 0.5;
-
-///////////// turb_hi_thresh //////////////////////////
-//
-// Value at which the turbulence is considered High.
-//
-// Type: double
-//
-
-turb_hi_thresh = 0.75;
-
-///////////// icing_url ///////////////////////////////
-//
-// Icing Index.
-//
-// Type: string
-//
-
-icing_url = "mdvp::d3_d4//neptune::mdv/mm5&Icing";
-
-///////////// icing_low_thresh ////////////////////////
-//
-// Value at which the icing is considered Light.
-//
-// Type: double
-//
-
-icing_low_thresh = 0.25;
-
-///////////// icing_mod_thresh ////////////////////////
-//
-// Value at which the icing is considered Moderate.
-//
-// Type: double
-//
-
-icing_mod_thresh = 0.5;
-
-///////////// icing_hi_thresh /////////////////////////
-//
-// Value at which the icing is considered Heavy.
-//
-// Type: double
-//
-
-icing_hi_thresh = 0.75;
-
-///////////// route_paths /////////////////////////////
-//
-//  Route path strings - Format of each string isROUTE_LABEL NPOINTS  
-//   ID_String Lat Lon ID_String LAT Lon ...
-// ROUTE_LABEL will be used in the menu, 
-// NPoints = Number of way points in route 
-//   Followed by NPoint triplets of the following:
-// ID_string -> usually a Airport or VOR 
-// Lat Lon :  decimal degrees.
-//
-// Type: string
-// 1D array - variable length.
-//
-
-route_paths = { "A-1 8 BULAN 27.0917 124.0000 OSTAR 26.3317 123.0000 SHARK 25.8333 122.3583 ANNNA 25.5717 122.0217 APU 25.1767 121.5233 HLG 24.6400 120.7833 MKG 23.5583 119.6283 ELATO 22.3333 117.5000 ", "M-750 12 MOLKA 26.6583 124.0000 MORSU 25.9100 123.0000 LEKOS 25.5100 122.4717 ROBIN 25.4200 122.2083 NOKAS 25.1317 121.9917 SANAS 24.8967 121.6917 PILOX 24.4150 121.0250 ANLOT 23.9417 120.5233 TOROX 23.3533 119.9083 RENOT 22.5683 118.5117 DADON 22.2767 118.0033 ENVAR 21.9917 117.5000 ", "G-581 7 IGURU 23.9500 124.0000 TULTO 23.3233 123.0000 HCN 21.9283 120.8433 PARPA 22.0150 120.1683 CYRUS 22.2167 118.5317 DADON 22.2767 118.0033 ELATO 22.3333 117.5000 ", "B-591 9 APU 25.1767 121.5233 SANAS 24.8967 121.6917 TINHO 24.3533 122.0283 TITUS 23.8283 121.8517 TACLE 22.9933 121.5867 GID 22.6733 121.4867 TUNNY 22.3600 121.2150 HCN 21.9283 120.8433 DOREX 21.0000 120.7833 ", "R-583 5 BORDO 26.0167 124.0000 KIKIT 25.8817 123.5917 PABSO 25.6517 122.8750 LEKOS 25.5100 122.4717 APU 25.1767 121.5233 ", "G-86 3 HCN 21.9283 120.8433 ANDRE 21.7783 120.1683 KAPLI 21.1667 117.5000 ", "B-576 3 SALMI 28.3150 124.0000 BERBA 27.0783 123.0000 APU 25.1767 121.5233 " };
-
-</ROUTE_WINDS>
-
 

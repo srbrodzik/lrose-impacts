@@ -14,13 +14,13 @@ baseDir = '/media/usb/data/raw/images'
 
 indir = baseDir + '/' + date
 category_new = 'gis'
-platform_new = 'GOES-16'
-product_new = 'ir_ch13'
+platform_new = 'MRMS_MOSAIC'
+product_new = 'DBZ'
 ext_new = 'png'
 
 os.chdir(indir)
 for file in os.listdir(indir):
-    if file.startswith('gis.GOES16_CH13') and file.endswith('png'):
+    if file.startswith('gis.DBZ') and file.endswith('png'):
         print(file)
         (cat,platf1,plat2,plat3,datetime,ext) = file.split('.')
         if len(datetime) > 12:

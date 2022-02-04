@@ -36,13 +36,9 @@ InputWatcher	mrms_refl	start_inst(ingest)        snuff_inst
 #
 # Catalog images
 #
-LdataMultWatcher  catalog_mrms_refl		start_inst(catalog) snuff_inst
-#LdataWatcher      catalog_mrms_images  	start_inst(catalog) snuff_inst
-LdataMultWatcher  catalog_goes16_ch01          start_inst(catalog) snuff_inst
-#LdataWatcher      catalog_goes16_ch01_images   start_inst(catalog) snuff_inst
-LdataMultWatcher  catalog_goes16_ch13		start_inst(catalog) snuff_inst
-#LdataWatcher      catalog_goes16_ch13_images   start_inst(catalog) snuff_inst
-
+#LdataMultWatcher  catalog.mosaic_nexrad         start_inst(catalog) snuff_inst
+#put_images_to_catalog.py  
+#
 ######################################################################
 #
 # Ingesting NPOL data

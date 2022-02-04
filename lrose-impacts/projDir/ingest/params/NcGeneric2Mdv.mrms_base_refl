@@ -106,8 +106,7 @@ mode = FILELIST;
 // Type: string
 //
 
-input_dir = "/home/disk/bob/impacts/netcdf/mrms/base_refl";
-//input_dir = "/home/disk/bob/gpm/nam_imp_ku/classify/ex_data_v06/2019/12";
+input_dir = "/home/disk/bob/impacts/netcdf/mrms/2DBaseRefl";
 
 ///////////// use_ldata_info_file /////////////////////
 //
@@ -596,11 +595,20 @@ remap_projection = PROJ_LATLON;
 //
 //
 
+//remap_grid = {
+//    nx = 4000,
+//    ny = 2500,
+//    minx = -104.995,
+//    miny = 25.005,
+//    dx = 0.01,
+//    dy = 0.01
+//};
+
 remap_grid = {
-    nx = 4000,
-    ny = 2500,
-    minx = -104.995,
-    miny = 25.005,
+    nx = 3400,
+    ny = 1600,
+    minx = -99.995,
+    miny = 32.005,
     dx = 0.01,
     dy = 0.01
 };
@@ -928,7 +936,7 @@ output_compression_type = COMPRESSION_GZIP;
 // Type: string
 //
 
-data_set_name = "MRMS";
+data_set_name = "MRMS_base_refl";
 
 ///////////// data_set_source /////////////////////////
 //

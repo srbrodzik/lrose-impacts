@@ -10,11 +10,12 @@ if len(sys.argv) < 2:
 else:
     date = sys.argv[1]
 
-baseDir = '/home/disk/bob/impacts/raw/images'
+baseDir = '/media/usb/data/raw/images'
 
 inDir = baseDir + '/' + date
 for file in os.listdir(inDir):
     if 'CH01' in file:
+        print(file)
         parts = file.split('.')
         datetime = parts[4]
         datetime = datetime[:-2]

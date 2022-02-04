@@ -85,12 +85,12 @@
 #
 # AIRCRAFT
 # Uncomment the next line when ER2 is flying
-#*/5 5-12 4 2 * /home/disk/bob/impacts/bin/run.get_er2_rt_images.csh >> /home/disk/meso-home/meso/cron/logs/er2_rt.log 2>&1
+#*/5 * * * * /home/disk/bob/impacts/bin/run.get_er2_rt_images.csh >> /home/disk/meso-home/meso/cron/logs/er2_rt.log 2>&1
 # Uncomment the next line when P-3 is flying and might use dropsondes
 */5 * * * * /home/disk/bob/impacts/bin/run.get_dropsonde_images.csh >> /home/disk/meso-home/meso/cron/logs/dropsonde.log
 ##*/10 * * * * /home/disk/bob/impacts/bin/run.get_er2_mvis.csh >> /home/disk/meso-home/meso/cron/logs/mvis.log
 # Uncomment next line when P3 is flying (make mod to run script first)
-#* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_p3_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_p3.log 2>&1
+* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_p3_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_p3.log 2>&1
 # Uncomment next line when ER2 is flying (make mod to run script first)
 #* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_er2_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_er2.log 2>&1
 #
