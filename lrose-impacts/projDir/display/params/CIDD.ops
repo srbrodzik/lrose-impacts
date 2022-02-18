@@ -101,24 +101,15 @@ MRMS_ZDR	MRMS_ZDR    mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/mrms/3DZdr&ZDR		zdr.
 MRMS_======  ======         mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors      m   -5   80  5  cont    1 0
 
 ############################
-# NPOL data
-#NPOL_DZ       NPOL_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz.colors    dBZ    -5   80  5  dcont   1 0
-NPOL_DZ       NPOL_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DZ   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-NPOL_VR       NPOL_VR      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&VR   vel.colors    m/s    -5   80  5  dcont   1 0
-NPOL_ZDR      NPOL_ZDR     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&DR   zdr.colors    m/s    -5   80  5  dcont   1 0
-NPOL_RHOHV    NPOL_RHOHV   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
-NPOL_PHIDP    NPOL_PHIDP   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/npol/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
-NPOL_======   ======       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/mdv/spacer/moments&Elevation none.colors  m -5   80  5  cont    1 0
+# RaXPOL data
 
-############################
-# UMaXX data
-#UMAXX_DZ       UMAXX_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz.colors    dBZ    -5   80  5  dcont   1 0
-UMAXX_DZ       UMAXX_DZ      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZH   dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
-UMAXX_VE       UMAXX_VE      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&VE   vel.colors    m/s    -5   80  5  dcont   1 0
-UMAXX_ZDR      UMAXX_ZDR     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&ZD   zdr.colors    m/s    -5   80  5  dcont   1 0
-UMAXX_RHOHV    UMAXX_RHOHV   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&RH   rhohv.colors  -      -5   80  5  dcont   1 0
-UMAXX_PHIDP    UMAXX_PHIDP   mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&PH   phidp_360.colors deg -5   80  5  dcont   1 0
-UMAXX_SW       UMAXX_SW      mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/umaxx/sur&VW   width.colors  m/s    -5   80  5  dcont   1 0
+#RAXPOL_DBZ     RAXPOL_DBZ       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/raxpol/sur&DBZ    dbz.colors    dBZ    -5   80  5  dcont   1 0
+RAXPOL_DBZ      RAXPOL_DBZ       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/raxpol/sur&DBZ    dbz_carbone17.colors    dBZ    0   50  5  dcont   1 0
+RAXPOL_VEL      RAXPOL_VEL       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/raxpol/sur&VEL    vel.colors    m/s    -5   80  5  dcont   1 0
+RAXPOL_WIDTH    RAXPOL_WIDTH     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/raxpol/sur&WIDTH  width.colors  m/s    -5   80  5  dcont   1 0
+RAXPOL_ZDR      RAXPOL_ZDR       mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/raxpol/sur&ZDR    zdr.colors    m/s    -5   80  5  dcont   1 0
+RAXPOL_RHOHV    RAXPOL_RHOHV     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/raxpol/sur&RHOHV  rhohv.colors  -      -5   80  5  dcont   1 0
+RAXPOL_PHIDP    RAXPOL_PHIDP     mdvp:://$(DATA_HOST):0:$(DATA_DIR)/cfradial/raxpol/sur&PHIDP  phidp_360.colors deg -5   80  5  dcont   1 0
 
 ############################
 # GPM Ku data
@@ -264,7 +255,7 @@ STATES     State_Borders   usa.map           1      0.0         10000.0   yellow
 NEXRADS    Nexrads         nexrads.map       1      0.0         10000.0   white
 #NEXRADS    Nexrads         nexrads.map       1      0.0         100000.0   black
 #RADARS     Radars          imp_radars.map    1      0.0         10000.0   cyan
-RADARS     Radars          imp_radars.map    1      0.0         10000.0   green
+RADARS     Radars          imp_radars_2022.map    1      0.0         10000.0   green
 #AIRFIELDS  Airfields       imp_airfields.map 1      0.0         10000.0   blue
 AIRFIELDS  Airfields       imp_airfields_2022.map 1      0.0         10000.0   cyan
 
@@ -551,7 +542,7 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       7
+cidd.num_zoom_levels:       6
 cidd.start_zoom_level:      1
 #cidd.zoom_limits_in_latlon: 
 
@@ -587,23 +578,17 @@ cidd.level4_min_ykm:                33
 cidd.level4_max_xkm:                -62
 cidd.level4_max_ykm:                47
 #
-cidd.level5_label:                  NPOL
-cidd.level5_min_xkm:                -78.0
-cidd.level5_min_ykm:                37.0
-cidd.level5_max_xkm:                -72.5
-cidd.level5_max_ykm:                39.6
+cidd.level5_label:                  RaXPOL
+cidd.level5_min_xkm:                -73.7
+cidd.level5_min_ykm:                38.9
+cidd.level5_max_xkm:                -67.7
+cidd.level5_max_ykm:                44.9
 #
-cidd.level6_label:                  UMaXX
-cidd.level6_min_xkm:                -74.6
-cidd.level6_min_ykm:                41.4
-cidd.level6_max_xkm:                -70.4
-cidd.level6_max_ykm:                43.4
-#
-cidd.level7_label:                  North America
-cidd.level7_min_xkm:                -135
-cidd.level7_min_ykm:                20
-cidd.level7_max_xkm:                -65
-cidd.level7_max_ykm:                70
+cidd.level6_label:                  North America
+cidd.level6_min_xkm:                -135
+cidd.level6_min_ykm:                20
+cidd.level6_max_xkm:                -65
+cidd.level6_max_ykm:                70
 
 
 # Vertical Range and Resolution - Establishes a vertical coordinate system
@@ -1542,8 +1527,8 @@ prod_info = {
   }
   ,                        
   {
-    menu_label = "RHI-NPOL",
-    url = "spdbp:Rhi2Symprod:ticks//$(DATA_HOST):0:$(DATA_DIR)/spdb/rhi/npol",
+    menu_label = "RHI-RAXPOL",
+    url = "spdbp:Rhi2Symprod:ticks//$(DATA_HOST):0:$(DATA_DIR)/spdb/rhi/raxpol",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     on_by_default = FALSE,

@@ -28,7 +28,6 @@
 #
 # SURFACE
 00 * * * * /home/disk/bob/impacts/bin/run.get_sfc_anal.csh >> /home/disk/meso-home/meso/cron/logs/sfc_anal.log 2>&1
-#47 * * * * /home/disk/bob/impacts/bin/run.ASOS_save_and_plot.pl >> /home/disk/meso-home/meso/cron/logs/asos.log 2>&1
 #57 * * * * /home/disk/bob/impacts/bin/run.plot_impacts_domain.csh >> /home/disk/meso-home/meso/cron/logs/precip.log 2>&1
 #59 15 * * * /home/disk/bob/impacts/bin/run.get_daily_rainmap.pl >> /home/disk/meso-home/meso/cron/logs/rainmap.log 2>&1
 45 * * * * /home/disk/bob/impacts/bin/run.get_sfc_metars.csh >> /home/disk/meso-home/meso/cron/logs/metars.log 2>&1
@@ -41,7 +40,10 @@
 0 */8 * * * /home/disk/bob/impacts/bin/run.get_albany_plots.csh >> /home/disk/meso-home/meso/cron/logs/albany.log 2>&1
 5 * * * * /home/disk/bob/impacts/bin/run.NYS_mesonet_save.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_std_save.log 2>&1
 0 */1 * * * /home/disk/bob/impacts/bin/run.NYS_mesonet_plot.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_std_plot.log 2>&1
+5 * * * * /home/disk/bob/impacts/bin/run.NYS_profiler_save.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_prof_save.log 2>&1
+6 */1 * * * /home/disk/bob/impacts/bin/run.NYS_profiler_plot.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_prof_plot.log 2>&1
 0 * * * * /home/disk/bob/impacts/bin/run.ASOS_get_site_data_from_ISU.csh >>  /home/disk/meso-home/meso/cron/logs/asos_save.log 2>&1
+# Needed to run next job on shear, then stellar due to issues with metpy
 #0 * * * * /home/disk/bob/impacts/bin/run.ASOS_plot_data_hourly_ISU.csh >>  /home/disk/meso-home/meso/cron/logs/asos_plot.log 2>&1
 #
 00 * * * * /home/disk/bob/impacts/bin/run.clean_images.csh >> /home/disk/meso-home/meso/cron/logs/clean_images.log 2>&1
@@ -62,9 +64,6 @@
 20 */8 * * * /home/disk/bob/impacts/bin/run.get_sbu_man_radar_plots.csh >> /home/disk/meso-home/meso/cron/logs/sbu_man_radar.log 2>&1
 20 */8 * * * /home/disk/bob/impacts/bin/run.get_sbu_mobile_radar_plots.csh >> /home/disk/meso-home/meso/cron/logs/sbu_mobile_radar.log 2>&1
 20 */8 * * * /home/disk/bob/impacts/bin/run.get_sbu_radar_plots.csh >> /home/disk/meso-home/meso/cron/logs/sbu_radar.log 2>&1
-#30 */1 * * * /home/disk/bob/impacts/bin/run.get_sbu_kaspr_plots.pl >> /home/disk/meso-home/meso/cron/logs/sbu_kaspr.log 2>&1
-#5-59/15 * * * * /home/disk/bob/impacts/bin/run.get_sbu_kaspr_rt_plots.csh > /home/disk/meso-home/meso/cron/logs/sbu_kaspr_rt.log 2>&1
-#30 * * * * /home/disk/bob/impacts/bin/run.get_npol_images.pl >> /home/disk/meso-home/meso/cron/logs/npol.log 2>&1
 */10 * * * * /home/disk/bob/impacts/bin/run.MrmsGribIngest_v2.csh >> /home/disk/meso-home/meso/cron/logs/mrms_ingest.log 2>&1
 */10 * * * * /home/disk/bob/impacts/bin/run.MrmsGribIngestZDR_v2.csh >> /home/disk/meso-home/meso/cron/logs/mrms_ingest_zdr.log 2>&1
 */10 * * * * /home/disk/bob/impacts/bin/run.MrmsGribIngestRhoHV_v2.csh >> /home/disk/meso-home/meso/cron/logs/mrms_ingest_rhohv.log 2>&1
@@ -79,20 +78,19 @@
 00 00 * * * /home/disk/bob/impacts/bin/run.get_gpm_overpasses_west.csh >> /home/disk/meso-home/meso/cron/logs/gpm_overpasses_west.log 2>&1
 */5 * * * * /home/disk/bob/impacts/bin/run.get_goes_meso_plots.csh 1 >> /home/disk/meso-home/meso/cron/logs/goes_meso.log 2>&1
 */5 * * * * /home/disk/bob/impacts/bin/run.get_goes_meso_plots.csh 2 >> /home/disk/meso-home/meso/cron/logs/goes_meso2.log 2>&1
-#*/5 * * * * /home/disk/bob/impacts/bin/run.get_goes_fd_plots.csh >> /home/disk/meso-home/meso/cron/logs/goes_fd.log 2>&1
 */15 * * * * /home/disk/bob/impacts/bin/run.get_goes_sat_plots.csh >> /home/disk/meso-home/meso/cron/logs/goes_sat.log 2>&1
 00 */3 * * * /home/disk/bob/impacts/bin/run.get_goes_sat_upperair_plots.csh >> /home/disk/meso-home/meso/cron/logs/goes_sat_upperair.log 2>&1
 #
 # AIRCRAFT
 # Uncomment the next line when ER2 is flying
-#*/5 5-12 4 2 * /home/disk/bob/impacts/bin/run.get_er2_rt_images.csh >> /home/disk/meso-home/meso/cron/logs/er2_rt.log 2>&1
+#*/5 9-16 17 2 * /home/disk/bob/impacts/bin/run.get_er2_rt_images.csh >> /home/disk/meso-home/meso/cron/logs/er2_rt.log 2>&1
 # Uncomment the next line when P-3 is flying and might use dropsondes
 */5 * * * * /home/disk/bob/impacts/bin/run.get_dropsonde_images.csh >> /home/disk/meso-home/meso/cron/logs/dropsonde.log
 ##*/10 * * * * /home/disk/bob/impacts/bin/run.get_er2_mvis.csh >> /home/disk/meso-home/meso/cron/logs/mvis.log
 # Uncomment next line when P3 is flying (make mod to run script first)
-#* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_p3_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_p3.log 2>&1
+* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_p3_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_p3.log 2>&1
 # Uncomment next line when ER2 is flying (make mod to run script first)
-#* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_er2_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_er2.log 2>&1
+* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_er2_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_er2.log 2>&1
 #
 # CATALOG
 */10 * * * * /home/disk/bob/impacts/bin/kml_create/run.rename_cat_images_and_ftp.csh >> /home/disk/meso-home/meso/cron/logs/rename_cat_images.log 2>&1
@@ -110,6 +108,7 @@
 ####################################################################
 
 # GOES-R Mesoscale sector image generation - when applicable
+# Currently running this as ldm on bob - se/edite crontab file at ldm@bob:/~ldm/cron/crontab.ldm.bob
 # M1
 #* * 14,15 1 * csh -c "/home/disk/ldm/local/bin/new_sat/timed_run.pl -delay 240 20220114120000 20220115120000 /home/disk/ldm/local/bin/new_sat/testmeso.csh true_color_night 1 YYYYMMDD HH /home/disk/data/images/sat_east_meso_impacts" 1> /home/disk/bob/impacts/logs/fortesting/M1.log 2>&1
 #

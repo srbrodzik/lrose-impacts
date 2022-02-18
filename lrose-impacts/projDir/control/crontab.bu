@@ -41,6 +41,8 @@
 0 */8 * * * /home/disk/bob/impacts/bin/run.get_albany_plots.csh >> /home/disk/meso-home/meso/cron/logs/albany.log 2>&1
 5 * * * * /home/disk/bob/impacts/bin/run.NYS_mesonet_save.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_std_save.log 2>&1
 0 */1 * * * /home/disk/bob/impacts/bin/run.NYS_mesonet_plot.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_std_plot.log 2>&1
+5 * * * * /home/disk/bob/impacts/bin/run.NYS_profiler_save.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_prof_save.log 2>&1
+0 */1 * * * /home/disk/bob/impacts/bin/run.NYS_profiler_plot.csh >>  /home/disk/meso-home/meso/cron/logs/nysm_prof_plot.log 2>&1
 0 * * * * /home/disk/bob/impacts/bin/run.ASOS_get_site_data_from_ISU.csh >>  /home/disk/meso-home/meso/cron/logs/asos_save.log 2>&1
 #0 * * * * /home/disk/bob/impacts/bin/run.ASOS_plot_data_hourly_ISU.csh >>  /home/disk/meso-home/meso/cron/logs/asos_plot.log 2>&1
 #
@@ -85,14 +87,14 @@
 #
 # AIRCRAFT
 # Uncomment the next line when ER2 is flying
-#*/5 * * * * /home/disk/bob/impacts/bin/run.get_er2_rt_images.csh >> /home/disk/meso-home/meso/cron/logs/er2_rt.log 2>&1
+#*/5 4-12 13 2 * /home/disk/bob/impacts/bin/run.get_er2_rt_images.csh >> /home/disk/meso-home/meso/cron/logs/er2_rt.log 2>&1
 # Uncomment the next line when P-3 is flying and might use dropsondes
 */5 * * * * /home/disk/bob/impacts/bin/run.get_dropsonde_images.csh >> /home/disk/meso-home/meso/cron/logs/dropsonde.log
 ##*/10 * * * * /home/disk/bob/impacts/bin/run.get_er2_mvis.csh >> /home/disk/meso-home/meso/cron/logs/mvis.log
 # Uncomment next line when P3 is flying (make mod to run script first)
 * * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_p3_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_p3.log 2>&1
 # Uncomment next line when ER2 is flying (make mod to run script first)
-#* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_er2_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_er2.log 2>&1
+* * * * * /home/disk/bob/impacts/bin/kml_create/run.make_kml_er2_fltTrk_fill_v5_rt_worms.csh >> /home/disk/meso-home/meso/cron/logs/kml_er2.log 2>&1
 #
 # CATALOG
 */10 * * * * /home/disk/bob/impacts/bin/kml_create/run.rename_cat_images_and_ftp.csh >> /home/disk/meso-home/meso/cron/logs/rename_cat_images.log 2>&1
